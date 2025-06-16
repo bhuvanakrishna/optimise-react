@@ -50,7 +50,9 @@ const Level2 = (props: any) => {
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
       <p>Computed: {computed}</p>
       <UI onClick={handleClick} />
-      <Level3 count={count} /> 
+      
+        <Level3 count={count} data={{ value: Math.random() }} />
+      
     </div>
   );
   
