@@ -42,7 +42,9 @@ const Parent = (props: any) => {
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
       <p>Computed: {computed}</p>
       <UI onClick={handleClick} />
-      <Level2 count={count} /> 
+      
+        <Level2 count={count}  />
+      
     </div>
   );
   
