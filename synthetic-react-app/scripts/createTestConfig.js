@@ -3,32 +3,50 @@ const path = require('path');
 
 const baseDir = path.resolve(__dirname, '..');
 const componentsDir = path.join(baseDir, 'src', 'components');
-const components = fs.readdirSync(componentsDir).map(f => path.parse(f).name);
+const outputPath = path.join(baseDir, 'src', 'config', 'testPages.json');
 
+// Load available component names
+const components = fs.readdirSync(componentsDir)
+  .filter(f => f.endsWith('.tsx') && !f.startsWith('.DS_Store'))
+  .map(f => path.parse(f).name);
+
+
+// Shuffle utility
 function shuffle(arr) {
   return arr.sort(() => Math.random() - 0.5);
 }
 
-const patterns = [
-  'prop-drilling',
-  'unstable-props',
-  'too-many-effects',
-  'missing-useMemo',
-  'lazy-loading'
-];
+// Define patterns and unique flags for better synthetic diversity
+const patterns = {
+  'prop-drilling': { deepProps: true },
+  'unstable-props': { frequentRerenders: true },
+  'too-many-effects': { effectFlood: true },
+  'missing-useMemo': { recomputesHeavyFn: true },
+  'lazy-loading': { breakIntoChunks: true },
+  'inefficient-context': { globalContext: true },
+  'stale-closures': { staleState: true },
+  'misused-useEffect': { wrongDeps: true },
+  'inline-functions': { inlineInJSX: true },
+  'repeated-fetching': { repeatedCalls: true }
+};
 
+// Create page configurations
 const pages = [];
-patterns.forEach(pattern => {
+for (const [pattern, flags] of Object.entries(patterns)) {
   for (let i = 1; i <= 30; i++) {
     pages.push({
       pageName: `${pattern.replace(/-/g, '')}Test${i}`,
       layout: i % 2 === 0 ? 'row' : 'column',
-      depth: 2 + (i % 5),
+      depth: 2 + (i % 4),
       pattern,
+      patternFlags: flags,
       components: shuffle([...components]).slice(0, 5)
     });
   }
-});
+}
 
-fs.writeFileSync(path.join(baseDir, 'src', 'config', 'testPages.json'), JSON.stringify(pages, null, 2));
-console.log('testPages.json generated with', pages.length, 'pages');
+// Write the file
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+fs.writeFileSync(outputPath, JSON.stringify(pages, null, 2));
+console.log('✅ testPages.json generated with', pages.length, 'pages');
+

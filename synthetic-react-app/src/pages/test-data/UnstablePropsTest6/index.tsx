@@ -1,17 +1,13 @@
 import React from 'react';
-
 import Parent from './Parent';
 
-
-const UnstablePropsTest6 = () => {
+const unstablepropsTest6 = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <h2>UnstablePropsTest6</h2>
-      
-      <Parent user="test-user" />
-      
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <h2>unstablepropsTest6</h2>
+      <Parent user={{ name: 'Krishna' }} />
     </div>
   );
 };
 
-export default UnstablePropsTest6;
+export default unstablepropsTest6;

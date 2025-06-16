@@ -1,17 +1,13 @@
 import React from 'react';
-
 import Parent from './Parent';
 
-
-const TooManyEffectsTest19 = () => {
+const toomanyeffectsTest19 = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <h2>TooManyEffectsTest19</h2>
-      
-      <Parent user="test-user" />
-      
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <h2>toomanyeffectsTest19</h2>
+      <Parent user={{ name: 'Krishna' }} />
     </div>
   );
 };
 
-export default TooManyEffectsTest19;
+export default toomanyeffectsTest19;

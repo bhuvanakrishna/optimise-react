@@ -1,19 +1,13 @@
 import React from 'react';
+import Parent from './Parent';
 
-const LazyParent = React.lazy(() => import('./Parent'));
-
-
-const LazyLoadingTest8 = () => {
+const lazyloadingTest8 = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <h2>LazyLoadingTest8</h2>
-      
-      <React.Suspense fallback={null}>
-        <LazyParent />
-      </React.Suspense>
-      
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <h2>lazyloadingTest8</h2>
+      <Parent user={{ name: 'Krishna' }} />
     </div>
   );
 };
 
-export default LazyLoadingTest8;
+export default lazyloadingTest8;

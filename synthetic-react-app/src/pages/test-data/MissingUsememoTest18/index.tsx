@@ -1,17 +1,13 @@
 import React from 'react';
-
 import Parent from './Parent';
 
-
-const MissingUsememoTest18 = () => {
+const missinguseMemoTest18 = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <h2>MissingUsememoTest18</h2>
-      
-      <Parent user="test-user" />
-      
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <h2>missinguseMemoTest18</h2>
+      <Parent user={{ name: 'Krishna' }} />
     </div>
   );
 };
 
-export default MissingUsememoTest18;
+export default missinguseMemoTest18;

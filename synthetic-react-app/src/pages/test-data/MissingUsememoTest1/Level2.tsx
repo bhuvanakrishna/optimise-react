@@ -1,23 +1,51 @@
-import React, { useEffect } from 'react';
-import Level3 from './Level3';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useContext,
+  Suspense,
+  lazy,
+  memo,
+  startTransition,
+  createContext,
+} from 'react';
+
+import UI from '../../../components/Popover';
+
+import Child from './Child';
+
+
+// Context setup for inefficient-context pattern
 
 
 const Level2 = (props: any) => {
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState<any>(null);
+
   
+  const computed = Array(10000)
+    .fill(0)
+    .map((_, i) => i * count)
+    .reduce((a, b) => a + b, 0);
   
+
   
-  const expensive = Array.from({ length: 1000 }).reduce((a, _, i) => a + i, 0);
-  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+
   return (
-    <div>
-      <h4>Level2</h4>
-      
-        
-        <Level3 user={props.user} />
-        
-      
+    <div style={{ padding: 12 }}>
+      <h3>Level2</h3>
+      <p>Count: {count}</p>
+      <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
+      <p>Computed: {computed}</p>
+      <UI onClick={handleClick} />
+      <Child count={count} /> 
     </div>
   );
+  
 };
 
 export default Level2;

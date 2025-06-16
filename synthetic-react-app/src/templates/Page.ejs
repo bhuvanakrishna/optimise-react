@@ -1,21 +1,11 @@
 import React from 'react';
-<% if (pattern === 'lazy-loading') { %>
-const LazyParent = React.lazy(() => import('./Parent'));
-<% } else { %>
 import Parent from './Parent';
-<% } %>
 
 const <%= pageName %> = () => {
   return (
     <div style={{ display: 'flex', flexDirection: '<%= layout %>' }}>
       <h2><%= pageName %></h2>
-      <% if (pattern === 'lazy-loading') { %>
-      <React.Suspense fallback={null}>
-        <LazyParent />
-      </React.Suspense>
-      <% } else { %>
-      <Parent user="test-user" />
-      <% } %>
+      <Parent user={{ name: 'Krishna' }} />
     </div>
   );
 };

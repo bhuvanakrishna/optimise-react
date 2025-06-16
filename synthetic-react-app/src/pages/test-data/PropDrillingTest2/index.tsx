@@ -1,17 +1,13 @@
 import React from 'react';
-
 import Parent from './Parent';
 
-
-const PropDrillingTest2 = () => {
+const propdrillingTest2 = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <h2>PropDrillingTest2</h2>
-      
-      <Parent user="test-user" />
-      
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <h2>propdrillingTest2</h2>
+      <Parent user={{ name: 'Krishna' }} />
     </div>
   );
 };
 
-export default PropDrillingTest2;
+export default propdrillingTest2;

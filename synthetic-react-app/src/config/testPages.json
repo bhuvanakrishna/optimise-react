@@ -4,12 +4,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
+      "PasswordInput",
       "Switch",
-      "Affix",
-      "Tooltip",
-      "TimePicker",
-      "MultiSelect"
+      "Input",
+      "Avatar",
+      "Affix"
     ]
   },
   {
@@ -17,12 +20,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Checkbox",
-      "Card",
-      "Switch",
-      "Message",
-      "Table"
+      "Drawer",
+      "RangePicker",
+      "Alert",
+      "Badge",
+      "PasswordInput"
     ]
   },
   {
@@ -30,220 +36,271 @@
     "layout": "column",
     "depth": 5,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
+      "Progress",
+      "Tag",
+      "Descriptions",
       "BackTop",
-      "Image",
-      "Popover",
-      "Card",
-      "Badge"
+      "Drawer"
     ]
   },
   {
     "pageName": "propdrillingTest4",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "BackTop",
-      "Select",
-      "Button",
-      "Image",
-      "Input"
+      "RangePicker",
+      "Drawer",
+      "Input",
+      "Affix",
+      "Message"
     ]
   },
   {
     "pageName": "propdrillingTest5",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Affix",
+      "Popover",
+      "RangePicker",
       "Collapse",
-      "Progress",
-      "Switch",
-      "PasswordInput"
+      "Checkbox",
+      "Badge"
     ]
   },
   {
     "pageName": "propdrillingTest6",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Empty",
-      "Drawer",
-      "Message",
       "Checkbox",
+      "Collapse",
+      "Slider",
+      "Image",
       "List"
     ]
   },
   {
     "pageName": "propdrillingTest7",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Badge",
-      "DatePicker",
-      "Affix",
-      "Message",
-      "BackTop"
+      "Progress",
+      "Modal",
+      "Popover",
+      "PasswordInput",
+      "Message"
     ]
   },
   {
     "pageName": "propdrillingTest8",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Alert",
       "Checkbox",
-      "PasswordInput",
-      "Select",
-      "Card"
+      "Switch",
+      "Message",
+      "Avatar",
+      "Tag"
     ]
   },
   {
     "pageName": "propdrillingTest9",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Tabs",
-      "RadioGroup",
-      "InputNumber",
-      "Switch",
-      "Tooltip"
+      "Affix",
+      "Image",
+      "Alert",
+      "Empty",
+      "Spin"
     ]
   },
   {
     "pageName": "propdrillingTest10",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "TimePicker",
-      "Descriptions",
-      "Popover",
-      "Affix",
-      "Alert"
+      "Slider",
+      "Empty",
+      "Select",
+      "TextArea",
+      "Card"
     ]
   },
   {
     "pageName": "propdrillingTest11",
     "layout": "column",
-    "depth": 3,
+    "depth": 5,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
+      "Table",
       "DatePicker",
-      "Alert",
-      "Tooltip",
-      "Image",
-      "Modal"
+      "Button",
+      "PasswordInput",
+      "Slider"
     ]
   },
   {
     "pageName": "propdrillingTest12",
     "layout": "row",
-    "depth": 4,
+    "depth": 2,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Upload",
-      "PasswordInput",
-      "Tabs",
-      "Tooltip",
-      "Message"
+      "Image",
+      "Badge",
+      "Card",
+      "Popover",
+      "Slider"
     ]
   },
   {
     "pageName": "propdrillingTest13",
     "layout": "column",
-    "depth": 5,
+    "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Collapse",
-      "Affix",
-      "BackTop",
-      "Tabs",
-      "Checkbox"
+      "Spin",
+      "Select",
+      "PasswordInput",
+      "Upload",
+      "Collapse"
     ]
   },
   {
     "pageName": "propdrillingTest14",
     "layout": "row",
-    "depth": 6,
+    "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Checkbox",
-      "Descriptions",
-      "Select",
-      "Message",
-      "Dropdown"
+      "RadioGroup",
+      "InputNumber",
+      "List",
+      "Badge",
+      "Modal"
     ]
   },
   {
     "pageName": "propdrillingTest15",
     "layout": "column",
-    "depth": 2,
+    "depth": 5,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Table",
-      "Badge",
-      "Modal",
-      "Tag",
-      "Select"
+      "Avatar",
+      "Upload",
+      "Image",
+      "Collapse",
+      "Input"
     ]
   },
   {
     "pageName": "propdrillingTest16",
     "layout": "row",
-    "depth": 3,
+    "depth": 2,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Badge",
-      "Checkbox",
-      "Message",
-      "InputNumber",
-      "BackTop"
+      "Avatar",
+      "DatePicker",
+      "Dropdown",
+      "Table",
+      "RadioGroup"
     ]
   },
   {
     "pageName": "propdrillingTest17",
     "layout": "column",
-    "depth": 4,
+    "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Input",
-      "Badge",
-      "PasswordInput",
-      "Modal",
-      "List"
+      "Image",
+      "Avatar",
+      "Checkbox",
+      "Slider",
+      "Dropdown"
     ]
   },
   {
     "pageName": "propdrillingTest18",
     "layout": "row",
-    "depth": 5,
+    "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Switch",
-      "Empty",
-      "Upload",
+      "Table",
       "BackTop",
-      "Popover"
+      "Avatar",
+      "Collapse",
+      "Drawer"
     ]
   },
   {
     "pageName": "propdrillingTest19",
     "layout": "column",
-    "depth": 6,
+    "depth": 5,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Card",
-      "Tooltip",
-      "Collapse",
-      "Upload",
-      "Empty"
+      "Alert",
+      "Drawer",
+      "Switch",
+      "MultiSelect",
+      "Modal"
     ]
   },
   {
@@ -251,12 +308,15 @@
     "layout": "row",
     "depth": 2,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Avatar",
-      "Table",
-      "Empty",
-      "Checkbox",
-      "InputNumber"
+      "Affix",
+      "Tabs",
+      "Dropdown",
+      "List",
+      "Card"
     ]
   },
   {
@@ -264,12 +324,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Spin",
+      "Button",
+      "MultiSelect",
       "Drawer",
-      "Alert",
-      "Tooltip",
-      "Progress"
+      "Affix",
+      "RangePicker"
     ]
   },
   {
@@ -277,12 +340,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Select",
-      "Badge",
-      "Tooltip",
-      "Image",
-      "Button"
+      "Affix",
+      "Slider",
+      "Alert",
+      "Avatar",
+      "TimePicker"
     ]
   },
   {
@@ -290,103 +356,127 @@
     "layout": "column",
     "depth": 5,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Input",
-      "Progress",
-      "TimePicker",
-      "Collapse",
-      "Modal"
+      "Message",
+      "Alert",
+      "Descriptions",
+      "PasswordInput",
+      "Collapse"
     ]
   },
   {
     "pageName": "propdrillingTest24",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "BackTop",
-      "Message",
-      "Checkbox",
-      "Image",
-      "Popover"
+      "Drawer",
+      "Popover",
+      "Card",
+      "Switch",
+      "RangePicker"
     ]
   },
   {
     "pageName": "propdrillingTest25",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Progress",
       "Tooltip",
-      "Modal",
-      "Alert",
-      "Empty"
+      "BackTop",
+      "Card",
+      "Affix",
+      "Button"
     ]
   },
   {
     "pageName": "propdrillingTest26",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "MultiSelect",
-      "Upload",
-      "Message",
-      "Dropdown",
-      "Affix"
+      "Affix",
+      "Input",
+      "List",
+      "Tabs",
+      "Table"
     ]
   },
   {
     "pageName": "propdrillingTest27",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Card",
-      "Message",
-      "Slider",
-      "Image",
-      "Affix"
+      "Checkbox",
+      "Table",
+      "Empty",
+      "Button",
+      "Alert"
     ]
   },
   {
     "pageName": "propdrillingTest28",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "BackTop",
-      "Card",
-      "DatePicker",
-      "Checkbox",
-      "Message"
+      "Affix",
+      "Descriptions",
+      "Button",
+      "TextArea",
+      "InputNumber"
     ]
   },
   {
     "pageName": "propdrillingTest29",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Progress",
-      "DatePicker",
-      "Switch",
-      "TextArea",
-      "Affix"
+      "Image",
+      "Tabs",
+      "Button",
+      "RadioGroup",
+      "Input"
     ]
   },
   {
     "pageName": "propdrillingTest30",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "prop-drilling",
+    "patternFlags": {
+      "deepProps": true
+    },
     "components": [
-      "Affix",
-      "List",
-      "InputNumber",
+      "Table",
+      "Input",
+      "Upload",
       "BackTop",
-      "Table"
+      "Select"
     ]
   },
   {
@@ -394,12 +484,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Affix",
-      "Alert",
-      "List",
-      "Tag",
-      "Collapse"
+      "Button",
+      "Card",
+      "TimePicker",
+      "Drawer",
+      "Descriptions"
     ]
   },
   {
@@ -407,12 +500,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Tag",
-      "Affix",
-      "Dropdown",
-      "Popover",
-      "DatePicker"
+      "PasswordInput",
+      "Badge",
+      "Message",
+      "Avatar",
+      "Modal"
     ]
   },
   {
@@ -420,220 +516,271 @@
     "layout": "column",
     "depth": 5,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "TimePicker",
+      "Checkbox",
+      "Spin",
       "Descriptions",
-      "BackTop",
-      "Avatar",
-      "Upload"
+      "Alert",
+      "Tooltip"
     ]
   },
   {
     "pageName": "unstablepropsTest4",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
       "Drawer",
-      "Alert",
-      "Select",
-      "Card",
-      "Descriptions"
+      "Slider",
+      "Button",
+      "Tag",
+      "TimePicker"
     ]
   },
   {
     "pageName": "unstablepropsTest5",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Spin",
-      "Button",
-      "Badge",
-      "List",
-      "Drawer"
+      "Avatar",
+      "Image",
+      "TimePicker",
+      "RangePicker",
+      "InputNumber"
     ]
   },
   {
     "pageName": "unstablepropsTest6",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Spin",
-      "DatePicker",
-      "Upload",
-      "RadioGroup",
-      "Checkbox"
+      "Select",
+      "Button",
+      "Dropdown",
+      "Progress",
+      "Modal"
     ]
   },
   {
     "pageName": "unstablepropsTest7",
     "layout": "column",
-    "depth": 4,
-    "pattern": "unstable-props",
-    "components": [
-      "Empty",
-      "Descriptions",
-      "Tabs",
-      "Dropdown",
-      "Switch"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest8",
-    "layout": "row",
     "depth": 5,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Drawer",
-      "Switch",
-      "Checkbox",
-      "RadioGroup",
-      "TimePicker"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest9",
-    "layout": "column",
-    "depth": 6,
-    "pattern": "unstable-props",
-    "components": [
-      "Badge",
-      "Descriptions",
-      "List",
-      "Card",
-      "Table"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest10",
-    "layout": "row",
-    "depth": 2,
-    "pattern": "unstable-props",
-    "components": [
-      "Drawer",
-      "RadioGroup",
-      "MultiSelect",
-      "Select",
-      "Popover"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest11",
-    "layout": "column",
-    "depth": 3,
-    "pattern": "unstable-props",
-    "components": [
-      "Affix",
-      "DatePicker",
-      "Progress",
-      "Upload",
-      "TextArea"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest12",
-    "layout": "row",
-    "depth": 4,
-    "pattern": "unstable-props",
-    "components": [
-      "Card",
-      "Progress",
-      "TextArea",
+      "BackTop",
       "Empty",
-      "Button"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest13",
-    "layout": "column",
-    "depth": 5,
-    "pattern": "unstable-props",
-    "components": [
-      "Affix",
-      "PasswordInput",
-      "Collapse",
-      "Spin",
-      "BackTop"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest14",
-    "layout": "row",
-    "depth": 6,
-    "pattern": "unstable-props",
-    "components": [
-      "Dropdown",
-      "DatePicker",
-      "Tag",
-      "Modal",
-      "PasswordInput"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest15",
-    "layout": "column",
-    "depth": 2,
-    "pattern": "unstable-props",
-    "components": [
-      "RadioGroup",
-      "Message",
-      "Affix",
-      "Alert",
-      "Collapse"
-    ]
-  },
-  {
-    "pageName": "unstablepropsTest16",
-    "layout": "row",
-    "depth": 3,
-    "pattern": "unstable-props",
-    "components": [
-      "Affix",
-      "Card",
-      "Message",
+      "Button",
       "Tabs",
       "DatePicker"
     ]
   },
   {
-    "pageName": "unstablepropsTest17",
-    "layout": "column",
-    "depth": 4,
+    "pageName": "unstablepropsTest8",
+    "layout": "row",
+    "depth": 2,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "Tabs",
+      "Checkbox",
+      "MultiSelect",
+      "InputNumber",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest9",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
       "Affix",
-      "Alert",
-      "Switch",
+      "Input",
+      "PasswordInput",
+      "Image",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest10",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "Button",
+      "Select",
+      "Dropdown",
+      "Image",
+      "Table"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest11",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "Drawer",
+      "Avatar",
+      "Affix",
+      "InputNumber",
+      "Switch"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest12",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "BackTop",
+      "RangePicker",
+      "Select",
+      "Progress",
+      "Spin"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest13",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "MultiSelect",
+      "TimePicker",
+      "BackTop",
+      "List",
+      "Switch"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest14",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "List",
+      "Image",
+      "Modal",
+      "Dropdown",
+      "Collapse"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest15",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "DatePicker",
+      "Affix",
+      "Progress",
+      "RangePicker",
+      "Descriptions"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest16",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
       "Empty",
-      "Modal"
+      "Upload",
+      "Affix",
+      "TextArea",
+      "Switch"
+    ]
+  },
+  {
+    "pageName": "unstablepropsTest17",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
+    "components": [
+      "DatePicker",
+      "Card",
+      "Upload",
+      "Drawer",
+      "Button"
     ]
   },
   {
     "pageName": "unstablepropsTest18",
     "layout": "row",
-    "depth": 5,
+    "depth": 4,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Collapse",
-      "Badge",
-      "Progress",
-      "Checkbox",
-      "Spin"
+      "TimePicker",
+      "Input",
+      "Card",
+      "Affix",
+      "Select"
     ]
   },
   {
     "pageName": "unstablepropsTest19",
     "layout": "column",
-    "depth": 6,
+    "depth": 5,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Spin",
-      "Switch",
-      "Card",
-      "RangePicker",
-      "Image"
+      "Button",
+      "Affix",
+      "Modal",
+      "Empty",
+      "Alert"
     ]
   },
   {
@@ -641,12 +788,15 @@
     "layout": "row",
     "depth": 2,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Card",
-      "Popover",
-      "Tooltip",
-      "Select",
-      "Button"
+      "TextArea",
+      "Modal",
+      "Collapse",
+      "Upload",
+      "Descriptions"
     ]
   },
   {
@@ -654,12 +804,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Input",
-      "Checkbox",
-      "Dropdown",
-      "Popover",
-      "Alert"
+      "List",
+      "Drawer",
+      "PasswordInput",
+      "Tag",
+      "BackTop"
     ]
   },
   {
@@ -667,12 +820,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Upload",
-      "Checkbox",
-      "Popover",
-      "Table",
-      "Input"
+      "Affix",
+      "Badge",
+      "Drawer",
+      "BackTop",
+      "Empty"
     ]
   },
   {
@@ -680,103 +836,127 @@
     "layout": "column",
     "depth": 5,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Input",
-      "Collapse",
+      "Empty",
+      "Button",
+      "Card",
       "Table",
-      "TimePicker",
-      "Switch"
+      "Modal"
     ]
   },
   {
     "pageName": "unstablepropsTest24",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "TimePicker",
-      "Tooltip",
-      "MultiSelect",
-      "RangePicker",
+      "Slider",
+      "TextArea",
+      "PasswordInput",
+      "Avatar",
       "Input"
     ]
   },
   {
     "pageName": "unstablepropsTest25",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "RangePicker",
-      "Collapse",
+      "Button",
+      "Card",
       "Affix",
-      "TextArea",
-      "Popover"
+      "Dropdown",
+      "Table"
     ]
   },
   {
     "pageName": "unstablepropsTest26",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "DatePicker",
-      "Input",
-      "Collapse",
-      "Button",
-      "Modal"
+      "Avatar",
+      "Tabs",
+      "MultiSelect",
+      "PasswordInput",
+      "Drawer"
     ]
   },
   {
     "pageName": "unstablepropsTest27",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "RangePicker",
-      "Drawer",
-      "Table",
-      "Image",
-      "Tabs"
+      "Input",
+      "Affix",
+      "Progress",
+      "Popover",
+      "RangePicker"
     ]
   },
   {
     "pageName": "unstablepropsTest28",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Table",
-      "Checkbox",
-      "Input",
-      "PasswordInput",
-      "Badge"
+      "Collapse",
+      "Slider",
+      "Modal",
+      "BackTop",
+      "Checkbox"
     ]
   },
   {
     "pageName": "unstablepropsTest29",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Drawer",
-      "Checkbox",
-      "TextArea",
-      "RangePicker",
-      "Tabs"
+      "Collapse",
+      "List",
+      "Modal",
+      "BackTop",
+      "Spin"
     ]
   },
   {
     "pageName": "unstablepropsTest30",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "unstable-props",
+    "patternFlags": {
+      "frequentRerenders": true
+    },
     "components": [
-      "Avatar",
-      "Button",
-      "TextArea",
-      "Switch",
-      "Select"
+      "InputNumber",
+      "Empty",
+      "RangePicker",
+      "Slider",
+      "Message"
     ]
   },
   {
@@ -784,12 +964,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Tooltip",
-      "Upload",
-      "Input",
-      "Slider",
-      "Image"
+      "Collapse",
+      "Badge",
+      "Affix",
+      "PasswordInput",
+      "Drawer"
     ]
   },
   {
@@ -797,12 +980,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Dropdown",
-      "Select",
-      "Table",
-      "Slider",
-      "Image"
+      "MultiSelect",
+      "Affix",
+      "Checkbox",
+      "Descriptions",
+      "Progress"
     ]
   },
   {
@@ -810,220 +996,271 @@
     "layout": "column",
     "depth": 5,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Checkbox",
-      "Descriptions",
-      "Upload",
-      "Spin",
-      "Tooltip"
+      "Tooltip",
+      "BackTop",
+      "Table",
+      "InputNumber",
+      "Tabs"
     ]
   },
   {
     "pageName": "toomanyeffectsTest4",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Switch",
-      "Table",
+      "DatePicker",
+      "Drawer",
       "Tooltip",
-      "Upload",
-      "Card"
+      "Input",
+      "Slider"
     ]
   },
   {
     "pageName": "toomanyeffectsTest5",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Card",
+      "Alert",
       "Progress",
-      "Badge",
-      "List",
-      "RangePicker"
+      "Drawer",
+      "Image",
+      "Spin"
     ]
   },
   {
     "pageName": "toomanyeffectsTest6",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
+      "RangePicker",
       "Drawer",
-      "Tooltip",
-      "Card",
-      "Switch",
-      "DatePicker"
+      "Image",
+      "Message",
+      "Tooltip"
     ]
   },
   {
     "pageName": "toomanyeffectsTest7",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Dropdown",
-      "DatePicker",
-      "Image",
+      "Badge",
+      "Input",
       "Spin",
-      "Tag"
+      "MultiSelect",
+      "Image"
     ]
   },
   {
     "pageName": "toomanyeffectsTest8",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Switch",
-      "InputNumber",
-      "List",
-      "PasswordInput",
-      "TextArea"
+      "Modal",
+      "Upload",
+      "Badge",
+      "BackTop",
+      "Select"
     ]
   },
   {
     "pageName": "toomanyeffectsTest9",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Popover",
-      "MultiSelect",
-      "Checkbox",
-      "Slider",
-      "Modal"
+      "Image",
+      "Input",
+      "Tag",
+      "DatePicker",
+      "BackTop"
     ]
   },
   {
     "pageName": "toomanyeffectsTest10",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Dropdown",
-      "Badge",
-      "List",
-      "Select",
-      "Card"
+      "Progress",
+      "Alert",
+      "BackTop",
+      "Upload",
+      "Table"
     ]
   },
   {
     "pageName": "toomanyeffectsTest11",
     "layout": "column",
-    "depth": 3,
+    "depth": 5,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
+      "Dropdown",
       "Card",
-      "PasswordInput",
-      "RangePicker",
-      "Drawer",
-      "Tag"
+      "TimePicker",
+      "List",
+      "Slider"
     ]
   },
   {
     "pageName": "toomanyeffectsTest12",
     "layout": "row",
-    "depth": 4,
+    "depth": 2,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Button",
-      "Affix",
-      "TimePicker",
-      "List",
-      "Drawer"
+      "Image",
+      "Select",
+      "Drawer",
+      "Progress",
+      "Dropdown"
     ]
   },
   {
     "pageName": "toomanyeffectsTest13",
     "layout": "column",
-    "depth": 5,
+    "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Tabs",
-      "Table",
-      "BackTop",
+      "PasswordInput",
+      "Avatar",
+      "Descriptions",
       "TextArea",
-      "Tag"
+      "RangePicker"
     ]
   },
   {
     "pageName": "toomanyeffectsTest14",
     "layout": "row",
-    "depth": 6,
+    "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "DatePicker",
-      "Badge",
-      "Table",
-      "Popover",
-      "Switch"
+      "Slider",
+      "Image",
+      "TextArea",
+      "Tooltip",
+      "PasswordInput"
     ]
   },
   {
     "pageName": "toomanyeffectsTest15",
     "layout": "column",
-    "depth": 2,
+    "depth": 5,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Descriptions",
-      "RangePicker",
+      "Card",
+      "RadioGroup",
       "Affix",
-      "Alert",
-      "Card"
+      "Descriptions",
+      "Collapse"
     ]
   },
   {
     "pageName": "toomanyeffectsTest16",
     "layout": "row",
-    "depth": 3,
+    "depth": 2,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Affix",
+      "PasswordInput",
+      "Popover",
+      "BackTop",
       "Collapse",
-      "Switch",
-      "Alert",
-      "Checkbox"
+      "Progress"
     ]
   },
   {
     "pageName": "toomanyeffectsTest17",
     "layout": "column",
-    "depth": 4,
+    "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Empty",
-      "Input",
+      "Badge",
+      "PasswordInput",
       "Checkbox",
-      "List",
-      "Tag"
+      "Button",
+      "Empty"
     ]
   },
   {
     "pageName": "toomanyeffectsTest18",
     "layout": "row",
-    "depth": 5,
+    "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Alert",
-      "Badge",
       "Button",
-      "Checkbox",
-      "Card"
+      "Switch",
+      "Drawer",
+      "Empty",
+      "Progress"
     ]
   },
   {
     "pageName": "toomanyeffectsTest19",
     "layout": "column",
-    "depth": 6,
+    "depth": 5,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Checkbox",
-      "Slider",
-      "Alert",
-      "InputNumber",
-      "Input"
+      "MultiSelect",
+      "Modal",
+      "TextArea",
+      "Input",
+      "Avatar"
     ]
   },
   {
@@ -1031,12 +1268,15 @@
     "layout": "row",
     "depth": 2,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Badge",
-      "BackTop",
-      "Empty",
-      "DatePicker",
-      "List"
+      "Avatar",
+      "Card",
+      "Popover",
+      "Checkbox",
+      "Table"
     ]
   },
   {
@@ -1044,12 +1284,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "InputNumber",
-      "Image",
-      "Drawer",
-      "Empty",
-      "Tag"
+      "DatePicker",
+      "Slider",
+      "Spin",
+      "MultiSelect",
+      "Empty"
     ]
   },
   {
@@ -1057,12 +1300,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Slider",
-      "Checkbox",
+      "RangePicker",
+      "BackTop",
       "Table",
-      "TimePicker",
-      "Select"
+      "Empty",
+      "Affix"
     ]
   },
   {
@@ -1070,103 +1316,127 @@
     "layout": "column",
     "depth": 5,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "TextArea",
-      "Badge",
       "Tabs",
-      "Table",
-      "Affix"
+      "Spin",
+      "TextArea",
+      "RangePicker",
+      "MultiSelect"
     ]
   },
   {
     "pageName": "toomanyeffectsTest24",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Spin",
-      "Switch",
-      "Progress",
-      "Avatar",
-      "Dropdown"
+      "Table",
+      "Drawer",
+      "Image",
+      "Tag",
+      "TimePicker"
     ]
   },
   {
     "pageName": "toomanyeffectsTest25",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Tag",
-      "RangePicker",
-      "Empty",
-      "Progress",
-      "Message"
+      "Affix",
+      "Switch",
+      "Checkbox",
+      "Upload",
+      "Alert"
     ]
   },
   {
     "pageName": "toomanyeffectsTest26",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Descriptions",
+      "Affix",
       "Switch",
-      "InputNumber",
-      "Popover",
-      "PasswordInput"
+      "BackTop",
+      "Dropdown",
+      "Upload"
     ]
   },
   {
     "pageName": "toomanyeffectsTest27",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "TextArea",
-      "Input",
       "Image",
       "Spin",
-      "Checkbox"
+      "MultiSelect",
+      "DatePicker",
+      "Popover"
     ]
   },
   {
     "pageName": "toomanyeffectsTest28",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "BackTop",
-      "Badge",
+      "Affix",
+      "Alert",
       "Checkbox",
-      "Card",
-      "Alert"
+      "Avatar",
+      "BackTop"
     ]
   },
   {
     "pageName": "toomanyeffectsTest29",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Affix",
-      "Message",
-      "Select",
-      "Alert",
-      "TextArea"
+      "DatePicker",
+      "Image",
+      "Popover",
+      "Drawer",
+      "Modal"
     ]
   },
   {
     "pageName": "toomanyeffectsTest30",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "too-many-effects",
+    "patternFlags": {
+      "effectFlood": true
+    },
     "components": [
-      "Spin",
-      "Upload",
-      "Tabs",
-      "Image",
-      "Empty"
+      "Checkbox",
+      "Affix",
+      "Input",
+      "List",
+      "DatePicker"
     ]
   },
   {
@@ -1174,12 +1444,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
+      "TextArea",
+      "Popover",
       "Switch",
-      "Button",
-      "Modal",
-      "Table",
-      "Spin"
+      "RangePicker",
+      "Card"
     ]
   },
   {
@@ -1187,12 +1460,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Switch",
-      "TimePicker",
-      "Progress",
-      "MultiSelect",
-      "Tooltip"
+      "Table",
+      "Affix",
+      "PasswordInput",
+      "Alert",
+      "Tag"
     ]
   },
   {
@@ -1200,220 +1476,271 @@
     "layout": "column",
     "depth": 5,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Drawer",
-      "Spin",
-      "Progress",
-      "Button",
-      "Modal"
+      "Card",
+      "Affix",
+      "Descriptions",
+      "Alert",
+      "Switch"
     ]
   },
   {
     "pageName": "missinguseMemoTest4",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Image",
-      "Table",
-      "Modal",
-      "RadioGroup",
-      "MultiSelect"
+      "RangePicker",
+      "DatePicker",
+      "Descriptions",
+      "Upload",
+      "Progress"
     ]
   },
   {
     "pageName": "missinguseMemoTest5",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Collapse",
-      "DatePicker",
-      "Upload",
-      "RadioGroup",
-      "Card"
+      "Tag",
+      "Switch",
+      "Message",
+      "Affix",
+      "MultiSelect"
     ]
   },
   {
     "pageName": "missinguseMemoTest6",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Dropdown",
-      "Progress",
-      "Collapse",
-      "Badge",
-      "DatePicker"
+      "Tooltip",
+      "PasswordInput",
+      "Slider",
+      "Empty",
+      "Table"
     ]
   },
   {
     "pageName": "missinguseMemoTest7",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "TextArea",
-      "Drawer",
-      "Badge",
-      "Tag",
-      "Affix"
+      "Affix",
+      "Select",
+      "Dropdown",
+      "Message",
+      "TextArea"
     ]
   },
   {
     "pageName": "missinguseMemoTest8",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Input",
-      "Slider",
-      "Badge",
-      "Popover",
-      "MultiSelect"
+      "Dropdown",
+      "Descriptions",
+      "MultiSelect",
+      "TimePicker",
+      "Tag"
     ]
   },
   {
     "pageName": "missinguseMemoTest9",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Message",
-      "Select",
-      "Spin",
-      "DatePicker",
-      "Avatar"
+      "Avatar",
+      "Tabs",
+      "BackTop",
+      "Slider",
+      "Descriptions"
     ]
   },
   {
     "pageName": "missinguseMemoTest10",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Empty",
-      "Switch",
-      "DatePicker",
-      "Card",
-      "Message"
+      "Tooltip",
+      "Progress",
+      "RangePicker",
+      "Tag",
+      "Popover"
     ]
   },
   {
     "pageName": "missinguseMemoTest11",
     "layout": "column",
-    "depth": 3,
+    "depth": 5,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "List",
-      "Affix",
-      "TimePicker",
-      "Popover",
-      "Alert"
+      "Image",
+      "Avatar",
+      "PasswordInput",
+      "Modal",
+      "InputNumber"
     ]
   },
   {
     "pageName": "missinguseMemoTest12",
     "layout": "row",
-    "depth": 4,
+    "depth": 2,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Button",
-      "Dropdown",
-      "Select",
-      "Tabs",
-      "Modal"
+      "Checkbox",
+      "Card",
+      "Affix",
+      "Empty",
+      "Drawer"
     ]
   },
   {
     "pageName": "missinguseMemoTest13",
     "layout": "column",
-    "depth": 5,
+    "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Avatar",
-      "Table",
-      "Dropdown",
       "Empty",
-      "Progress"
+      "Checkbox",
+      "BackTop",
+      "Alert",
+      "Collapse"
     ]
   },
   {
     "pageName": "missinguseMemoTest14",
     "layout": "row",
-    "depth": 6,
+    "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "PasswordInput",
-      "Badge",
-      "Empty",
-      "Modal",
-      "Descriptions"
+      "Affix",
+      "Alert",
+      "Progress",
+      "Tag",
+      "List"
     ]
   },
   {
     "pageName": "missinguseMemoTest15",
     "layout": "column",
-    "depth": 2,
+    "depth": 5,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Table",
-      "Tag",
-      "Affix",
-      "Tooltip",
-      "Input"
+      "RadioGroup",
+      "RangePicker",
+      "Input",
+      "Checkbox",
+      "PasswordInput"
     ]
   },
   {
     "pageName": "missinguseMemoTest16",
     "layout": "row",
-    "depth": 3,
+    "depth": 2,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Image",
-      "Card",
-      "List",
-      "Select",
-      "Popover"
+      "Avatar",
+      "Switch",
+      "RangePicker",
+      "Empty",
+      "Table"
     ]
   },
   {
     "pageName": "missinguseMemoTest17",
     "layout": "column",
-    "depth": 4,
+    "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Modal",
-      "Empty",
-      "PasswordInput",
-      "Spin",
-      "Select"
+      "Progress",
+      "Descriptions",
+      "Image",
+      "Alert",
+      "Tag"
     ]
   },
   {
     "pageName": "missinguseMemoTest18",
     "layout": "row",
-    "depth": 5,
+    "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Slider",
-      "Button",
-      "Select",
-      "Dropdown",
-      "Popover"
+      "Card",
+      "Modal",
+      "Table",
+      "Image",
+      "Avatar"
     ]
   },
   {
     "pageName": "missinguseMemoTest19",
     "layout": "column",
-    "depth": 6,
+    "depth": 5,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Avatar",
-      "Select",
-      "Alert",
-      "Button",
-      "Spin"
+      "BackTop",
+      "Modal",
+      "Badge",
+      "List",
+      "DatePicker"
     ]
   },
   {
@@ -1421,12 +1748,15 @@
     "layout": "row",
     "depth": 2,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "TextArea",
-      "BackTop",
-      "Popover",
-      "Avatar",
-      "Select"
+      "Badge",
+      "InputNumber",
+      "RadioGroup",
+      "TimePicker",
+      "TextArea"
     ]
   },
   {
@@ -1434,12 +1764,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Checkbox",
-      "Input",
+      "Descriptions",
+      "Image",
       "Upload",
-      "Drawer",
-      "Button"
+      "Spin",
+      "Switch"
     ]
   },
   {
@@ -1447,12 +1780,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Affix",
-      "BackTop",
-      "Progress",
-      "TimePicker",
-      "Empty"
+      "RangePicker",
+      "Alert",
+      "Input",
+      "TextArea",
+      "Avatar"
     ]
   },
   {
@@ -1460,103 +1796,127 @@
     "layout": "column",
     "depth": 5,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "BackTop",
-      "Switch",
-      "Upload",
-      "Slider",
-      "Avatar"
+      "Input",
+      "Badge",
+      "Spin",
+      "Tooltip",
+      "Upload"
     ]
   },
   {
     "pageName": "missinguseMemoTest24",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
+      "Message",
       "Drawer",
-      "Spin",
-      "Tag",
       "TimePicker",
-      "Avatar"
+      "Upload",
+      "Dropdown"
     ]
   },
   {
     "pageName": "missinguseMemoTest25",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Checkbox",
-      "RadioGroup",
-      "Descriptions",
-      "MultiSelect",
-      "Input"
+      "Empty",
+      "Tabs",
+      "Card",
+      "PasswordInput",
+      "Image"
     ]
   },
   {
     "pageName": "missinguseMemoTest26",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Input",
-      "RangePicker",
-      "Tooltip",
+      "Badge",
       "Tabs",
-      "Slider"
+      "Button",
+      "Upload",
+      "Modal"
     ]
   },
   {
     "pageName": "missinguseMemoTest27",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
+      "Tabs",
+      "Empty",
+      "TimePicker",
       "TextArea",
-      "BackTop",
-      "Table",
-      "Avatar",
-      "TimePicker"
+      "Popover"
     ]
   },
   {
     "pageName": "missinguseMemoTest28",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Checkbox",
-      "Switch",
-      "Button",
-      "Upload",
-      "PasswordInput"
+      "Affix",
+      "DatePicker",
+      "Input",
+      "Select",
+      "Alert"
     ]
   },
   {
     "pageName": "missinguseMemoTest29",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Input",
-      "Modal",
-      "Table",
-      "Select",
-      "Drawer"
+      "List",
+      "Affix",
+      "PasswordInput",
+      "Alert",
+      "Avatar"
     ]
   },
   {
     "pageName": "missinguseMemoTest30",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "missing-useMemo",
+    "patternFlags": {
+      "recomputesHeavyFn": true
+    },
     "components": [
-      "Button",
-      "Tooltip",
-      "Table",
-      "Empty",
-      "Dropdown"
+      "Drawer",
+      "Descriptions",
+      "Modal",
+      "Popover",
+      "Input"
     ]
   },
   {
@@ -1564,12 +1924,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Collapse",
-      "Empty",
-      "Checkbox",
-      "Progress",
-      "Drawer"
+      "Affix",
+      "Alert",
+      "Tag",
+      "Avatar",
+      "Image"
     ]
   },
   {
@@ -1577,12 +1940,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Table",
-      "Slider",
-      "Spin",
-      "Dropdown",
-      "Affix"
+      "Card",
+      "Tag",
+      "PasswordInput",
+      "Avatar",
+      "Upload"
     ]
   },
   {
@@ -1590,220 +1956,271 @@
     "layout": "column",
     "depth": 5,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Modal",
-      "Image",
-      "TimePicker",
-      "BackTop",
+      "DatePicker",
+      "Affix",
+      "Card",
+      "TextArea",
       "Alert"
     ]
   },
   {
     "pageName": "lazyloadingTest4",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Input",
-      "DatePicker",
-      "Checkbox",
-      "Empty",
-      "PasswordInput"
+      "Progress",
+      "Spin",
+      "Affix",
+      "Table",
+      "Button"
     ]
   },
   {
     "pageName": "lazyloadingTest5",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Empty",
-      "Badge",
-      "Tag",
-      "Modal",
-      "Spin"
+      "Table",
+      "Switch",
+      "TextArea",
+      "MultiSelect",
+      "InputNumber"
     ]
   },
   {
     "pageName": "lazyloadingTest6",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Collapse",
-      "Spin",
-      "Table",
-      "TimePicker",
-      "Affix"
+      "Image",
+      "Drawer",
+      "Switch",
+      "RadioGroup",
+      "RangePicker"
     ]
   },
   {
     "pageName": "lazyloadingTest7",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Affix",
-      "Drawer",
-      "List",
-      "Modal",
-      "Button"
+      "Badge",
+      "Alert",
+      "Tabs",
+      "Avatar",
+      "Progress"
     ]
   },
   {
     "pageName": "lazyloadingTest8",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "RadioGroup",
-      "Checkbox",
-      "Progress",
-      "Tooltip",
-      "MultiSelect"
+      "Spin",
+      "Select",
+      "Drawer",
+      "Badge",
+      "Tabs"
     ]
   },
   {
     "pageName": "lazyloadingTest9",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Input",
-      "Dropdown",
-      "Message",
-      "Select",
-      "RangePicker"
+      "Avatar",
+      "Collapse",
+      "TimePicker",
+      "Spin",
+      "DatePicker"
     ]
   },
   {
     "pageName": "lazyloadingTest10",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Collapse",
-      "Checkbox",
-      "InputNumber",
+      "Button",
+      "Card",
+      "Message",
       "Empty",
-      "Dropdown"
+      "Checkbox"
     ]
   },
   {
     "pageName": "lazyloadingTest11",
     "layout": "column",
-    "depth": 3,
+    "depth": 5,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Switch",
-      "Popover",
-      "Image",
-      "Dropdown",
-      "MultiSelect"
+      "DatePicker",
+      "Table",
+      "TextArea",
+      "Alert",
+      "Progress"
     ]
   },
   {
     "pageName": "lazyloadingTest12",
     "layout": "row",
-    "depth": 4,
+    "depth": 2,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Collapse",
-      "RadioGroup",
-      "Button",
+      "Message",
+      "Switch",
       "Avatar",
-      "Table"
+      "PasswordInput",
+      "TimePicker"
     ]
   },
   {
     "pageName": "lazyloadingTest13",
     "layout": "column",
-    "depth": 5,
+    "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "RangePicker",
-      "Progress",
-      "Image",
+      "PasswordInput",
+      "List",
       "Button",
-      "Avatar"
+      "InputNumber",
+      "Slider"
     ]
   },
   {
     "pageName": "lazyloadingTest14",
     "layout": "row",
-    "depth": 6,
+    "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "BackTop",
-      "Avatar",
-      "DatePicker",
       "Table",
-      "RangePicker"
+      "Collapse",
+      "Checkbox",
+      "Card",
+      "Image"
     ]
   },
   {
     "pageName": "lazyloadingTest15",
     "layout": "column",
-    "depth": 2,
+    "depth": 5,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "RadioGroup",
-      "Button",
-      "BackTop",
-      "Affix",
-      "DatePicker"
+      "Message",
+      "Avatar",
+      "PasswordInput",
+      "Upload",
+      "BackTop"
     ]
   },
   {
     "pageName": "lazyloadingTest16",
     "layout": "row",
-    "depth": 3,
+    "depth": 2,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Table",
-      "Avatar",
-      "InputNumber",
-      "Popover",
-      "Checkbox"
+      "Badge",
+      "DatePicker",
+      "Affix",
+      "BackTop",
+      "Tooltip"
     ]
   },
   {
     "pageName": "lazyloadingTest17",
     "layout": "column",
-    "depth": 4,
+    "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "BackTop",
-      "Tooltip",
-      "TimePicker",
-      "Avatar",
-      "Collapse"
+      "Affix",
+      "Slider",
+      "Alert",
+      "DatePicker",
+      "Checkbox"
     ]
   },
   {
     "pageName": "lazyloadingTest18",
     "layout": "row",
-    "depth": 5,
+    "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "InputNumber",
-      "Image",
-      "MultiSelect",
-      "Affix",
-      "Tag"
+      "Switch",
+      "Slider",
+      "Button",
+      "Progress",
+      "Avatar"
     ]
   },
   {
     "pageName": "lazyloadingTest19",
     "layout": "column",
-    "depth": 6,
+    "depth": 5,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Descriptions",
-      "Empty",
-      "RadioGroup",
-      "MultiSelect",
-      "Image"
+      "Select",
+      "Tooltip",
+      "Tabs",
+      "RangePicker",
+      "Button"
     ]
   },
   {
@@ -1811,12 +2228,15 @@
     "layout": "row",
     "depth": 2,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Spin",
-      "Affix",
-      "BackTop",
-      "Message",
-      "TextArea"
+      "Image",
+      "Input",
+      "PasswordInput",
+      "Drawer",
+      "List"
     ]
   },
   {
@@ -1824,12 +2244,15 @@
     "layout": "column",
     "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
+      "Descriptions",
+      "Dropdown",
       "TimePicker",
-      "Button",
-      "Checkbox",
-      "InputNumber",
-      "Tooltip"
+      "Avatar",
+      "Button"
     ]
   },
   {
@@ -1837,12 +2260,15 @@
     "layout": "row",
     "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Tooltip",
+      "BackTop",
+      "Affix",
       "Input",
-      "TimePicker",
-      "Descriptions",
-      "List"
+      "Table",
+      "TextArea"
     ]
   },
   {
@@ -1850,103 +2276,2527 @@
     "layout": "column",
     "depth": 5,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "InputNumber",
-      "Popover",
-      "Tag",
-      "Card",
-      "Tooltip"
+      "Image",
+      "PasswordInput",
+      "Tooltip",
+      "Switch",
+      "Card"
     ]
   },
   {
     "pageName": "lazyloadingTest24",
     "layout": "row",
-    "depth": 6,
+    "depth": 2,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Badge",
-      "Collapse",
-      "Modal",
-      "Upload",
-      "Popover"
+      "Input",
+      "Switch",
+      "Affix",
+      "List",
+      "Message"
     ]
   },
   {
     "pageName": "lazyloadingTest25",
     "layout": "column",
-    "depth": 2,
+    "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "TimePicker",
-      "Descriptions",
-      "Input",
-      "Tag",
-      "Card"
+      "Modal",
+      "Tooltip",
+      "PasswordInput",
+      "Drawer",
+      "Tabs"
     ]
   },
   {
     "pageName": "lazyloadingTest26",
     "layout": "row",
-    "depth": 3,
+    "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Button",
       "Empty",
-      "Avatar",
-      "Card",
-      "Drawer"
+      "Descriptions",
+      "Tooltip",
+      "TextArea",
+      "Slider"
     ]
   },
   {
     "pageName": "lazyloadingTest27",
     "layout": "column",
-    "depth": 4,
+    "depth": 5,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Descriptions",
-      "Affix",
-      "TimePicker",
-      "Spin",
-      "PasswordInput"
+      "RadioGroup",
+      "Message",
+      "Switch",
+      "Button",
+      "BackTop"
     ]
   },
   {
     "pageName": "lazyloadingTest28",
     "layout": "row",
-    "depth": 5,
+    "depth": 2,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Table",
-      "Checkbox",
-      "Tooltip",
       "Collapse",
-      "DatePicker"
+      "Dropdown",
+      "Progress",
+      "Select",
+      "Tooltip"
     ]
   },
   {
     "pageName": "lazyloadingTest29",
     "layout": "column",
-    "depth": 6,
+    "depth": 3,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
     "components": [
-      "Avatar",
-      "Collapse",
-      "Upload",
-      "Descriptions",
-      "Checkbox"
+      "Message",
+      "Checkbox",
+      "Drawer",
+      "Empty",
+      "RadioGroup"
     ]
   },
   {
     "pageName": "lazyloadingTest30",
     "layout": "row",
-    "depth": 2,
+    "depth": 4,
     "pattern": "lazy-loading",
+    "patternFlags": {
+      "breakIntoChunks": true
+    },
+    "components": [
+      "Card",
+      "Affix",
+      "Tag",
+      "Descriptions",
+      "Drawer"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest1",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "RangePicker",
+      "Card",
+      "Checkbox",
+      "Affix",
+      "Tooltip"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest2",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
     "components": [
       "Spin",
-      "BackTop",
-      "TextArea",
+      "List",
+      "Switch",
+      "Tooltip",
+      "TimePicker"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest3",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Button",
+      "Image",
+      "Progress",
+      "Dropdown",
+      "RadioGroup"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest4",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
       "Affix",
+      "Avatar",
+      "Tabs",
+      "RangePicker",
+      "Upload"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest5",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Affix",
+      "BackTop",
+      "Collapse",
+      "InputNumber",
+      "Slider"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest6",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Card",
+      "Drawer",
+      "List",
+      "Checkbox",
+      "Modal"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest7",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Checkbox",
+      "Image",
+      "List",
+      "BackTop",
+      "Upload"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest8",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "BackTop",
+      "RadioGroup",
+      "Tag",
+      "Spin",
+      "Input"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest9",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Avatar",
+      "BackTop",
+      "Modal",
+      "RangePicker",
       "Popover"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest10",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "RangePicker",
+      "Tabs",
+      "Spin",
+      "Empty",
+      "Button"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest11",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "DatePicker",
+      "Empty",
+      "TimePicker",
+      "Progress",
+      "Popover"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest12",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Upload",
+      "Button",
+      "Checkbox",
+      "Tag",
+      "Popover"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest13",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Card",
+      "Empty",
+      "Collapse",
+      "DatePicker",
+      "Button"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest14",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Card",
+      "Dropdown",
+      "DatePicker",
+      "Switch",
+      "Descriptions"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest15",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Table",
+      "Input",
+      "MultiSelect",
+      "Switch",
+      "Checkbox"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest16",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Descriptions",
+      "Tooltip",
+      "PasswordInput",
+      "Affix",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest17",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "List",
+      "Image",
+      "RangePicker",
+      "Button",
+      "Modal"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest18",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Modal",
+      "Alert",
+      "BackTop",
+      "Message",
+      "List"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest19",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Input",
+      "Modal",
+      "List",
+      "Upload",
+      "Progress"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest20",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Button",
+      "Drawer",
+      "Slider",
+      "Modal",
+      "RadioGroup"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest21",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Checkbox",
+      "Image",
+      "RadioGroup",
+      "Affix",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest22",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Tabs",
+      "Slider",
+      "Dropdown",
+      "Checkbox",
+      "Input"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest23",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Checkbox",
+      "Tag",
+      "Spin",
+      "Switch",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest24",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "BackTop",
+      "Slider",
+      "Card",
+      "Progress",
+      "Image"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest25",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Checkbox",
+      "List",
+      "Spin",
+      "Card",
+      "Image"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest26",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Tabs",
+      "MultiSelect",
+      "Slider",
+      "InputNumber",
+      "Drawer"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest27",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "List",
+      "Alert",
+      "RangePicker",
+      "InputNumber",
+      "Tag"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest28",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "BackTop",
+      "Affix",
+      "TimePicker",
+      "Descriptions",
+      "Drawer"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest29",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Avatar",
+      "RangePicker",
+      "Alert",
+      "BackTop",
+      "Popover"
+    ]
+  },
+  {
+    "pageName": "inefficientcontextTest30",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inefficient-context",
+    "patternFlags": {
+      "globalContext": true
+    },
+    "components": [
+      "Checkbox",
+      "Tabs",
+      "PasswordInput",
+      "RangePicker",
+      "Tag"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest1",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Badge",
+      "Affix",
+      "Popover",
+      "TimePicker",
+      "Collapse"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest2",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Badge",
+      "Tabs",
+      "InputNumber",
+      "Popover",
+      "Message"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest3",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Drawer",
+      "Tooltip",
+      "Tabs",
+      "Message",
+      "Progress"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest4",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Slider",
+      "DatePicker",
+      "TextArea",
+      "Popover",
+      "Affix"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest5",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Affix",
+      "Button",
+      "Dropdown",
+      "Slider",
+      "Descriptions"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest6",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Progress",
+      "Upload",
+      "Card",
+      "Avatar",
+      "RadioGroup"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest7",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "DatePicker",
+      "Image",
+      "Avatar",
+      "InputNumber",
+      "RangePicker"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest8",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "PasswordInput",
+      "Descriptions",
+      "BackTop",
+      "Badge",
+      "Avatar"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest9",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Button",
+      "Input",
+      "TextArea",
+      "PasswordInput",
+      "Select"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest10",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Message",
+      "Checkbox",
+      "Avatar",
+      "InputNumber",
+      "Image"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest11",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "DatePicker",
+      "Affix",
+      "Card",
+      "Collapse",
+      "Image"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest12",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "InputNumber",
+      "TimePicker",
+      "Card",
+      "Table",
+      "Drawer"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest13",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Alert",
+      "Image",
+      "Dropdown",
+      "BackTop",
+      "Popover"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest14",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Drawer",
+      "Switch",
+      "Button",
+      "Affix",
+      "Tabs"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest15",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "DatePicker",
+      "RangePicker",
+      "Button",
+      "Drawer",
+      "Select"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest16",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Button",
+      "Tabs",
+      "Spin",
+      "Drawer",
+      "Checkbox"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest17",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Slider",
+      "DatePicker",
+      "MultiSelect",
+      "Message",
+      "Table"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest18",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Tabs",
+      "Popover",
+      "PasswordInput",
+      "Card",
+      "Affix"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest19",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Card",
+      "Table",
+      "Tag",
+      "Avatar",
+      "DatePicker"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest20",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Empty",
+      "BackTop",
+      "Image",
+      "Slider",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest21",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Checkbox",
+      "PasswordInput",
+      "Progress",
+      "Avatar",
+      "Spin"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest22",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "PasswordInput",
+      "Checkbox",
+      "Select",
+      "Image",
+      "InputNumber"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest23",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Input",
+      "Tabs",
+      "Avatar",
+      "Popover",
+      "Modal"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest24",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Avatar",
+      "Slider",
+      "RangePicker",
+      "Switch",
+      "InputNumber"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest25",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Popover",
+      "Alert",
+      "Input",
+      "InputNumber",
+      "List"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest26",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Checkbox",
+      "Slider",
+      "Badge",
+      "PasswordInput",
+      "RangePicker"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest27",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Popover",
+      "Affix",
+      "Collapse",
+      "List",
+      "Checkbox"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest28",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Checkbox",
+      "Affix",
+      "Spin",
+      "List",
+      "Slider"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest29",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Affix",
+      "Slider",
+      "TimePicker",
+      "Tooltip",
+      "List"
+    ]
+  },
+  {
+    "pageName": "staleclosuresTest30",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "stale-closures",
+    "patternFlags": {
+      "staleState": true
+    },
+    "components": [
+      "Affix",
+      "BackTop",
+      "Tooltip",
+      "Empty",
+      "Card"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest1",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Message",
+      "Progress",
+      "Descriptions",
+      "Affix",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest2",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "TimePicker",
+      "Select",
+      "Switch",
+      "Affix",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest3",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Input",
+      "DatePicker",
+      "Popover",
+      "Image",
+      "Affix"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest4",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Input",
+      "Switch",
+      "Popover",
+      "InputNumber",
+      "Upload"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest5",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "BackTop",
+      "RangePicker",
+      "Descriptions",
+      "Input",
+      "Drawer"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest6",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Slider",
+      "Descriptions",
+      "Upload",
+      "Affix",
+      "TimePicker"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest7",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Alert",
+      "Affix",
+      "RadioGroup",
+      "Table",
+      "Drawer"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest8",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Card",
+      "Empty",
+      "Switch",
+      "Button",
+      "Spin"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest9",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Dropdown",
+      "Slider",
+      "Modal",
+      "Progress",
+      "TimePicker"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest10",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "RadioGroup",
+      "Modal",
+      "Image",
+      "Popover",
+      "DatePicker"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest11",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Slider",
+      "Tooltip",
+      "Affix",
+      "InputNumber",
+      "Badge"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest12",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Tabs",
+      "Dropdown",
+      "Switch",
+      "Message",
+      "Input"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest13",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Popover",
+      "Badge",
+      "MultiSelect",
+      "Avatar",
+      "InputNumber"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest14",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Descriptions",
+      "Badge",
+      "Image",
+      "BackTop",
+      "Switch"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest15",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Input",
+      "MultiSelect",
+      "Avatar",
+      "List",
+      "Tabs"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest16",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Card",
+      "PasswordInput",
+      "Checkbox",
+      "Alert",
+      "List"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest17",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "BackTop",
+      "List",
+      "Affix",
+      "RadioGroup",
+      "Upload"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest18",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Badge",
+      "Switch",
+      "Message",
+      "Tabs",
+      "BackTop"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest19",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Button",
+      "Spin",
+      "Popover",
+      "Alert",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest20",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Switch",
+      "Button",
+      "Affix",
+      "Modal",
+      "Tabs"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest21",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Button",
+      "Input",
+      "TimePicker",
+      "Badge",
+      "Message"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest22",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "DatePicker",
+      "Progress",
+      "Upload",
+      "TimePicker",
+      "Spin"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest23",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Checkbox",
+      "TextArea",
+      "Card",
+      "RangePicker",
+      "TimePicker"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest24",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "BackTop",
+      "Dropdown",
+      "Slider",
+      "Input",
+      "Empty"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest25",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Collapse",
+      "Spin",
+      "Switch",
+      "Tag",
+      "Popover"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest26",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Upload",
+      "Select",
+      "Affix",
+      "Empty",
+      "Message"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest27",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "InputNumber",
+      "Image",
+      "Select",
+      "List",
+      "PasswordInput"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest28",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Table",
+      "Select",
+      "TextArea",
+      "BackTop",
+      "Tooltip"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest29",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "Select",
+      "Checkbox",
+      "RangePicker",
+      "Alert",
+      "Input"
+    ]
+  },
+  {
+    "pageName": "misuseduseEffectTest30",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "misused-useEffect",
+    "patternFlags": {
+      "wrongDeps": true
+    },
+    "components": [
+      "MultiSelect",
+      "Slider",
+      "Affix",
+      "BackTop",
+      "Descriptions"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest1",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Input",
+      "Avatar",
+      "RadioGroup",
+      "MultiSelect",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest2",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Button",
+      "Progress",
+      "Drawer",
+      "Message",
+      "Slider"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest3",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Upload",
+      "Affix",
+      "BackTop",
+      "Drawer",
+      "TimePicker"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest4",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Dropdown",
+      "Tabs",
+      "Card",
+      "Avatar",
+      "InputNumber"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest5",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Drawer",
+      "Badge",
+      "Button",
+      "Collapse",
+      "Checkbox"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest6",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Empty",
+      "Collapse",
+      "Avatar",
+      "Switch",
+      "List"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest7",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "PasswordInput",
+      "Affix",
+      "MultiSelect",
+      "Select",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest8",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Progress",
+      "Badge",
+      "Descriptions",
+      "BackTop",
+      "Tooltip"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest9",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Tabs",
+      "List",
+      "Switch",
+      "Tag",
+      "PasswordInput"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest10",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Affix",
+      "List",
+      "Alert",
+      "MultiSelect",
+      "Empty"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest11",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Avatar",
+      "Popover",
+      "Alert",
+      "BackTop",
+      "Tag"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest12",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Descriptions",
+      "Table",
+      "Checkbox",
+      "Badge",
+      "Card"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest13",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "TimePicker",
+      "Spin",
+      "BackTop",
+      "Tag",
+      "Badge"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest14",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Popover",
+      "MultiSelect",
+      "Dropdown",
+      "Tooltip",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest15",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Button",
+      "Empty",
+      "Message",
+      "Alert",
+      "Tooltip"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest16",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "DatePicker",
+      "BackTop",
+      "Avatar",
+      "TextArea",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest17",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Button",
+      "Empty",
+      "DatePicker",
+      "Spin",
+      "TimePicker"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest18",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Empty",
+      "Select",
+      "Alert",
+      "Input",
+      "Checkbox"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest19",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Drawer",
+      "BackTop",
+      "Switch",
+      "Slider",
+      "List"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest20",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Input",
+      "Progress",
+      "Card",
+      "Affix",
+      "Tabs"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest21",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Message",
+      "Collapse",
+      "Select",
+      "Switch",
+      "Drawer"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest22",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Tooltip",
+      "Table",
+      "Upload",
+      "Collapse",
+      "MultiSelect"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest23",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Avatar",
+      "Tabs",
+      "List",
+      "InputNumber",
+      "Switch"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest24",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "RangePicker",
+      "Dropdown",
+      "InputNumber",
+      "MultiSelect",
+      "Message"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest25",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Slider",
+      "Badge",
+      "Descriptions",
+      "Select",
+      "Tag"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest26",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Modal",
+      "Input",
+      "Image",
+      "Spin",
+      "Slider"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest27",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Modal",
+      "Progress",
+      "Tag",
+      "List",
+      "Upload"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest28",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Tooltip",
+      "Empty",
+      "List",
+      "MultiSelect",
+      "Select"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest29",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "RadioGroup",
+      "Input",
+      "List",
+      "Upload",
+      "Affix"
+    ]
+  },
+  {
+    "pageName": "inlinefunctionsTest30",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "inline-functions",
+    "patternFlags": {
+      "inlineInJSX": true
+    },
+    "components": [
+      "Switch",
+      "Alert",
+      "Button",
+      "Spin",
+      "Progress"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest1",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "TextArea",
+      "Avatar",
+      "Alert",
+      "Modal",
+      "BackTop"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest2",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Collapse",
+      "Affix",
+      "Tooltip",
+      "Message",
+      "PasswordInput"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest3",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Progress",
+      "Input",
+      "Collapse",
+      "Drawer",
+      "InputNumber"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest4",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Switch",
+      "DatePicker",
+      "Card",
+      "RangePicker",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest5",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Table",
+      "Descriptions",
+      "Upload",
+      "MultiSelect",
+      "Dropdown"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest6",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Drawer",
+      "Image",
+      "Tooltip",
+      "TimePicker",
+      "DatePicker"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest7",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Select",
+      "Avatar",
+      "Upload",
+      "Alert",
+      "Modal"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest8",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Descriptions",
+      "Select",
+      "Message",
+      "Upload",
+      "Table"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest9",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "BackTop",
+      "Button",
+      "Switch",
+      "Dropdown",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest10",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Button",
+      "Badge",
+      "MultiSelect",
+      "Descriptions",
+      "BackTop"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest11",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Tag",
+      "RadioGroup",
+      "Card",
+      "Upload",
+      "Input"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest12",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "RadioGroup",
+      "BackTop",
+      "Spin",
+      "Upload",
+      "Descriptions"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest13",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Tabs",
+      "Slider",
+      "RangePicker",
+      "Input",
+      "BackTop"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest14",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "BackTop",
+      "Tooltip",
+      "Popover",
+      "Empty",
+      "Affix"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest15",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "PasswordInput",
+      "RangePicker",
+      "Alert",
+      "InputNumber",
+      "Input"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest16",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "TimePicker",
+      "Modal",
+      "InputNumber",
+      "Tooltip",
+      "Popover"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest17",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Button",
+      "Avatar",
+      "Tabs",
+      "TextArea",
+      "Popover"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest18",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Button",
+      "Avatar",
+      "Image",
+      "Checkbox",
+      "Message"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest19",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "BackTop",
+      "Progress",
+      "RadioGroup",
+      "List",
+      "Card"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest20",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Input",
+      "RadioGroup",
+      "Tag",
+      "List",
+      "Alert"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest21",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Progress",
+      "Select",
+      "Affix",
+      "Message",
+      "Upload"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest22",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Avatar",
+      "Input",
+      "Tabs",
+      "Progress",
+      "BackTop"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest23",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Dropdown",
+      "Input",
+      "Card",
+      "Slider",
+      "Select"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest24",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Drawer",
+      "Table",
+      "Tooltip",
+      "Progress",
+      "DatePicker"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest25",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "BackTop",
+      "Button",
+      "InputNumber",
+      "Checkbox",
+      "Modal"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest26",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Slider",
+      "RadioGroup",
+      "Progress",
+      "Table",
+      "Card"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest27",
+    "layout": "column",
+    "depth": 5,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Empty",
+      "Button",
+      "Tag",
+      "TimePicker",
+      "TextArea"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest28",
+    "layout": "row",
+    "depth": 2,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Badge",
+      "Drawer",
+      "Input",
+      "Spin",
+      "BackTop"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest29",
+    "layout": "column",
+    "depth": 3,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Tooltip",
+      "Dropdown",
+      "Input",
+      "Popover",
+      "Empty"
+    ]
+  },
+  {
+    "pageName": "repeatedfetchingTest30",
+    "layout": "row",
+    "depth": 4,
+    "pattern": "repeated-fetching",
+    "patternFlags": {
+      "repeatedCalls": true
+    },
+    "components": [
+      "Collapse",
+      "Badge",
+      "Tabs",
+      "MultiSelect",
+      "Empty"
     ]
   }
 ]

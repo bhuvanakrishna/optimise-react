@@ -1,46 +1,101 @@
-import React, { useEffect } from 'react';
-<% if (nextName && pattern !== 'lazy-loading') { %>import <%= nextName %> from './<%= nextName %>';<% } %>
-<% if (uiComponent) { %>import <%= uiComponent %> from '../../components/<%= uiComponent %>';<% } %>
-<% if (nextName && pattern === 'lazy-loading' && name === 'Parent') { %>
-const Lazy<%= nextName %> = React.lazy(() => import('./<%= nextName %>'));
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useContext,
+  Suspense,
+  lazy,
+  memo,
+  startTransition,
+  createContext,
+} from 'react';
+
+import UI from '../../../components/<%= uiComponent %>';
+<% if (nextName) { %>
+import <%= nextName %> from './<%= nextName %>';
+<% } %>
+
+// Context setup for inefficient-context pattern
+<% if (pattern === 'inefficient-context') { %>
+const InefficientContext = createContext({});
 <% } %>
 
 const <%= name %> = (props: any) => {
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState<any>(null);
+
   <% if (pattern === 'too-many-effects') { %>
-  useEffect(() => {}, []);
-  useEffect(() => {}, []);
-  useEffect(() => {}, []);
-  <% } %>
-  <% if (pattern === 'no-deps-effect') { %>
   useEffect(() => {
-    console.log('effect runs every render');
-  });
+    const id = setInterval(() => setCount((c) => c + 1), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    document.title = `Count is ${count}`;
+  }, [count]);
+
+  useEffect(() => {
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
+  <% } else if (pattern === 'missing-useMemo') { %>
+  const computed = Array(10000)
+    .fill(0)
+    .map((_, i) => i * count)
+    .reduce((a, b) => a + b, 0);
+  <% } else { %>
+  useEffect(() => {
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
+
+  const computed = useMemo(() => {
+    return Array(10000)
+      .fill(0)
+      .map((_, i) => i * count)
+      .reduce((a, b) => a + b, 0);
+  }, [count]);
   <% } %>
-  <% if (pattern === 'missing-useMemo') { %>
-  const expensive = Array.from({ length: 1000 }).reduce((a, _, i) => a + i, 0);
-  <% } %>
+
+  <% if (pattern === 'inline-functions') { %>
   return (
-    <div>
-      <h4><%= name %></h4>
-      <% if (uiComponent) { %>
-      <<%= uiComponent %> />
-      <% } %>
-      <% if (nextName) { %>
-        <% if (pattern === 'lazy-loading' && name === 'Parent') { %>
-        <React.Suspense fallback={null}>
-          <Lazy<%= nextName %> user={props.user<%= pattern === 'unstable-props' ? ', data: { value: Math.random() }' : '' %>} />
-        </React.Suspense>
-        <% } else { %>
-        <<%= nextName %> user={props.user<%= pattern === 'unstable-props' ? ', data: { value: Math.random() }' : '' %>} />
-        <% } %>
-      <% } else { %>
-        <div>User: {props.user}</div>
-        <% if (pattern === 'inline-handler') { %>
-        <button onClick={() => console.log('clicked')}>Click</button>
-        <% } %>
-      <% } %>
+    <div style={{ padding: 12 }}>
+      <h3><%= name %></h3>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(c => c + 1)}>Click</button>
+      <UI />
+      <% if (nextName) { %><<%= nextName %> count={count} /> <% } %>
     </div>
   );
+  <% } else if (pattern === 'inefficient-context') { %>
+  return (
+    <InefficientContext.Provider value={{ count, setCount, data }}>
+      <div style={{ padding: 12 }}>
+        <h3><%= name %></h3>
+        <UI />
+        <% if (nextName) { %><<%= nextName %> /> <% } %>
+      </div>
+    </InefficientContext.Provider>
+  );
+  <% } else { %>
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+
+  return (
+    <div style={{ padding: 12 }}>
+      <h3><%= name %></h3>
+      <p>Count: {count}</p>
+      <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
+      <p>Computed: {computed}</p>
+      <UI onClick={handleClick} />
+      <% if (nextName) { %><<%= nextName %> count={count} /> <% } %>
+    </div>
+  );
+  <% } %>
 };
 
-export default <%= name %>;
+export default <%= pattern === 'missing-useMemo' ? name : 'memo(' + name + ')' %>;

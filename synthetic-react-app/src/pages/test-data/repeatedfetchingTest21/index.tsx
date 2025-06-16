@@ -1,0 +1,13 @@
+import React from 'react';
+import Parent from './Parent';
+
+const repeatedfetchingTest21 = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <h2>repeatedfetchingTest21</h2>
+      <Parent user={{ name: 'Krishna' }} />
+    </div>
+  );
+};
+
+export default repeatedfetchingTest21;
