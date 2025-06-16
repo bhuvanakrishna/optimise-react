@@ -1,0 +1,26 @@
+import React, { useEffect } from 'react';
+
+import InputNumber from '../../components/InputNumber';
+
+
+const Child = (props: any) => {
+  
+  
+  
+  return (
+    <div>
+      <h4>Child</h4>
+      
+      <InputNumber />
+      
+      
+        <div>User: {props.user}</div>
+        
+        <button onClick={() => console.log('clicked')}>Click</button>
+        
+      
+    </div>
+  );
+};
+
+export default Child;

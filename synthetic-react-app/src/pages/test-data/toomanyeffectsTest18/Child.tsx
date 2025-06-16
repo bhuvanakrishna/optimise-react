@@ -1,0 +1,28 @@
+import React, { useEffect } from 'react';
+
+import Select from '../../components/Select';
+
+
+const Child = (props: any) => {
+  
+  useEffect(() => {}, []);
+  useEffect(() => {}, []);
+  useEffect(() => {}, []);
+  
+  
+  
+  return (
+    <div>
+      <h4>Child</h4>
+      
+      <Select />
+      
+      
+        <div>User: {props.user}</div>
+        
+      
+    </div>
+  );
+};
+
+export default Child;

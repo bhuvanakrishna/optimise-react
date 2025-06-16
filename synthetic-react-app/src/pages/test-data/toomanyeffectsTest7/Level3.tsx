@@ -1,0 +1,29 @@
+import React, { useEffect } from 'react';
+import Child from './Child';
+import Avatar from '../../components/Avatar';
+
+
+const Level3 = (props: any) => {
+  
+  useEffect(() => {}, []);
+  useEffect(() => {}, []);
+  useEffect(() => {}, []);
+  
+  
+  
+  return (
+    <div>
+      <h4>Level3</h4>
+      
+      <Avatar />
+      
+      
+        
+        <Child user={props.user} />
+        
+      
+    </div>
+  );
+};
+
+export default Level3;

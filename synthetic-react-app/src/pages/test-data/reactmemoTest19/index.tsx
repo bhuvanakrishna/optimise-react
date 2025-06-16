@@ -1,0 +1,17 @@
+import React from 'react';
+
+import Parent from './Parent';
+
+
+const reactmemoTest19 = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <h2>reactmemoTest19</h2>
+      
+      <Parent user="test-user" />
+      
+    </div>
+  );
+};
+
+export default reactmemoTest19;

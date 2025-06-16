@@ -1,0 +1,25 @@
+import React, { useEffect } from 'react';
+
+import Progress from '../../components/Progress';
+
+
+const Level2 = (props: any) => {
+  
+  
+  
+  return (
+    <div>
+      <h4>Level2</h4>
+      
+      <Progress />
+      
+      
+        
+        <Level3 user={props.user} />
+        
+      
+    </div>
+  );
+};
+
+export default Level2;

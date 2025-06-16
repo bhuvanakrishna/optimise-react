@@ -6,6 +6,9 @@ const Lazy<%= nextName %> = React.lazy(() => import('./<%= nextName %>'));
 <% } %>
 
 const <%= name %> = (props: any) => {
+  <% if (pattern === 'log-in-render') { %>
+  console.log('<%= name %> render');
+  <% } %>
   <% if (pattern === 'too-many-effects') { %>
   useEffect(() => {}, []);
   useEffect(() => {}, []);
@@ -16,11 +19,25 @@ const <%= name %> = (props: any) => {
     console.log('effect runs every render');
   });
   <% } %>
+  <% if (pattern === 'no-cleanup-effect') { %>
+  useEffect(() => {
+    const onResize = () => {};
+    window.addEventListener('resize', onResize);
+  }, []);
+  <% } %>
+  <% if (pattern === 'loop-log-effect') { %>
+  useEffect(() => {
+    for (let i = 0; i < 5; i++) console.log(i);
+  }, []);
+  <% } %>
   <% if (pattern === 'missing-useMemo') { %>
   const expensive = Array.from({ length: 1000 }).reduce((a, _, i) => a + i, 0);
   <% } %>
+  <% if (pattern === 'expensive-render') { %>
+  const heavy = Array.from({ length: 10000 }).reduce((a, _, i) => a + i, 0);
+  <% } %>
   return (
-    <div>
+    <% if (pattern === 'anonymous-jsx') { %><><% } else { %><div><% } %>
       <h4><%= name %></h4>
       <% if (uiComponent) { %>
       <<%= uiComponent %> />
@@ -38,9 +55,12 @@ const <%= name %> = (props: any) => {
         <% if (pattern === 'inline-handler') { %>
         <button onClick={() => console.log('clicked')}>Click</button>
         <% } %>
+        <% if (pattern === 'large-list-no-key') { %>
+        {Array.from({ length: 50 }).map((_, i) => <div>{i}</div>)}
+        <% } %>
       <% } %>
-    </div>
+    <% if (pattern === 'anonymous-jsx') { %></><% } else { %></div><% } %>
   );
 };
 
-export default <%= name %>;
+export default <%= pattern === 'react-memo' ? 'React.memo(' + name + ')' : name %>;

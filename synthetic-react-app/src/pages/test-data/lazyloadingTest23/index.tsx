@@ -1,0 +1,19 @@
+import React from 'react';
+
+const LazyParent = React.lazy(() => import('./Parent'));
+
+
+const lazyloadingTest23 = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <h2>lazyloadingTest23</h2>
+      
+      <React.Suspense fallback={null}>
+        <LazyParent />
+      </React.Suspense>
+      
+    </div>
+  );
+};
+
+export default lazyloadingTest23;
