@@ -1,11 +1,15 @@
 import React from 'react';
+
 import Parent from './Parent';
+
 
 const PropDrillingTest1 = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
       <h2>PropDrillingTest1</h2>
-      <Parent />
+      
+      <Parent user="test-user" />
+      
     </div>
   );
 };
