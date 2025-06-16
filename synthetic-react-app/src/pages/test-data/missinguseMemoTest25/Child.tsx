@@ -11,35 +11,89 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Card';
+import UI from '../../../components/Switch';
 
 
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Child = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
 
   
-  const computed = Array(10000)
-    .fill(0)
-    .map((_, i) => i * count)
-    .reduce((a, b) => a + b, 0);
+
+  
+
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
+
+  
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
+  }, []);
+  
+
+  
+  const computed = Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   
 
   
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
 
+  
+
+  
   return (
     <div style={{ padding: 12 }}>
+      
+
       <h3>Child</h3>
       <p>Count: {count}</p>
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
-      <p>Computed: {computed}</p>
+      
+        <p>Computed: {computed}</p>
+      
+
       <UI onClick={handleClick} />
+
+      
+
+      
+
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+      
       
     </div>
   );

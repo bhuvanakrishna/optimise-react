@@ -11,15 +11,44 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Alert';
+import UI from '../../../components/TimePicker';
 
 
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Child = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
+  
+
+  
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
+
+  
 
   
   useEffect(() => {
@@ -27,13 +56,20 @@ const Child = (props: any) => {
       .then((res) => res.json())
       .then(setData);
   }, []);
+  
 
+  
   const computed = useMemo(() => {
-    return Array(10000)
-      .fill(0)
-      .map((_, i) => i * count)
-      .reduce((a, b) => a + b, 0);
+    return Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   }, [count]);
+  
+
+  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
+
   
 
   

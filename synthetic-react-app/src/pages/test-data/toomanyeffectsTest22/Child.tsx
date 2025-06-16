@@ -11,15 +11,52 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Empty';
+import UI from '../../../components/Badge';
 
 
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Child = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+
+  
+
+  
+
+  
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
+  }, []);
+  
+
+  
+
+  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
 
   
   useEffect(() => {
@@ -39,17 +76,28 @@ const Child = (props: any) => {
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
-
   return (
     <div style={{ padding: 12 }}>
+      
+
       <h3>Child</h3>
       <p>Count: {count}</p>
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
-      <p>Computed: {computed}</p>
+      
+
       <UI onClick={handleClick} />
+
+      
+
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
+
+      
+
+      
       
     </div>
   );

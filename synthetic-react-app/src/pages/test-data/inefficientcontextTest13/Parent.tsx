@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Card';
+import UI from '../../../components/Upload';
 
 import Level2 from './Level2';
 
@@ -21,9 +21,33 @@ import Level2 from './Level2';
 const InefficientContext = createContext({});
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Parent = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+
+  
+
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
 
   
   useEffect(() => {
@@ -31,13 +55,22 @@ const Parent = (props: any) => {
       .then((res) => res.json())
       .then(setData);
   }, []);
+  
 
+  
   const computed = useMemo(() => {
-    return Array(10000)
-      .fill(0)
-      .map((_, i) => i * count)
-      .reduce((a, b) => a + b, 0);
+    return Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   }, [count]);
+  
+
+  
+  const handleClick = () => {
+    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
+    setData({ items });
+    setCount(c => c + 1);
+  };
+  
+
   
 
   

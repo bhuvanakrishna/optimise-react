@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/MultiSelect';
+import UI from '../../../components/Tabs';
 
 import Level4 from './Level4';
 
@@ -19,9 +19,40 @@ import Level4 from './Level4';
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Level3 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  const handleClick = () => {
+    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
+    setData({ items });
+    setCount(c => c + 1);
+  };
+  
 
   
   useEffect(() => {
@@ -41,19 +72,26 @@ const Level3 = (props: any) => {
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
-
   return (
     <div style={{ padding: 12 }}>
+      
+
       <h3>Level3</h3>
       <p>Count: {count}</p>
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
-      <p>Computed: {computed}</p>
+      
+
       <UI onClick={handleClick} />
+
       
         <Level4 count={count}  />
+      
+
+      
+
+      
+
+      
       
     </div>
   );

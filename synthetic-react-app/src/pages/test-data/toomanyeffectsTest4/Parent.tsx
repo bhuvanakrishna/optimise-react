@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/DatePicker';
+import UI from '../../../components/Slider';
 
 import Child from './Child';
 
@@ -19,9 +19,38 @@ import Child from './Child';
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Parent = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
 
   
   useEffect(() => {
@@ -41,19 +70,30 @@ const Parent = (props: any) => {
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
-
   return (
     <div style={{ padding: 12 }}>
+      
+
       <h3>Parent</h3>
       <p>Count: {count}</p>
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
-      <p>Computed: {computed}</p>
+      
+
       <UI onClick={handleClick} />
+
       
         <Child count={count}  />
+      
+
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
+
+      
+
+      
       
     </div>
   );

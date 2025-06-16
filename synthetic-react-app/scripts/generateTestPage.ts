@@ -18,7 +18,9 @@ const generateComponentChain = async (
   depth: number,
   pattern: string,
   pageDir: string,
-  components: string[]
+  components: string[],
+  webVitalsFlags: any,
+  realismFlags: any
 ) => {
   for (let i = 1; i <= depth; i++) {
     const name = i === 1 ? 'Parent' : i === depth ? 'Child' : `Level${i}`;
@@ -29,7 +31,8 @@ const generateComponentChain = async (
     await renderAndWrite(
       path.join(templatesDir, 'Component.ejs'),
       file,
-      { name, nextName, pattern, uiComponent }
+      { name, nextName, pattern, uiComponent,webVitalsFlags, realismFlags },
+      
     );
     
   }
@@ -46,7 +49,16 @@ const generateComponentChain = async (
       { pageName: config.pageName, layout: config.layout, pattern: config.pattern }
     );
 
-    await generateComponentChain(config.depth, config.pattern, pageDir, config.components || []);
+    await generateComponentChain(
+      config.depth,
+      config.pattern,
+      pageDir,
+      config.components || [],
+      config.webVitalsFlags ,
+      config.realismFlags
+    );
+    
+
   }
 
   const indexData = pagesConfig.map((p: any) => ({

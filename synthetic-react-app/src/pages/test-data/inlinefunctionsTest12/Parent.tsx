@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Descriptions';
+import UI from '../../../components/Badge';
 
 import Child from './Child';
 
@@ -19,9 +19,33 @@ import Child from './Child';
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Parent = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+
+  
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
+
+  
 
   
   useEffect(() => {
@@ -29,13 +53,20 @@ const Parent = (props: any) => {
       .then((res) => res.json())
       .then(setData);
   }, []);
+  
 
+  
   const computed = useMemo(() => {
-    return Array(10000)
-      .fill(0)
-      .map((_, i) => i * count)
-      .reduce((a, b) => a + b, 0);
+    return Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   }, [count]);
+  
+
+  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
+
   
 
   

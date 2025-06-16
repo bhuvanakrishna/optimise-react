@@ -40,8 +40,21 @@ for (const [pattern, flags] of Object.entries(patterns)) {
       depth: 2 + (i % 4),
       pattern,
       patternFlags: flags,
-      components: shuffle([...components]).slice(0, 5)
+      webVitalsFlags: {
+        hasLargeImage: Math.random() < 0.33,
+  causesLayoutShift: Math.random() < 0.25,
+  slowClickHandler: Math.random() < 0.2
+      },
+      components: shuffle([...components]).slice(0, 5),
+      realismFlags: {
+        deepComponentTree: Math.random() < 0.4,
+        bulkDOMNodes: Math.random() < 0.3,
+        slowNetwork: Math.random() < 0.3,
+        expensiveEffects: Math.random() < 0.3,
+        fakeImageAssets: Math.random() < 0.5
+      }
     });
+    
   }
 }
 

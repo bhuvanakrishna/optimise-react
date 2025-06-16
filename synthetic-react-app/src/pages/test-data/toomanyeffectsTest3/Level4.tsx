@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/InputNumber';
+import UI from '../../../components/RangePicker';
 
 import Child from './Child';
 
@@ -19,9 +19,43 @@ import Child from './Child';
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Level4 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
 
   
   useEffect(() => {
@@ -41,19 +75,47 @@ const Level4 = (props: any) => {
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
-
   return (
     <div style={{ padding: 12 }}>
+      
+
       <h3>Level4</h3>
       <p>Count: {count}</p>
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
-      <p>Computed: {computed}</p>
+      
+
       <UI onClick={handleClick} />
+
       
         <Child count={count}  />
+      
+
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
+
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
+      
       
     </div>
   );

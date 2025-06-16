@@ -21,9 +21,79 @@ import <%= nextName %> from './<%= nextName %>';
 const InefficientContext = createContext({});
 <% } %>
 
+// Safe guards
+<% const hasLargeImage = typeof webVitalsFlags !== 'undefined' && webVitalsFlags.hasLargeImage; %>
+<% const causesLayoutShift = typeof webVitalsFlags !== 'undefined' && webVitalsFlags.causesLayoutShift; %>
+<% const slowClickHandler = typeof webVitalsFlags !== 'undefined' && webVitalsFlags.slowClickHandler; %>
+
+<% const deepComponentTree = realismFlags && realismFlags.deepComponentTree; %>
+<% const bulkDOMNodes = realismFlags && realismFlags.bulkDOMNodes; %>
+<% const slowNetwork = realismFlags && realismFlags.slowNetwork; %>
+<% const expensiveEffects = realismFlags && realismFlags.expensiveEffects; %>
+<% const fakeImageAssets = realismFlags && realismFlags.fakeImageAssets; %>
+
 const <%= name %> = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  <% if (hasLargeImage || fakeImageAssets) { %>
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
+  <% } %>
+
+  <% if (causesLayoutShift) { %>
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  <% } %>
+
+  <% if (expensiveEffects) { %>
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  <% } %>
+
+  <% if (slowNetwork) { %>
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
+  }, []);
+  <% } else if (pattern !== 'too-many-effects' && pattern !== 'missing-useMemo') { %>
+  useEffect(() => {
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
+  <% } %>
+
+  <% if (pattern === 'missing-useMemo') { %>
+  const computed = Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
+  <% } else if (pattern !== 'too-many-effects') { %>
+  const computed = useMemo(() => {
+    return Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
+  }, [count]);
+  <% } %>
+
+  <% if (slowClickHandler) { %>
+  const handleClick = () => {
+    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
+    setData({ items });
+    setCount(c => c + 1);
+  };
+  <% } else { %>
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  <% } %>
 
   <% if (pattern === 'too-many-effects') { %>
   useEffect(() => {
@@ -40,24 +110,6 @@ const <%= name %> = (props: any) => {
       .then((res) => res.json())
       .then(setData);
   }, []);
-  <% } else if (pattern === 'missing-useMemo') { %>
-  const computed = Array(10000)
-    .fill(0)
-    .map((_, i) => i * count)
-    .reduce((a, b) => a + b, 0);
-  <% } else { %>
-  useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
-  }, []);
-
-  const computed = useMemo(() => {
-    return Array(10000)
-      .fill(0)
-      .map((_, i) => i * count)
-      .reduce((a, b) => a + b, 0);
-  }, [count]);
   <% } %>
 
   <% if (pattern === 'inline-functions') { %>
@@ -81,20 +133,53 @@ const <%= name %> = (props: any) => {
     </InefficientContext.Provider>
   );
   <% } else { %>
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
-
   return (
     <div style={{ padding: 12 }}>
+      <% if (causesLayoutShift) { %>
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
+      <% } %>
+
       <h3><%= name %></h3>
       <p>Count: {count}</p>
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
-      <p>Computed: {computed}</p>
+      <% if (pattern !== 'too-many-effects') { %>
+        <p>Computed: {computed}</p>
+      <% } %>
+
       <UI onClick={handleClick} />
+
       <% if (nextName) { %>
         <<%= nextName %> count={count} <% if (pattern === 'unstable-props') { %>data={{ [String(Math.random())]: Math.random() }}<% } %> />
       <% } %>
+
+      <% if (deepComponentTree) { %>
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      <% } %>
+
+      <% if (bulkDOMNodes) { %>
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      <% } %>
+
+      <% if (hasLargeImage || fakeImageAssets) { %>
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
+      <% } %>
+      
     </div>
   );
   <% } %>

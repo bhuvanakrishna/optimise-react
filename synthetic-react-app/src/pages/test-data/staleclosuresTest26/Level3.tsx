@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Badge';
+import UI from '../../../components/Affix';
 
 import Child from './Child';
 
@@ -19,9 +19,28 @@ import Child from './Child';
 // Context setup for inefficient-context pattern
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Level3 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+
+  
+
+  
 
   
   useEffect(() => {
@@ -29,12 +48,11 @@ const Level3 = (props: any) => {
       .then((res) => res.json())
       .then(setData);
   }, []);
+  
 
+  
   const computed = useMemo(() => {
-    return Array(10000)
-      .fill(0)
-      .map((_, i) => i * count)
-      .reduce((a, b) => a + b, 0);
+    return Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   }, [count]);
   
 
@@ -42,16 +60,43 @@ const Level3 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
 
+  
+
+  
   return (
     <div style={{ padding: 12 }}>
+      
+
       <h3>Level3</h3>
       <p>Count: {count}</p>
       <p>Data: {data ? 'Loaded' : 'Loading...'}</p>
-      <p>Computed: {computed}</p>
+      
+        <p>Computed: {computed}</p>
+      
+
       <UI onClick={handleClick} />
+
       
         <Child count={count}  />
+      
+
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
+
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+      
       
     </div>
   );

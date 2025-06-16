@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tabs';
+import UI from '../../../components/Collapse';
 
 import Level3 from './Level3';
 
@@ -21,9 +21,28 @@ import Level3 from './Level3';
 const InefficientContext = createContext({});
 
 
+// Safe guards
+
+
+
+
+
+
+
+
+
+
 const Level2 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [shifted, setShifted] = useState(false);
+
+  
+
+  
+
+  
 
   
   useEffect(() => {
@@ -31,13 +50,20 @@ const Level2 = (props: any) => {
       .then((res) => res.json())
       .then(setData);
   }, []);
+  
 
+  
   const computed = useMemo(() => {
-    return Array(10000)
-      .fill(0)
-      .map((_, i) => i * count)
-      .reduce((a, b) => a + b, 0);
+    return Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   }, [count]);
+  
+
+  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
+
   
 
   

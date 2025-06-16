@@ -7,13 +7,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "PasswordInput",
-      "Switch",
-      "Input",
-      "Avatar",
-      "Affix"
-    ]
+      "DatePicker",
+      "Button",
+      "Message",
+      "Tooltip",
+      "Table"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest2",
@@ -23,13 +35,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "RangePicker",
-      "Alert",
-      "Badge",
-      "PasswordInput"
-    ]
+      "PasswordInput",
+      "Dropdown",
+      "Checkbox",
+      "MultiSelect",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest3",
@@ -39,13 +63,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Progress",
-      "Tag",
-      "Descriptions",
-      "BackTop",
-      "Drawer"
-    ]
+      "RadioGroup",
+      "DatePicker",
+      "RangePicker",
+      "Dropdown",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest4",
@@ -55,13 +91,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "RangePicker",
-      "Drawer",
-      "Input",
-      "Affix",
-      "Message"
-    ]
+      "Alert",
+      "Select",
+      "Image",
+      "Upload",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest5",
@@ -71,13 +119,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Popover",
-      "RangePicker",
-      "Collapse",
-      "Checkbox",
-      "Badge"
-    ]
+      "Badge",
+      "Drawer",
+      "Progress",
+      "Affix",
+      "Collapse"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest6",
@@ -87,13 +147,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
-      "Collapse",
-      "Slider",
-      "Image",
-      "List"
-    ]
+      "Input",
+      "BackTop",
+      "Message",
+      "TimePicker",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest7",
@@ -103,13 +175,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Progress",
-      "Modal",
-      "Popover",
-      "PasswordInput",
-      "Message"
-    ]
+      "Alert",
+      "Avatar",
+      "RangePicker",
+      "Drawer",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest8",
@@ -119,13 +203,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
+      "Image",
+      "Alert",
+      "PasswordInput",
       "Switch",
-      "Message",
-      "Avatar",
-      "Tag"
-    ]
+      "Avatar"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest9",
@@ -135,13 +231,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Image",
-      "Alert",
-      "Empty",
-      "Spin"
-    ]
+      "Table",
+      "Checkbox",
+      "TextArea",
+      "PasswordInput",
+      "RadioGroup"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest10",
@@ -151,13 +259,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Slider",
-      "Empty",
-      "Select",
-      "TextArea",
-      "Card"
-    ]
+      "Drawer",
+      "BackTop",
+      "Tag",
+      "PasswordInput",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest11",
@@ -167,13 +287,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Table",
-      "DatePicker",
-      "Button",
-      "PasswordInput",
-      "Slider"
-    ]
+      "Tabs",
+      "Badge",
+      "Affix",
+      "Empty",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest12",
@@ -183,13 +315,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Image",
-      "Badge",
-      "Card",
-      "Popover",
-      "Slider"
-    ]
+      "Tabs",
+      "TimePicker",
+      "MultiSelect",
+      "Affix",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest13",
@@ -199,13 +343,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Spin",
-      "Select",
-      "PasswordInput",
-      "Upload",
-      "Collapse"
-    ]
+      "Image",
+      "Tabs",
+      "List",
+      "BackTop",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest14",
@@ -215,13 +371,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "RadioGroup",
-      "InputNumber",
-      "List",
-      "Badge",
-      "Modal"
-    ]
+      "Popover",
+      "Alert",
+      "RangePicker",
+      "Progress",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest15",
@@ -231,13 +399,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "Upload",
-      "Image",
-      "Collapse",
-      "Input"
-    ]
+      "Tabs",
+      "PasswordInput",
+      "List",
+      "Popover",
+      "Descriptions"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest16",
@@ -247,13 +427,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "DatePicker",
-      "Dropdown",
+      "Affix",
       "Table",
-      "RadioGroup"
-    ]
+      "Dropdown",
+      "Drawer",
+      "Image"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest17",
@@ -263,13 +455,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Image",
-      "Avatar",
-      "Checkbox",
       "Slider",
-      "Dropdown"
-    ]
+      "Spin",
+      "Button",
+      "TextArea",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest18",
@@ -279,13 +483,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Table",
-      "BackTop",
-      "Avatar",
-      "Collapse",
-      "Drawer"
-    ]
+      "Message",
+      "Badge",
+      "PasswordInput",
+      "Progress",
+      "Select"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest19",
@@ -295,13 +511,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Alert",
-      "Drawer",
-      "Switch",
-      "MultiSelect",
-      "Modal"
-    ]
+      "Card",
+      "Checkbox",
+      "PasswordInput",
+      "Upload",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest20",
@@ -311,13 +539,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Affix",
-      "Tabs",
-      "Dropdown",
-      "List",
-      "Card"
-    ]
+      "Modal",
+      "Checkbox",
+      "Slider",
+      "InputNumber",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest21",
@@ -327,13 +567,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
+      "DatePicker",
+      "Modal",
+      "Image",
       "MultiSelect",
-      "Drawer",
-      "Affix",
-      "RangePicker"
-    ]
+      "Collapse"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest22",
@@ -343,13 +595,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
+      "Message",
+      "Dropdown",
       "Slider",
-      "Alert",
-      "Avatar",
-      "TimePicker"
-    ]
+      "PasswordInput",
+      "BackTop"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest23",
@@ -359,13 +623,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "BackTop",
+      "Input",
       "Message",
-      "Alert",
-      "Descriptions",
-      "PasswordInput",
-      "Collapse"
-    ]
+      "RadioGroup",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest24",
@@ -375,13 +651,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Popover",
-      "Card",
+      "Spin",
       "Switch",
-      "RangePicker"
-    ]
+      "Collapse",
+      "Modal",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest25",
@@ -391,13 +679,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tooltip",
+      "Badge",
       "BackTop",
-      "Card",
-      "Affix",
-      "Button"
-    ]
+      "Upload",
+      "Message",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest26",
@@ -407,13 +707,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Input",
-      "List",
-      "Tabs",
-      "Table"
-    ]
+      "Checkbox",
+      "Avatar",
+      "TimePicker",
+      "MultiSelect",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest27",
@@ -423,13 +735,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
-      "Table",
-      "Empty",
-      "Button",
-      "Alert"
-    ]
+      "Upload",
+      "BackTop",
+      "TextArea",
+      "Affix",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "propdrillingTest28",
@@ -439,13 +763,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Descriptions",
-      "Button",
       "TextArea",
-      "InputNumber"
-    ]
+      "Tabs",
+      "Popover",
+      "Descriptions",
+      "List"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest29",
@@ -455,13 +791,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Image",
+      "List",
       "Tabs",
-      "Button",
-      "RadioGroup",
-      "Input"
-    ]
+      "TimePicker",
+      "Tag",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "propdrillingTest30",
@@ -471,13 +819,25 @@
     "patternFlags": {
       "deepProps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Table",
-      "Input",
-      "Upload",
-      "BackTop",
-      "Select"
-    ]
+      "Tag",
+      "Modal",
+      "Empty",
+      "Tooltip",
+      "PasswordInput"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest1",
@@ -487,13 +847,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Card",
+      "BackTop",
+      "Message",
       "TimePicker",
-      "Drawer",
-      "Descriptions"
-    ]
+      "Tooltip",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest2",
@@ -503,13 +875,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "PasswordInput",
-      "Badge",
-      "Message",
       "Avatar",
-      "Modal"
-    ]
+      "Checkbox",
+      "Switch",
+      "Spin",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest3",
@@ -519,13 +903,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
+      "Input",
+      "Button",
       "Spin",
-      "Descriptions",
-      "Alert",
-      "Tooltip"
-    ]
+      "Checkbox",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest4",
@@ -535,13 +931,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
+      "RadioGroup",
+      "RangePicker",
+      "Descriptions",
       "Slider",
-      "Button",
-      "Tag",
-      "TimePicker"
-    ]
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest5",
@@ -551,13 +959,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
       "Image",
-      "TimePicker",
-      "RangePicker",
-      "InputNumber"
-    ]
+      "Tag",
+      "Popover",
+      "Dropdown",
+      "Slider"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest6",
@@ -567,13 +987,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Select",
-      "Button",
-      "Dropdown",
-      "Progress",
-      "Modal"
-    ]
+      "Avatar",
+      "Image",
+      "Drawer",
+      "Tooltip",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest7",
@@ -583,13 +1015,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "BackTop",
-      "Empty",
-      "Button",
-      "Tabs",
-      "DatePicker"
-    ]
+      "Tooltip",
+      "Input",
+      "Dropdown",
+      "MultiSelect",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest8",
@@ -599,13 +1043,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Tabs",
+      "Empty",
       "Checkbox",
-      "MultiSelect",
-      "InputNumber",
-      "TextArea"
-    ]
+      "Progress",
+      "Tag",
+      "MultiSelect"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest9",
@@ -615,13 +1071,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "RadioGroup",
       "Affix",
-      "Input",
-      "PasswordInput",
-      "Image",
-      "Alert"
-    ]
+      "TimePicker",
+      "Button",
+      "Upload"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest10",
@@ -631,13 +1099,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Select",
-      "Dropdown",
-      "Image",
-      "Table"
-    ]
+      "Avatar",
+      "Affix",
+      "Input",
+      "Popover",
+      "Tabs"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest11",
@@ -647,13 +1127,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Avatar",
-      "Affix",
-      "InputNumber",
-      "Switch"
-    ]
+      "Dropdown",
+      "PasswordInput",
+      "TextArea",
+      "Button",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest12",
@@ -663,13 +1155,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
+      "Spin",
       "BackTop",
-      "RangePicker",
-      "Select",
-      "Progress",
-      "Spin"
-    ]
+      "Affix",
+      "MultiSelect",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest13",
@@ -679,13 +1183,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "MultiSelect",
-      "TimePicker",
+      "Upload",
+      "Dropdown",
+      "Input",
       "BackTop",
-      "List",
-      "Switch"
-    ]
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest14",
@@ -695,13 +1211,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "List",
-      "Image",
-      "Modal",
-      "Dropdown",
-      "Collapse"
-    ]
+      "Descriptions",
+      "Upload",
+      "Switch",
+      "Alert",
+      "Empty"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest15",
@@ -711,13 +1239,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "Select",
       "DatePicker",
-      "Affix",
-      "Progress",
-      "RangePicker",
-      "Descriptions"
-    ]
+      "MultiSelect",
+      "Input",
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest16",
@@ -727,13 +1267,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Upload",
-      "Affix",
-      "TextArea",
-      "Switch"
-    ]
+      "PasswordInput",
+      "Avatar",
+      "Descriptions",
+      "Switch",
+      "Image"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest17",
@@ -743,13 +1295,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "DatePicker",
-      "Card",
-      "Upload",
+      "RangePicker",
       "Drawer",
-      "Button"
-    ]
+      "Affix",
+      "Popover",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest18",
@@ -759,13 +1323,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "TimePicker",
-      "Input",
-      "Card",
-      "Affix",
-      "Select"
-    ]
+      "Avatar",
+      "Drawer",
+      "Empty",
+      "BackTop",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest19",
@@ -775,13 +1351,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Affix",
-      "Modal",
-      "Empty",
-      "Alert"
-    ]
+      "TimePicker",
+      "Tabs",
+      "Drawer",
+      "RadioGroup",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest20",
@@ -791,13 +1379,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "TextArea",
-      "Modal",
-      "Collapse",
-      "Upload",
-      "Descriptions"
-    ]
+      "Dropdown",
+      "Card",
+      "BackTop",
+      "Checkbox",
+      "Image"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest21",
@@ -807,13 +1407,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "List",
+      "Popover",
       "Drawer",
-      "PasswordInput",
+      "Checkbox",
       "Tag",
-      "BackTop"
-    ]
+      "MultiSelect"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest22",
@@ -823,13 +1435,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Affix",
-      "Badge",
-      "Drawer",
-      "BackTop",
-      "Empty"
-    ]
+      "Slider",
+      "Select",
+      "Spin",
+      "Tag",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest23",
@@ -839,13 +1463,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Button",
-      "Card",
+      "Input",
       "Table",
-      "Modal"
-    ]
+      "Dropdown",
+      "RangePicker",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest24",
@@ -855,13 +1491,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Slider",
-      "TextArea",
-      "PasswordInput",
-      "Avatar",
-      "Input"
-    ]
+      "Input",
+      "Message",
+      "Progress",
+      "Table",
+      "Slider"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest25",
@@ -871,13 +1519,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
+      "TimePicker",
+      "Checkbox",
       "Card",
-      "Affix",
-      "Dropdown",
-      "Table"
-    ]
+      "BackTop",
+      "RangePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest26",
@@ -887,13 +1547,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
       "Tabs",
-      "MultiSelect",
-      "PasswordInput",
-      "Drawer"
-    ]
+      "Image",
+      "Input",
+      "Checkbox",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "unstablepropsTest27",
@@ -903,13 +1575,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Affix",
-      "Progress",
+      "InputNumber",
+      "RangePicker",
+      "Button",
       "Popover",
-      "RangePicker"
-    ]
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest28",
@@ -919,13 +1603,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Collapse",
-      "Slider",
-      "Modal",
-      "BackTop",
-      "Checkbox"
-    ]
+      "Progress",
+      "RangePicker",
+      "Avatar",
+      "Message",
+      "Collapse"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest29",
@@ -935,13 +1631,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Collapse",
-      "List",
-      "Modal",
-      "BackTop",
-      "Spin"
-    ]
+      "Affix",
+      "Image",
+      "DatePicker",
+      "Dropdown",
+      "RadioGroup"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "unstablepropsTest30",
@@ -951,13 +1659,25 @@
     "patternFlags": {
       "frequentRerenders": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "InputNumber",
-      "Empty",
-      "RangePicker",
-      "Slider",
-      "Message"
-    ]
+      "Switch",
+      "Tag",
+      "DatePicker",
+      "Dropdown",
+      "Upload"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest1",
@@ -967,13 +1687,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
       "Collapse",
-      "Badge",
+      "Tooltip",
       "Affix",
       "PasswordInput",
-      "Drawer"
-    ]
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest2",
@@ -983,13 +1715,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "MultiSelect",
-      "Affix",
-      "Checkbox",
-      "Descriptions",
-      "Progress"
-    ]
+      "Image",
+      "Button",
+      "Collapse",
+      "DatePicker",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest3",
@@ -999,13 +1743,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tooltip",
-      "BackTop",
-      "Table",
-      "InputNumber",
-      "Tabs"
-    ]
+      "Empty",
+      "Affix",
+      "Avatar",
+      "RangePicker",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest4",
@@ -1015,13 +1771,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "DatePicker",
-      "Drawer",
-      "Tooltip",
+      "Slider",
+      "Image",
       "Input",
-      "Slider"
-    ]
+      "Popover",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest5",
@@ -1031,13 +1799,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Alert",
-      "Progress",
-      "Drawer",
+      "RangePicker",
       "Image",
-      "Spin"
-    ]
+      "Card",
+      "TimePicker",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest6",
@@ -1047,13 +1827,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RangePicker",
-      "Drawer",
+      "Card",
       "Image",
-      "Message",
-      "Tooltip"
-    ]
+      "Progress",
+      "MultiSelect",
+      "BackTop"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest7",
@@ -1063,13 +1855,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Badge",
-      "Input",
-      "Spin",
-      "MultiSelect",
-      "Image"
-    ]
+      "Progress",
+      "TextArea",
+      "Button",
+      "Dropdown",
+      "Empty"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest8",
@@ -1079,13 +1883,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Modal",
-      "Upload",
-      "Badge",
-      "BackTop",
-      "Select"
-    ]
+      "Slider",
+      "Input",
+      "Checkbox",
+      "Popover",
+      "Empty"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest9",
@@ -1095,13 +1911,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Image",
-      "Input",
-      "Tag",
-      "DatePicker",
-      "BackTop"
-    ]
+      "Switch",
+      "Upload",
+      "RadioGroup",
+      "TimePicker",
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest10",
@@ -1111,13 +1939,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Progress",
-      "Alert",
-      "BackTop",
-      "Upload",
-      "Table"
-    ]
+      "InputNumber",
+      "Affix",
+      "Modal",
+      "Collapse",
+      "PasswordInput"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest11",
@@ -1127,13 +1967,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Dropdown",
-      "Card",
-      "TimePicker",
+      "Checkbox",
       "List",
-      "Slider"
-    ]
+      "PasswordInput",
+      "Table",
+      "Tag"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest12",
@@ -1143,13 +1995,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Image",
-      "Select",
-      "Drawer",
-      "Progress",
-      "Dropdown"
-    ]
+      "Switch",
+      "MultiSelect",
+      "TimePicker",
+      "Badge",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest13",
@@ -1159,13 +2023,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "PasswordInput",
-      "Avatar",
       "Descriptions",
-      "TextArea",
-      "RangePicker"
-    ]
+      "Upload",
+      "Affix",
+      "PasswordInput",
+      "Table"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest14",
@@ -1175,13 +2051,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Slider",
-      "Image",
-      "TextArea",
-      "Tooltip",
-      "PasswordInput"
-    ]
+      "BackTop",
+      "Modal",
+      "Dropdown",
+      "Checkbox",
+      "Descriptions"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest15",
@@ -1191,13 +2079,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Card",
-      "RadioGroup",
-      "Affix",
-      "Descriptions",
-      "Collapse"
-    ]
+      "MultiSelect",
+      "Image",
+      "Dropdown",
+      "BackTop",
+      "Avatar"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest16",
@@ -1207,13 +2107,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "PasswordInput",
-      "Popover",
-      "BackTop",
-      "Collapse",
-      "Progress"
-    ]
+      "Slider",
+      "Dropdown",
+      "Button",
+      "Affix",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest17",
@@ -1223,13 +2135,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
+      "Drawer",
       "Badge",
-      "PasswordInput",
-      "Checkbox",
-      "Button",
-      "Empty"
-    ]
+      "TimePicker",
+      "Image",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest18",
@@ -1239,13 +2163,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Switch",
+      "BackTop",
       "Drawer",
-      "Empty",
-      "Progress"
-    ]
+      "Badge",
+      "Button",
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest19",
@@ -1255,13 +2191,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "MultiSelect",
+      "Descriptions",
+      "DatePicker",
+      "Empty",
       "Modal",
-      "TextArea",
-      "Input",
-      "Avatar"
-    ]
+      "List"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest20",
@@ -1271,13 +2219,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "Card",
-      "Popover",
-      "Checkbox",
-      "Table"
-    ]
+      "Spin",
+      "Table",
+      "Message",
+      "Drawer",
+      "RangePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest21",
@@ -1287,13 +2247,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "DatePicker",
-      "Slider",
-      "Spin",
-      "MultiSelect",
+      "Card",
+      "Progress",
+      "Descriptions",
+      "BackTop",
       "Empty"
-    ]
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest22",
@@ -1303,13 +2275,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RangePicker",
-      "BackTop",
-      "Table",
-      "Empty",
-      "Affix"
-    ]
+      "Switch",
+      "Modal",
+      "Tabs",
+      "Badge",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest23",
@@ -1319,13 +2303,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Tabs",
       "Spin",
-      "TextArea",
-      "RangePicker",
-      "MultiSelect"
-    ]
+      "Dropdown",
+      "Badge",
+      "Select",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest24",
@@ -1335,13 +2331,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Table",
-      "Drawer",
       "Image",
-      "Tag",
-      "TimePicker"
-    ]
+      "MultiSelect",
+      "Card",
+      "DatePicker",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest25",
@@ -1351,13 +2359,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Switch",
+      "RadioGroup",
+      "Button",
+      "Select",
       "Checkbox",
-      "Upload",
-      "Alert"
-    ]
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest26",
@@ -1367,13 +2387,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Switch",
-      "BackTop",
-      "Dropdown",
-      "Upload"
-    ]
+      "Checkbox",
+      "Card",
+      "Image",
+      "Tabs",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "toomanyeffectsTest27",
@@ -1383,13 +2415,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Image",
       "Spin",
-      "MultiSelect",
-      "DatePicker",
-      "Popover"
-    ]
+      "Popover",
+      "Tabs",
+      "Affix",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest28",
@@ -1399,13 +2443,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Alert",
-      "Checkbox",
-      "Avatar",
-      "BackTop"
-    ]
+      "Tooltip",
+      "Input",
+      "Collapse",
+      "Button",
+      "Descriptions"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest29",
@@ -1415,13 +2471,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "Affix",
+      "Descriptions",
       "DatePicker",
-      "Image",
-      "Popover",
-      "Drawer",
-      "Modal"
-    ]
+      "Modal",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "toomanyeffectsTest30",
@@ -1431,13 +2499,25 @@
     "patternFlags": {
       "effectFlood": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
       "Affix",
       "Input",
-      "List",
-      "DatePicker"
-    ]
+      "Slider",
+      "Spin",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest1",
@@ -1447,13 +2527,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "TextArea",
-      "Popover",
-      "Switch",
-      "RangePicker",
-      "Card"
-    ]
+      "Badge",
+      "BackTop",
+      "Dropdown",
+      "Empty",
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest2",
@@ -1463,13 +2555,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Table",
+      "Tag",
       "Affix",
+      "Image",
       "PasswordInput",
-      "Alert",
-      "Tag"
-    ]
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest3",
@@ -1479,13 +2583,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Drawer",
+      "Table",
       "Card",
-      "Affix",
-      "Descriptions",
-      "Alert",
-      "Switch"
-    ]
+      "Image",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest4",
@@ -1495,13 +2611,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "RangePicker",
-      "DatePicker",
-      "Descriptions",
-      "Upload",
-      "Progress"
-    ]
+      "Badge",
+      "Empty",
+      "Affix",
+      "TextArea",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest5",
@@ -1511,13 +2639,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tag",
-      "Switch",
-      "Message",
-      "Affix",
-      "MultiSelect"
-    ]
+      "Drawer",
+      "Button",
+      "PasswordInput",
+      "InputNumber",
+      "Upload"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest6",
@@ -1527,13 +2667,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tooltip",
-      "PasswordInput",
-      "Slider",
-      "Empty",
-      "Table"
-    ]
+      "Message",
+      "Drawer",
+      "Modal",
+      "Progress",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest7",
@@ -1543,13 +2695,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Select",
-      "Dropdown",
-      "Message",
-      "TextArea"
-    ]
+      "Alert",
+      "Image",
+      "TimePicker",
+      "RadioGroup",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest8",
@@ -1559,13 +2723,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Dropdown",
-      "Descriptions",
-      "MultiSelect",
-      "TimePicker",
-      "Tag"
-    ]
+      "Progress",
+      "Switch",
+      "Input",
+      "RangePicker",
+      "Tabs"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest9",
@@ -1575,13 +2751,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "Tabs",
-      "BackTop",
-      "Slider",
-      "Descriptions"
-    ]
+      "Badge",
+      "Checkbox",
+      "Empty",
+      "Upload",
+      "Select"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest10",
@@ -1591,13 +2779,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "Affix",
+      "Message",
       "Tooltip",
-      "Progress",
-      "RangePicker",
-      "Tag",
-      "Popover"
-    ]
+      "MultiSelect",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest11",
@@ -1607,13 +2807,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Image",
-      "Avatar",
-      "PasswordInput",
+      "Input",
       "Modal",
-      "InputNumber"
-    ]
+      "Slider",
+      "Message",
+      "List"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest12",
@@ -1623,13 +2835,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Checkbox",
-      "Card",
-      "Affix",
-      "Empty",
-      "Drawer"
-    ]
+      "Dropdown",
+      "Spin",
+      "Button",
+      "InputNumber",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest13",
@@ -1639,13 +2863,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Checkbox",
-      "BackTop",
       "Alert",
-      "Collapse"
-    ]
+      "Tabs",
+      "RangePicker",
+      "Progress",
+      "Upload"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest14",
@@ -1655,13 +2891,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Affix",
-      "Alert",
-      "Progress",
+      "Avatar",
+      "Card",
+      "Badge",
       "Tag",
-      "List"
-    ]
+      "Empty"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest15",
@@ -1671,13 +2919,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RadioGroup",
-      "RangePicker",
-      "Input",
-      "Checkbox",
-      "PasswordInput"
-    ]
+      "Popover",
+      "Modal",
+      "Avatar",
+      "Tabs",
+      "Spin"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest16",
@@ -1687,13 +2947,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "Switch",
-      "RangePicker",
-      "Empty",
-      "Table"
-    ]
+      "Descriptions",
+      "InputNumber",
+      "PasswordInput",
+      "Select",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest17",
@@ -1703,13 +2975,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Progress",
-      "Descriptions",
-      "Image",
-      "Alert",
-      "Tag"
-    ]
+      "Input",
+      "Tabs",
+      "Card",
+      "TextArea",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest18",
@@ -1719,13 +3003,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Card",
-      "Modal",
-      "Table",
-      "Image",
-      "Avatar"
-    ]
+      "RangePicker",
+      "Popover",
+      "Checkbox",
+      "BackTop",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest19",
@@ -1735,13 +3031,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
       "BackTop",
       "Modal",
+      "Tag",
       "Badge",
-      "List",
-      "DatePicker"
-    ]
+      "Upload"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest20",
@@ -1751,13 +3059,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Badge",
-      "InputNumber",
-      "RadioGroup",
-      "TimePicker",
-      "TextArea"
-    ]
+      "Empty",
+      "Image",
+      "BackTop",
+      "Collapse",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest21",
@@ -1767,13 +3087,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Descriptions",
-      "Image",
-      "Upload",
-      "Spin",
-      "Switch"
-    ]
+      "Badge",
+      "Collapse",
+      "Popover",
+      "MultiSelect",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest22",
@@ -1783,13 +3115,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RangePicker",
-      "Alert",
-      "Input",
-      "TextArea",
-      "Avatar"
-    ]
+      "Dropdown",
+      "Card",
+      "Affix",
+      "BackTop",
+      "Slider"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest23",
@@ -1799,13 +3143,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Badge",
-      "Spin",
-      "Tooltip",
-      "Upload"
-    ]
+      "Image",
+      "Empty",
+      "Switch",
+      "Checkbox",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest24",
@@ -1815,13 +3171,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Message",
-      "Drawer",
-      "TimePicker",
-      "Upload",
-      "Dropdown"
-    ]
+      "Affix",
+      "DatePicker",
+      "Button",
+      "InputNumber",
+      "Slider"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest25",
@@ -1831,13 +3199,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Tabs",
-      "Card",
-      "PasswordInput",
-      "Image"
-    ]
+      "Table",
+      "BackTop",
+      "Switch",
+      "Dropdown",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest26",
@@ -1847,13 +3227,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Badge",
-      "Tabs",
+      "MultiSelect",
       "Button",
-      "Upload",
-      "Modal"
-    ]
+      "Avatar",
+      "List",
+      "BackTop"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest27",
@@ -1863,13 +3255,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tabs",
+      "PasswordInput",
       "Empty",
-      "TimePicker",
-      "TextArea",
-      "Popover"
-    ]
+      "Avatar",
+      "Upload",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "missinguseMemoTest28",
@@ -1879,13 +3283,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "Tabs",
+      "Alert",
+      "Image",
       "Affix",
-      "DatePicker",
-      "Input",
-      "Select",
-      "Alert"
-    ]
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest29",
@@ -1895,13 +3311,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "List",
-      "Affix",
-      "PasswordInput",
-      "Alert",
-      "Avatar"
-    ]
+      "Card",
+      "Switch",
+      "Checkbox",
+      "Collapse",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "missinguseMemoTest30",
@@ -1911,13 +3339,25 @@
     "patternFlags": {
       "recomputesHeavyFn": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Descriptions",
-      "Modal",
-      "Popover",
-      "Input"
-    ]
+      "Dropdown",
+      "Checkbox",
+      "RadioGroup",
+      "Progress",
+      "Avatar"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest1",
@@ -1927,13 +3367,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Alert",
+      "Empty",
       "Tag",
-      "Avatar",
-      "Image"
-    ]
+      "List",
+      "Checkbox",
+      "RangePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest2",
@@ -1943,13 +3395,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Card",
-      "Tag",
-      "PasswordInput",
+      "Descriptions",
       "Avatar",
-      "Upload"
-    ]
+      "Popover",
+      "Message",
+      "BackTop"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest3",
@@ -1959,13 +3423,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
+      "Checkbox",
+      "RangePicker",
       "DatePicker",
       "Affix",
-      "Card",
-      "TextArea",
-      "Alert"
-    ]
+      "Select"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest4",
@@ -1975,13 +3451,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Progress",
-      "Spin",
-      "Affix",
+      "RangePicker",
       "Table",
-      "Button"
-    ]
+      "Modal",
+      "Alert",
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest5",
@@ -1991,13 +3479,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Table",
-      "Switch",
-      "TextArea",
-      "MultiSelect",
-      "InputNumber"
-    ]
+      "Avatar",
+      "Button",
+      "Affix",
+      "Message",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest6",
@@ -2007,13 +3507,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Image",
       "Drawer",
-      "Switch",
-      "RadioGroup",
-      "RangePicker"
-    ]
+      "Button",
+      "Tooltip",
+      "Select",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest7",
@@ -2023,13 +3535,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
       "Badge",
-      "Alert",
-      "Tabs",
-      "Avatar",
-      "Progress"
-    ]
+      "Checkbox",
+      "Message",
+      "Descriptions",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest8",
@@ -2039,13 +3563,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Spin",
-      "Select",
-      "Drawer",
       "Badge",
-      "Tabs"
-    ]
+      "Input",
+      "Message",
+      "Upload",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest9",
@@ -2055,13 +3591,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "Collapse",
-      "TimePicker",
-      "Spin",
-      "DatePicker"
-    ]
+      "Progress",
+      "Card",
+      "Slider",
+      "Message",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest10",
@@ -2071,13 +3619,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Card",
-      "Message",
-      "Empty",
-      "Checkbox"
-    ]
+      "InputNumber",
+      "Dropdown",
+      "Modal",
+      "Badge",
+      "Image"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest11",
@@ -2087,13 +3647,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "DatePicker",
-      "Table",
-      "TextArea",
-      "Alert",
-      "Progress"
-    ]
+      "Switch",
+      "Modal",
+      "Card",
+      "Checkbox",
+      "Image"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest12",
@@ -2103,13 +3675,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Message",
-      "Switch",
-      "Avatar",
-      "PasswordInput",
-      "TimePicker"
-    ]
+      "Tag",
+      "Card",
+      "Popover",
+      "Progress",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest13",
@@ -2119,13 +3703,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "PasswordInput",
-      "List",
-      "Button",
-      "InputNumber",
-      "Slider"
-    ]
+      "DatePicker",
+      "Dropdown",
+      "Empty",
+      "Spin",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest14",
@@ -2135,13 +3731,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Table",
-      "Collapse",
-      "Checkbox",
-      "Card",
-      "Image"
-    ]
+      "Tabs",
+      "Image",
+      "Input",
+      "Popover",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest15",
@@ -2151,13 +3759,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Message",
-      "Avatar",
-      "PasswordInput",
+      "Tooltip",
+      "Checkbox",
+      "Descriptions",
       "Upload",
-      "BackTop"
-    ]
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest16",
@@ -2167,13 +3787,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Badge",
-      "DatePicker",
-      "Affix",
-      "BackTop",
-      "Tooltip"
-    ]
+      "TextArea",
+      "Checkbox",
+      "MultiSelect",
+      "Table",
+      "Drawer"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest17",
@@ -2183,13 +3815,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Slider",
-      "Alert",
       "DatePicker",
-      "Checkbox"
-    ]
+      "Affix",
+      "Table",
+      "Tabs",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest18",
@@ -2199,13 +3843,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Switch",
-      "Slider",
-      "Button",
-      "Progress",
-      "Avatar"
-    ]
+      "Tooltip",
+      "Badge",
+      "Dropdown",
+      "Tag",
+      "Descriptions"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest19",
@@ -2215,13 +3871,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Select",
-      "Tooltip",
-      "Tabs",
-      "RangePicker",
-      "Button"
-    ]
+      "Tag",
+      "Checkbox",
+      "TimePicker",
+      "TextArea",
+      "Descriptions"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest20",
@@ -2231,13 +3899,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Image",
-      "Input",
-      "PasswordInput",
       "Drawer",
-      "List"
-    ]
+      "MultiSelect",
+      "PasswordInput",
+      "Tooltip",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest21",
@@ -2247,13 +3927,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Descriptions",
-      "Dropdown",
-      "TimePicker",
-      "Avatar",
+      "Spin",
+      "Switch",
+      "BackTop",
+      "Badge",
       "Button"
-    ]
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest22",
@@ -2263,13 +3955,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "BackTop",
-      "Affix",
-      "Input",
-      "Table",
-      "TextArea"
-    ]
+      "TextArea",
+      "Tooltip",
+      "InputNumber",
+      "Dropdown",
+      "Tag"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest23",
@@ -2279,13 +3983,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Image",
-      "PasswordInput",
-      "Tooltip",
+      "List",
       "Switch",
-      "Card"
-    ]
+      "Tabs",
+      "Descriptions",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest24",
@@ -2295,13 +4011,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Switch",
       "Affix",
-      "List",
-      "Message"
-    ]
+      "Tag",
+      "Button",
+      "Checkbox",
+      "Select"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest25",
@@ -2311,13 +4039,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Modal",
-      "Tooltip",
-      "PasswordInput",
-      "Drawer",
-      "Tabs"
-    ]
+      "TextArea",
+      "Dropdown",
+      "Spin",
+      "TimePicker",
+      "Upload"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest26",
@@ -2327,13 +4067,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Descriptions",
-      "Tooltip",
-      "TextArea",
-      "Slider"
-    ]
+      "Checkbox",
+      "BackTop",
+      "Drawer",
+      "RadioGroup",
+      "List"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "lazyloadingTest27",
@@ -2343,13 +4095,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RadioGroup",
-      "Message",
-      "Switch",
       "Button",
-      "BackTop"
-    ]
+      "BackTop",
+      "Progress",
+      "Checkbox",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest28",
@@ -2359,13 +4123,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "TimePicker",
+      "Tag",
+      "Button",
       "Collapse",
-      "Dropdown",
-      "Progress",
-      "Select",
-      "Tooltip"
-    ]
+      "PasswordInput"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest29",
@@ -2375,13 +4151,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Message",
+      "DatePicker",
+      "TextArea",
       "Checkbox",
-      "Drawer",
-      "Empty",
-      "RadioGroup"
-    ]
+      "Card",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "lazyloadingTest30",
@@ -2391,13 +4179,25 @@
     "patternFlags": {
       "breakIntoChunks": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Card",
-      "Affix",
-      "Tag",
-      "Descriptions",
-      "Drawer"
-    ]
+      "Input",
+      "Popover",
+      "Empty",
+      "Tooltip",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest1",
@@ -2407,13 +4207,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "RangePicker",
       "Card",
-      "Checkbox",
       "Affix",
-      "Tooltip"
-    ]
+      "Alert",
+      "Input",
+      "Tabs"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest2",
@@ -2423,13 +4235,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Spin",
-      "List",
-      "Switch",
-      "Tooltip",
+      "Table",
+      "Affix",
+      "Upload",
+      "Checkbox",
       "TimePicker"
-    ]
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest3",
@@ -2439,13 +4263,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Image",
-      "Progress",
-      "Dropdown",
-      "RadioGroup"
-    ]
+      "Badge",
+      "Table",
+      "Tabs",
+      "Avatar",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest4",
@@ -2455,13 +4291,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
       "Affix",
-      "Avatar",
-      "Tabs",
-      "RangePicker",
-      "Upload"
-    ]
+      "Image",
+      "Modal",
+      "List",
+      "Badge"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest5",
@@ -2471,13 +4319,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "BackTop",
-      "Collapse",
-      "InputNumber",
-      "Slider"
-    ]
+      "Popover",
+      "Tabs",
+      "Upload",
+      "Input",
+      "Badge"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest6",
@@ -2487,13 +4347,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Card",
+      "Affix",
       "Drawer",
-      "List",
-      "Checkbox",
-      "Modal"
-    ]
+      "BackTop",
+      "Tooltip",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest7",
@@ -2503,13 +4375,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Checkbox",
-      "Image",
-      "List",
-      "BackTop",
-      "Upload"
-    ]
+      "TimePicker",
+      "Table",
+      "Dropdown",
+      "TextArea",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest8",
@@ -2519,13 +4403,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "BackTop",
-      "RadioGroup",
-      "Tag",
+      "DatePicker",
       "Spin",
-      "Input"
-    ]
+      "Affix",
+      "Tabs",
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest9",
@@ -2535,13 +4431,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "BackTop",
+      "Slider",
+      "Descriptions",
+      "Tooltip",
       "Modal",
-      "RangePicker",
-      "Popover"
-    ]
+      "List"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest10",
@@ -2551,13 +4459,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RangePicker",
       "Tabs",
-      "Spin",
-      "Empty",
-      "Button"
-    ]
+      "Collapse",
+      "TextArea",
+      "Affix",
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest11",
@@ -2567,13 +4487,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "DatePicker",
-      "Empty",
-      "TimePicker",
       "Progress",
-      "Popover"
-    ]
+      "Empty",
+      "Popover",
+      "Table",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest12",
@@ -2583,13 +4515,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Upload",
-      "Button",
-      "Checkbox",
-      "Tag",
-      "Popover"
-    ]
+      "Badge",
+      "BackTop",
+      "Slider",
+      "Collapse",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest13",
@@ -2599,13 +4543,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Card",
+      "Upload",
+      "Table",
+      "Spin",
       "Empty",
-      "Collapse",
-      "DatePicker",
-      "Button"
-    ]
+      "RangePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest14",
@@ -2615,13 +4571,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Card",
-      "Dropdown",
-      "DatePicker",
-      "Switch",
-      "Descriptions"
-    ]
+      "Image",
+      "Drawer",
+      "Popover",
+      "Message",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest15",
@@ -2631,13 +4599,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "Image",
       "Table",
+      "Card",
       "Input",
-      "MultiSelect",
-      "Switch",
-      "Checkbox"
-    ]
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest16",
@@ -2647,13 +4627,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Descriptions",
-      "Tooltip",
+      "Select",
       "PasswordInput",
-      "Affix",
-      "TextArea"
-    ]
+      "Tabs",
+      "Avatar",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest17",
@@ -2663,13 +4655,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "List",
-      "Image",
-      "RangePicker",
-      "Button",
-      "Modal"
-    ]
+      "Tabs",
+      "Dropdown",
+      "Progress",
+      "TextArea",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest18",
@@ -2679,13 +4683,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Modal",
-      "Alert",
-      "BackTop",
-      "Message",
-      "List"
-    ]
+      "Descriptions",
+      "DatePicker",
+      "Checkbox",
+      "TimePicker",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest19",
@@ -2695,13 +4711,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Modal",
+      "TimePicker",
+      "Card",
       "List",
-      "Upload",
-      "Progress"
-    ]
+      "Drawer",
+      "Spin"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest20",
@@ -2711,13 +4739,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
       "Button",
-      "Drawer",
-      "Slider",
-      "Modal",
-      "RadioGroup"
-    ]
+      "RangePicker",
+      "Descriptions",
+      "Input",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest21",
@@ -2727,13 +4767,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Tabs",
       "Checkbox",
-      "Image",
-      "RadioGroup",
-      "Affix",
-      "Alert"
-    ]
+      "DatePicker",
+      "Badge",
+      "Avatar"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest22",
@@ -2743,13 +4795,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Tabs",
-      "Slider",
-      "Dropdown",
-      "Checkbox",
-      "Input"
-    ]
+      "Alert",
+      "Card",
+      "Drawer",
+      "Modal",
+      "Badge"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest23",
@@ -2759,13 +4823,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
-      "Tag",
-      "Spin",
-      "Switch",
-      "Alert"
-    ]
+      "MultiSelect",
+      "Card",
+      "Drawer",
+      "BackTop",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest24",
@@ -2775,13 +4851,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "BackTop",
-      "Slider",
-      "Card",
-      "Progress",
-      "Image"
-    ]
+      "Modal",
+      "Empty",
+      "List",
+      "TimePicker",
+      "MultiSelect"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest25",
@@ -2791,13 +4879,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
-      "List",
-      "Spin",
       "Card",
-      "Image"
-    ]
+      "Avatar",
+      "Spin",
+      "BackTop",
+      "Slider"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest26",
@@ -2807,13 +4907,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tabs",
-      "MultiSelect",
-      "Slider",
-      "InputNumber",
-      "Drawer"
-    ]
+      "PasswordInput",
+      "Input",
+      "Affix",
+      "Message",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest27",
@@ -2823,13 +4935,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
+      "Collapse",
+      "Progress",
+      "Tooltip",
       "List",
-      "Alert",
-      "RangePicker",
-      "InputNumber",
-      "Tag"
-    ]
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest28",
@@ -2839,13 +4963,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "Button",
       "BackTop",
-      "Affix",
-      "TimePicker",
-      "Descriptions",
-      "Drawer"
-    ]
+      "Collapse",
+      "RangePicker",
+      "Modal"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inefficientcontextTest29",
@@ -2855,13 +4991,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
       "Avatar",
-      "RangePicker",
+      "Popover",
       "Alert",
-      "BackTop",
-      "Popover"
-    ]
+      "PasswordInput",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inefficientcontextTest30",
@@ -2871,13 +5019,25 @@
     "patternFlags": {
       "globalContext": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
-      "Tabs",
-      "PasswordInput",
-      "RangePicker",
-      "Tag"
-    ]
+      "Image",
+      "Dropdown",
+      "Popover",
+      "Card",
+      "Select"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest1",
@@ -2887,13 +5047,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Badge",
+      "RangePicker",
       "Affix",
-      "Popover",
       "TimePicker",
-      "Collapse"
-    ]
+      "Avatar",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest2",
@@ -2903,13 +5075,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Badge",
-      "Tabs",
-      "InputNumber",
-      "Popover",
-      "Message"
-    ]
+      "Image",
+      "Card",
+      "Tag",
+      "Message",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest3",
@@ -2919,13 +5103,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Tooltip",
-      "Tabs",
-      "Message",
-      "Progress"
-    ]
+      "MultiSelect",
+      "Empty",
+      "Table",
+      "Slider",
+      "Spin"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest4",
@@ -2935,13 +5131,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Slider",
+      "PasswordInput",
+      "Empty",
       "DatePicker",
-      "TextArea",
       "Popover",
-      "Affix"
-    ]
+      "Slider"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest5",
@@ -2951,13 +5159,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Alert",
       "Affix",
-      "Button",
-      "Dropdown",
-      "Slider",
-      "Descriptions"
-    ]
+      "Tooltip",
+      "Collapse",
+      "Spin"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest6",
@@ -2967,13 +5187,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Progress",
-      "Upload",
-      "Card",
-      "Avatar",
-      "RadioGroup"
-    ]
+      "RangePicker",
+      "Image",
+      "Collapse",
+      "Descriptions",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest7",
@@ -2983,13 +5215,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "DatePicker",
-      "Image",
-      "Avatar",
-      "InputNumber",
-      "RangePicker"
-    ]
+      "Tabs",
+      "Empty",
+      "TimePicker",
+      "Button",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest8",
@@ -2999,13 +5243,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "PasswordInput",
-      "Descriptions",
-      "BackTop",
-      "Badge",
-      "Avatar"
-    ]
+      "Tag",
+      "Avatar",
+      "RangePicker",
+      "Upload",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest9",
@@ -3015,13 +5271,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Input",
-      "TextArea",
-      "PasswordInput",
-      "Select"
-    ]
+      "Switch",
+      "BackTop",
+      "Avatar",
+      "Descriptions",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest10",
@@ -3031,13 +5299,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Message",
-      "Checkbox",
-      "Avatar",
-      "InputNumber",
-      "Image"
-    ]
+      "Dropdown",
+      "Empty",
+      "BackTop",
+      "Button",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest11",
@@ -3047,13 +5327,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "DatePicker",
-      "Affix",
-      "Card",
-      "Collapse",
-      "Image"
-    ]
+      "BackTop",
+      "PasswordInput",
+      "Switch",
+      "Avatar",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest12",
@@ -3063,13 +5355,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "InputNumber",
-      "TimePicker",
-      "Card",
-      "Table",
-      "Drawer"
-    ]
+      "RangePicker",
+      "Checkbox",
+      "Switch",
+      "Upload",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest13",
@@ -3079,13 +5383,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Alert",
-      "Image",
-      "Dropdown",
-      "BackTop",
-      "Popover"
-    ]
+      "Slider",
+      "Affix",
+      "Descriptions",
+      "InputNumber",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest14",
@@ -3095,13 +5411,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Switch",
-      "Button",
-      "Affix",
-      "Tabs"
-    ]
+      "Message",
+      "Alert",
+      "RadioGroup",
+      "Tag",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest15",
@@ -3111,13 +5439,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "DatePicker",
-      "RangePicker",
-      "Button",
-      "Drawer",
-      "Select"
-    ]
+      "TextArea",
+      "InputNumber",
+      "Affix",
+      "MultiSelect",
+      "Empty"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest16",
@@ -3127,13 +5467,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Tabs",
-      "Spin",
-      "Drawer",
-      "Checkbox"
-    ]
+      "InputNumber",
+      "Checkbox",
+      "Alert",
+      "Affix",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest17",
@@ -3143,13 +5495,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Slider",
-      "DatePicker",
-      "MultiSelect",
-      "Message",
-      "Table"
-    ]
+      "Affix",
+      "RadioGroup",
+      "Tag",
+      "Empty",
+      "Descriptions"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest18",
@@ -3159,13 +5523,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tabs",
-      "Popover",
-      "PasswordInput",
-      "Card",
-      "Affix"
-    ]
+      "Empty",
+      "BackTop",
+      "Alert",
+      "Progress",
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest19",
@@ -3175,13 +5551,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
+      "Progress",
       "Card",
-      "Table",
-      "Tag",
-      "Avatar",
-      "DatePicker"
-    ]
+      "Switch",
+      "Checkbox",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest20",
@@ -3191,13 +5579,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "BackTop",
-      "Image",
-      "Slider",
-      "TextArea"
-    ]
+      "Collapse",
+      "Tag",
+      "Button",
+      "Popover",
+      "List"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest21",
@@ -3207,13 +5607,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Checkbox",
-      "PasswordInput",
+      "Modal",
       "Progress",
-      "Avatar",
-      "Spin"
-    ]
+      "BackTop",
+      "Message",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest22",
@@ -3223,13 +5635,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "PasswordInput",
+      "Descriptions",
+      "TextArea",
       "Checkbox",
-      "Select",
-      "Image",
-      "InputNumber"
-    ]
+      "Input",
+      "RangePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest23",
@@ -3239,13 +5663,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Tabs",
-      "Avatar",
-      "Popover",
-      "Modal"
-    ]
+      "Upload",
+      "Modal",
+      "Badge",
+      "Select",
+      "Drawer"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest24",
@@ -3255,13 +5691,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Avatar",
-      "Slider",
-      "RangePicker",
-      "Switch",
-      "InputNumber"
-    ]
+      "Select",
+      "Badge",
+      "TextArea",
+      "BackTop",
+      "Dropdown"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest25",
@@ -3271,13 +5719,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Dropdown",
+      "MultiSelect",
       "Popover",
-      "Alert",
-      "Input",
-      "InputNumber",
-      "List"
-    ]
+      "Affix",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest26",
@@ -3287,13 +5747,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
-      "Slider",
-      "Badge",
-      "PasswordInput",
-      "RangePicker"
-    ]
+      "RadioGroup",
+      "Image",
+      "Affix",
+      "Tabs",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest27",
@@ -3303,13 +5775,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Popover",
-      "Affix",
-      "Collapse",
-      "List",
-      "Checkbox"
-    ]
+      "TextArea",
+      "Checkbox",
+      "Progress",
+      "Alert",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest28",
@@ -3319,13 +5803,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Checkbox",
-      "Affix",
-      "Spin",
-      "List",
-      "Slider"
-    ]
+      "Card",
+      "BackTop",
+      "Tabs",
+      "TextArea",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "staleclosuresTest29",
@@ -3335,13 +5831,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "Slider",
-      "TimePicker",
-      "Tooltip",
-      "List"
-    ]
+      "Image",
+      "Upload",
+      "Dropdown",
+      "MultiSelect",
+      "BackTop"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "staleclosuresTest30",
@@ -3351,13 +5859,25 @@
     "patternFlags": {
       "staleState": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Affix",
-      "BackTop",
-      "Tooltip",
-      "Empty",
-      "Card"
-    ]
+      "Slider",
+      "TimePicker",
+      "Upload",
+      "Button",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest1",
@@ -3367,13 +5887,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Message",
-      "Progress",
-      "Descriptions",
-      "Affix",
-      "TextArea"
-    ]
+      "DatePicker",
+      "Empty",
+      "Modal",
+      "RadioGroup",
+      "Progress"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest2",
@@ -3383,13 +5915,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "TimePicker",
-      "Select",
-      "Switch",
+      "Image",
+      "RangePicker",
+      "Input",
       "Affix",
-      "TextArea"
-    ]
+      "MultiSelect"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest3",
@@ -3399,13 +5943,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
+      "Collapse",
+      "Tabs",
+      "Avatar",
       "DatePicker",
-      "Popover",
-      "Image",
-      "Affix"
-    ]
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest4",
@@ -3415,13 +5971,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Switch",
+      "Table",
       "Popover",
-      "InputNumber",
-      "Upload"
-    ]
+      "Empty",
+      "Button",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest5",
@@ -3431,13 +5999,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "BackTop",
+      "RadioGroup",
+      "Avatar",
+      "Switch",
       "RangePicker",
-      "Descriptions",
-      "Input",
-      "Drawer"
-    ]
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest6",
@@ -3447,13 +6027,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Slider",
-      "Descriptions",
-      "Upload",
-      "Affix",
-      "TimePicker"
-    ]
+      "Spin",
+      "PasswordInput",
+      "InputNumber",
+      "TimePicker",
+      "Dropdown"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest7",
@@ -3463,13 +6055,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Alert",
-      "Affix",
-      "RadioGroup",
-      "Table",
-      "Drawer"
-    ]
+      "Spin",
+      "Card",
+      "Tag",
+      "Input",
+      "Empty"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest8",
@@ -3479,13 +6083,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Card",
-      "Empty",
       "Switch",
-      "Button",
-      "Spin"
-    ]
+      "Popover",
+      "Modal",
+      "Message",
+      "Tag"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest9",
@@ -3495,13 +6111,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Dropdown",
-      "Slider",
-      "Modal",
-      "Progress",
-      "TimePicker"
-    ]
+      "Select",
+      "Input",
+      "Affix",
+      "Tabs",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest10",
@@ -3511,13 +6139,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
+      "Select",
       "RadioGroup",
-      "Modal",
-      "Image",
-      "Popover",
-      "DatePicker"
-    ]
+      "Affix",
+      "Avatar",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest11",
@@ -3527,13 +6167,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Slider",
-      "Tooltip",
+      "Popover",
       "Affix",
-      "InputNumber",
-      "Badge"
-    ]
+      "Progress",
+      "DatePicker",
+      "Message"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest12",
@@ -3543,13 +6195,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Tabs",
-      "Dropdown",
-      "Switch",
-      "Message",
-      "Input"
-    ]
+      "InputNumber",
+      "Table",
+      "Modal",
+      "Card",
+      "Select"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest13",
@@ -3559,13 +6223,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Popover",
-      "Badge",
-      "MultiSelect",
-      "Avatar",
-      "InputNumber"
-    ]
+      "Button",
+      "Tag",
+      "DatePicker",
+      "Slider",
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest14",
@@ -3575,13 +6251,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Descriptions",
-      "Badge",
+      "Card",
       "Image",
-      "BackTop",
-      "Switch"
-    ]
+      "Dropdown",
+      "Empty",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest15",
@@ -3591,13 +6279,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "MultiSelect",
-      "Avatar",
-      "List",
-      "Tabs"
-    ]
+      "Descriptions",
+      "Checkbox",
+      "Drawer",
+      "Modal",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest16",
@@ -3607,13 +6307,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Card",
-      "PasswordInput",
-      "Checkbox",
-      "Alert",
-      "List"
-    ]
+      "Input",
+      "Select",
+      "Spin",
+      "Tag",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest17",
@@ -3623,13 +6335,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
+      "Tag",
+      "Collapse",
       "BackTop",
-      "List",
-      "Affix",
-      "RadioGroup",
-      "Upload"
-    ]
+      "Spin",
+      "Avatar"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest18",
@@ -3639,13 +6363,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Badge",
-      "Switch",
-      "Message",
-      "Tabs",
-      "BackTop"
-    ]
+      "Button",
+      "Select",
+      "Drawer",
+      "Checkbox",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest19",
@@ -3655,13 +6391,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Card",
+      "Progress",
       "Button",
-      "Spin",
-      "Popover",
-      "Alert",
-      "TextArea"
-    ]
+      "Tabs",
+      "PasswordInput"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest20",
@@ -3671,13 +6419,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Switch",
-      "Button",
-      "Affix",
+      "List",
+      "Checkbox",
+      "Progress",
       "Modal",
-      "Tabs"
-    ]
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest21",
@@ -3687,13 +6447,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Input",
-      "TimePicker",
+      "PasswordInput",
+      "Card",
       "Badge",
-      "Message"
-    ]
+      "Table",
+      "Tabs"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest22",
@@ -3703,13 +6475,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "DatePicker",
-      "Progress",
-      "Upload",
-      "TimePicker",
-      "Spin"
-    ]
+      "Slider",
+      "Tag",
+      "TextArea",
+      "Alert",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest23",
@@ -3719,13 +6503,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Checkbox",
-      "TextArea",
-      "Card",
-      "RangePicker",
-      "TimePicker"
-    ]
+      "Dropdown",
+      "Affix",
+      "Table",
+      "Switch",
+      "Badge"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest24",
@@ -3735,13 +6531,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "BackTop",
       "Dropdown",
-      "Slider",
-      "Input",
-      "Empty"
-    ]
+      "Modal",
+      "Drawer",
+      "Tabs",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest25",
@@ -3751,13 +6559,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Collapse",
       "Spin",
-      "Switch",
-      "Tag",
-      "Popover"
-    ]
+      "Collapse",
+      "DatePicker",
+      "Card",
+      "Tag"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest26",
@@ -3767,13 +6587,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Upload",
-      "Select",
-      "Affix",
+      "Tabs",
+      "RadioGroup",
       "Empty",
-      "Message"
-    ]
+      "Switch",
+      "Badge"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest27",
@@ -3783,13 +6615,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "InputNumber",
-      "Image",
-      "Select",
-      "List",
-      "PasswordInput"
-    ]
+      "Input",
+      "Tooltip",
+      "TimePicker",
+      "Tabs",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest28",
@@ -3799,13 +6643,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Table",
-      "Select",
-      "TextArea",
-      "BackTop",
-      "Tooltip"
-    ]
+      "Slider",
+      "Tag",
+      "Modal",
+      "Drawer",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "misuseduseEffectTest29",
@@ -3815,13 +6671,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Select",
-      "Checkbox",
-      "RangePicker",
+      "TimePicker",
+      "Affix",
       "Alert",
-      "Input"
-    ]
+      "Message",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "misuseduseEffectTest30",
@@ -3831,13 +6699,25 @@
     "patternFlags": {
       "wrongDeps": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "MultiSelect",
-      "Slider",
-      "Affix",
+      "Badge",
       "BackTop",
-      "Descriptions"
-    ]
+      "Select",
+      "TextArea",
+      "Tabs"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest1",
@@ -3847,13 +6727,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Avatar",
-      "RadioGroup",
-      "MultiSelect",
-      "Alert"
-    ]
+      "Button",
+      "Tag",
+      "Spin",
+      "Badge",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest2",
@@ -3863,13 +6755,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Button",
-      "Progress",
+      "Table",
+      "List",
+      "Avatar",
       "Drawer",
-      "Message",
-      "Slider"
-    ]
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest3",
@@ -3879,13 +6783,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Switch",
+      "PasswordInput",
+      "Input",
       "Upload",
-      "Affix",
-      "BackTop",
-      "Drawer",
-      "TimePicker"
-    ]
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest4",
@@ -3895,13 +6811,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Dropdown",
-      "Tabs",
-      "Card",
-      "Avatar",
-      "InputNumber"
-    ]
+      "Progress",
+      "List",
+      "RadioGroup",
+      "PasswordInput",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest5",
@@ -3911,13 +6839,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Badge",
-      "Button",
-      "Collapse",
-      "Checkbox"
-    ]
+      "Slider",
+      "Tooltip",
+      "Affix",
+      "Tabs",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest6",
@@ -3927,13 +6867,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Collapse",
-      "Avatar",
-      "Switch",
-      "List"
-    ]
+      "Input",
+      "InputNumber",
+      "MultiSelect",
+      "Card",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest7",
@@ -3943,13 +6895,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "PasswordInput",
-      "Affix",
-      "MultiSelect",
-      "Select",
-      "Alert"
-    ]
+      "Tabs",
+      "Progress",
+      "Card",
+      "Slider",
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest8",
@@ -3959,13 +6923,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Progress",
-      "Badge",
-      "Descriptions",
-      "BackTop",
-      "Tooltip"
-    ]
+      "Affix",
+      "Tabs",
+      "Popover",
+      "Spin",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest9",
@@ -3975,13 +6951,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tabs",
-      "List",
-      "Switch",
-      "Tag",
-      "PasswordInput"
-    ]
+      "BackTop",
+      "Affix",
+      "Upload",
+      "Modal",
+      "Drawer"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest10",
@@ -3991,13 +6979,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
       "Affix",
-      "List",
-      "Alert",
-      "MultiSelect",
-      "Empty"
-    ]
+      "Upload",
+      "BackTop",
+      "Tabs",
+      "Alert"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest11",
@@ -4007,13 +7007,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Avatar",
-      "Popover",
-      "Alert",
-      "BackTop",
-      "Tag"
-    ]
+      "List",
+      "Card",
+      "Descriptions",
+      "Select",
+      "Tabs"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest12",
@@ -4023,13 +7035,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Descriptions",
-      "Table",
-      "Checkbox",
       "Badge",
-      "Card"
-    ]
+      "Affix",
+      "Modal",
+      "DatePicker",
+      "Descriptions"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest13",
@@ -4039,13 +7063,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "TimePicker",
-      "Spin",
-      "BackTop",
-      "Tag",
-      "Badge"
-    ]
+      "RangePicker",
+      "Empty",
+      "Popover",
+      "Checkbox",
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest14",
@@ -4055,13 +7091,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Popover",
-      "MultiSelect",
-      "Dropdown",
-      "Tooltip",
-      "Alert"
-    ]
+      "Drawer",
+      "Input",
+      "Image",
+      "List",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest15",
@@ -4071,13 +7119,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Button",
-      "Empty",
-      "Message",
-      "Alert",
-      "Tooltip"
-    ]
+      "Affix",
+      "Image",
+      "Popover",
+      "DatePicker",
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest16",
@@ -4087,13 +7147,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
       "DatePicker",
-      "BackTop",
-      "Avatar",
-      "TextArea",
-      "Alert"
-    ]
+      "List",
+      "Checkbox",
+      "RadioGroup",
+      "Badge"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest17",
@@ -4103,13 +7175,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Empty",
-      "DatePicker",
-      "Spin",
-      "TimePicker"
-    ]
+      "List",
+      "Checkbox",
+      "Switch",
+      "TimePicker",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest18",
@@ -4119,13 +7203,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Select",
-      "Alert",
-      "Input",
-      "Checkbox"
-    ]
+      "Tooltip",
+      "Drawer",
+      "RangePicker",
+      "Modal",
+      "Spin"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest19",
@@ -4135,13 +7231,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
+      "Affix",
+      "Image",
+      "Button",
       "BackTop",
-      "Switch",
-      "Slider",
-      "List"
-    ]
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest20",
@@ -4151,13 +7259,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Input",
-      "Progress",
-      "Card",
       "Affix",
-      "Tabs"
-    ]
+      "Tag",
+      "Input",
+      "TextArea",
+      "Dropdown"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest21",
@@ -4167,13 +7287,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Message",
-      "Collapse",
+      "Checkbox",
       "Select",
-      "Switch",
-      "Drawer"
-    ]
+      "Empty",
+      "Button",
+      "Avatar"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest22",
@@ -4183,13 +7315,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tooltip",
-      "Table",
-      "Upload",
-      "Collapse",
-      "MultiSelect"
-    ]
+      "Slider",
+      "BackTop",
+      "Drawer",
+      "Avatar",
+      "RadioGroup"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest23",
@@ -4199,13 +7343,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "Tabs",
-      "List",
-      "InputNumber",
-      "Switch"
-    ]
+      "Card",
+      "BackTop",
+      "RadioGroup",
+      "Modal",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest24",
@@ -4215,13 +7371,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RangePicker",
-      "Dropdown",
-      "InputNumber",
-      "MultiSelect",
-      "Message"
-    ]
+      "Spin",
+      "Empty",
+      "Avatar",
+      "Badge",
+      "RadioGroup"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest25",
@@ -4231,13 +7399,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Avatar",
+      "DatePicker",
       "Slider",
-      "Badge",
-      "Descriptions",
-      "Select",
-      "Tag"
-    ]
+      "Checkbox",
+      "Card"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest26",
@@ -4247,13 +7427,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Modal",
-      "Input",
       "Image",
-      "Spin",
-      "Slider"
-    ]
+      "RangePicker",
+      "Affix",
+      "Tooltip",
+      "Table"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest27",
@@ -4263,13 +7455,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Modal",
+      "BackTop",
+      "Drawer",
+      "Popover",
       "Progress",
-      "Tag",
-      "List",
-      "Upload"
-    ]
+      "MultiSelect"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest28",
@@ -4279,13 +7483,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tooltip",
       "Empty",
-      "List",
-      "MultiSelect",
-      "Select"
-    ]
+      "Slider",
+      "Collapse",
+      "Affix",
+      "Tag"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "inlinefunctionsTest29",
@@ -4295,13 +7511,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "RadioGroup",
-      "Input",
-      "List",
-      "Upload",
-      "Affix"
-    ]
+      "InputNumber",
+      "Message",
+      "Card",
+      "Collapse",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "inlinefunctionsTest30",
@@ -4311,13 +7539,25 @@
     "patternFlags": {
       "inlineInJSX": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Switch",
-      "Alert",
-      "Button",
-      "Spin",
-      "Progress"
-    ]
+      "RadioGroup",
+      "Input",
+      "Checkbox",
+      "Popover",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest1",
@@ -4327,13 +7567,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "TextArea",
-      "Avatar",
-      "Alert",
-      "Modal",
-      "BackTop"
-    ]
+      "Spin",
+      "Descriptions",
+      "BackTop",
+      "InputNumber",
+      "Select"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest2",
@@ -4343,13 +7595,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Collapse",
-      "Affix",
-      "Tooltip",
-      "Message",
-      "PasswordInput"
-    ]
+      "Table",
+      "Progress",
+      "Alert",
+      "TimePicker",
+      "Collapse"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest3",
@@ -4359,13 +7623,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Progress",
-      "Input",
+      "Avatar",
+      "Badge",
       "Collapse",
-      "Drawer",
-      "InputNumber"
-    ]
+      "Table",
+      "Tag"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest4",
@@ -4375,13 +7651,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Switch",
-      "DatePicker",
-      "Card",
-      "RangePicker",
-      "TextArea"
-    ]
+      "Empty",
+      "Input",
+      "RadioGroup",
+      "Dropdown",
+      "Badge"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest5",
@@ -4391,13 +7679,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Table",
-      "Descriptions",
-      "Upload",
-      "MultiSelect",
-      "Dropdown"
-    ]
+      "Progress",
+      "BackTop",
+      "Affix",
+      "Tooltip",
+      "Image"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest6",
@@ -4407,13 +7707,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Image",
-      "Tooltip",
-      "TimePicker",
-      "DatePicker"
-    ]
+      "Affix",
+      "Alert",
+      "Empty",
+      "List",
+      "Tabs"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest7",
@@ -4423,13 +7735,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Select",
-      "Avatar",
-      "Upload",
-      "Alert",
-      "Modal"
-    ]
+      "TextArea",
+      "Image",
+      "Dropdown",
+      "Empty",
+      "Input"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest8",
@@ -4439,13 +7763,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Descriptions",
-      "Select",
-      "Message",
-      "Upload",
-      "Table"
-    ]
+      "Modal",
+      "Empty",
+      "Progress",
+      "Collapse",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest9",
@@ -4455,13 +7791,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "BackTop",
-      "Button",
-      "Switch",
-      "Dropdown",
-      "Alert"
-    ]
+      "Tooltip",
+      "InputNumber",
+      "PasswordInput",
+      "Drawer",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest10",
@@ -4471,13 +7819,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Badge",
-      "MultiSelect",
+      "RadioGroup",
+      "Tooltip",
       "Descriptions",
-      "BackTop"
-    ]
+      "Avatar",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest11",
@@ -4487,13 +7847,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
       "Tag",
-      "RadioGroup",
-      "Card",
-      "Upload",
-      "Input"
-    ]
+      "Affix",
+      "Button",
+      "MultiSelect",
+      "Spin"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest12",
@@ -4503,13 +7875,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
+      "Alert",
       "RadioGroup",
-      "BackTop",
-      "Spin",
-      "Upload",
-      "Descriptions"
-    ]
+      "Message",
+      "TimePicker",
+      "Popover"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest13",
@@ -4519,13 +7903,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tabs",
+      "Descriptions",
+      "Tag",
       "Slider",
-      "RangePicker",
-      "Input",
-      "BackTop"
-    ]
+      "Affix",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest14",
@@ -4535,13 +7931,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
       "BackTop",
-      "Tooltip",
-      "Popover",
-      "Empty",
-      "Affix"
-    ]
+      "Affix",
+      "Drawer",
+      "Slider",
+      "InputNumber"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest15",
@@ -4551,13 +7959,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "PasswordInput",
-      "RangePicker",
-      "Alert",
-      "InputNumber",
-      "Input"
-    ]
+      "Affix",
+      "BackTop",
+      "Input",
+      "TextArea",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest16",
@@ -4567,13 +7987,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "TimePicker",
-      "Modal",
-      "InputNumber",
-      "Tooltip",
-      "Popover"
-    ]
+      "List",
+      "Input",
+      "Popover",
+      "Tag",
+      "DatePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest17",
@@ -4583,13 +8015,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Button",
-      "Avatar",
-      "Tabs",
-      "TextArea",
-      "Popover"
-    ]
+      "RadioGroup",
+      "Switch",
+      "Badge",
+      "Affix",
+      "Tooltip"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest18",
@@ -4599,13 +8043,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Button",
-      "Avatar",
-      "Image",
+      "Collapse",
+      "RangePicker",
+      "Spin",
       "Checkbox",
-      "Message"
-    ]
+      "BackTop"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest19",
@@ -4615,13 +8071,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
+      "Input",
+      "Switch",
       "BackTop",
-      "Progress",
-      "RadioGroup",
-      "List",
-      "Card"
-    ]
+      "MultiSelect",
+      "Checkbox"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest20",
@@ -4631,13 +8099,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": true
+    },
     "components": [
-      "Input",
-      "RadioGroup",
-      "Tag",
-      "List",
-      "Alert"
-    ]
+      "TimePicker",
+      "BackTop",
+      "Avatar",
+      "Message",
+      "Drawer"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest21",
@@ -4647,13 +8127,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Progress",
       "Select",
-      "Affix",
-      "Message",
-      "Upload"
-    ]
+      "Checkbox",
+      "Tabs",
+      "Progress",
+      "RangePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest22",
@@ -4663,13 +8155,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Avatar",
-      "Input",
-      "Tabs",
-      "Progress",
-      "BackTop"
-    ]
+      "Upload",
+      "DatePicker",
+      "Dropdown",
+      "Card",
+      "TextArea"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest23",
@@ -4679,13 +8183,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Dropdown",
-      "Input",
-      "Card",
-      "Slider",
-      "Select"
-    ]
+      "Affix",
+      "RangePicker",
+      "Image",
+      "InputNumber",
+      "Switch"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest24",
@@ -4695,13 +8211,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Drawer",
-      "Table",
+      "Switch",
+      "Input",
       "Tooltip",
-      "Progress",
-      "DatePicker"
-    ]
+      "Popover",
+      "Dropdown"
+    ],
+    "realismFlags": {
+      "deepComponentTree": false,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": true,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest25",
@@ -4711,13 +8239,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "BackTop",
-      "Button",
-      "InputNumber",
-      "Checkbox",
-      "Modal"
-    ]
+      "Upload",
+      "Badge",
+      "Image",
+      "List",
+      "Button"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest26",
@@ -4727,13 +8267,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": false
+    },
     "components": [
-      "Slider",
-      "RadioGroup",
-      "Progress",
-      "Table",
-      "Card"
-    ]
+      "Tooltip",
+      "Descriptions",
+      "Avatar",
+      "Upload",
+      "Dropdown"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": true,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   },
   {
     "pageName": "repeatedfetchingTest27",
@@ -4743,13 +8295,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Empty",
-      "Button",
-      "Tag",
-      "TimePicker",
-      "TextArea"
-    ]
+      "Image",
+      "Checkbox",
+      "Slider",
+      "MultiSelect",
+      "TimePicker"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest28",
@@ -4759,13 +8323,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": true,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Badge",
-      "Drawer",
-      "Input",
-      "Spin",
-      "BackTop"
-    ]
+      "Select",
+      "MultiSelect",
+      "Tag",
+      "Checkbox",
+      "Affix"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest29",
@@ -4775,13 +8351,25 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": false,
+      "slowClickHandler": false
+    },
     "components": [
-      "Tooltip",
-      "Dropdown",
-      "Input",
-      "Popover",
-      "Empty"
-    ]
+      "Drawer",
+      "BackTop",
+      "Tag",
+      "MultiSelect",
+      "Slider"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": true,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": true
+    }
   },
   {
     "pageName": "repeatedfetchingTest30",
@@ -4791,12 +8379,24 @@
     "patternFlags": {
       "repeatedCalls": true
     },
+    "webVitalsFlags": {
+      "hasLargeImage": false,
+      "causesLayoutShift": true,
+      "slowClickHandler": true
+    },
     "components": [
-      "Collapse",
-      "Badge",
-      "Tabs",
-      "MultiSelect",
-      "Empty"
-    ]
+      "Affix",
+      "Alert",
+      "Message",
+      "Tooltip",
+      "Avatar"
+    ],
+    "realismFlags": {
+      "deepComponentTree": true,
+      "bulkDOMNodes": false,
+      "slowNetwork": false,
+      "expensiveEffects": false,
+      "fakeImageAssets": false
+    }
   }
 ]
