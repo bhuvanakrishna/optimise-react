@@ -11,7 +11,7 @@ const Level4 = (props: any) => {
       <h4>Level4</h4>
       
         
-        <Child user={props.user, data: { value: Math.random() }} />
+        <Child user={props.user} data={{ value: Math.random() }} />
         
       
     </div>
