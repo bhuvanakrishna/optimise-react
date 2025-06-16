@@ -93,7 +93,7 @@ const <%= name %> = (props: any) => {
       <p>Computed: {computed}</p>
       <UI onClick={handleClick} />
       <% if (nextName) { %>
-        <<%= nextName %> count={count} <% if (pattern === 'unstable-props') { %>data={{ value: Math.random() }}<% } %> />
+        <<%= nextName %> count={count} <% if (pattern === 'unstable-props') { %>data={{ [String(Math.random())]: Math.random() }}<% } %> />
       <% } %>
     </div>
   );

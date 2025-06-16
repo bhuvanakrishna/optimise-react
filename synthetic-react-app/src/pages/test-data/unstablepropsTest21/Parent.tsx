@@ -51,7 +51,7 @@ const Parent = (props: any) => {
       <p>Computed: {computed}</p>
       <UI onClick={handleClick} />
       
-        <Level2 count={count} data={{ value: Math.random() }} />
+        <Level2 count={count} data={{ [String(Math.random())]: Math.random() }} />
       
     </div>
   );

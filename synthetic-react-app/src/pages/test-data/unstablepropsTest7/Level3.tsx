@@ -51,7 +51,7 @@ const Level3 = (props: any) => {
       <p>Computed: {computed}</p>
       <UI onClick={handleClick} />
       
-        <Level4 count={count} data={{ value: Math.random() }} />
+        <Level4 count={count} data={{ [String(Math.random())]: Math.random() }} />
       
     </div>
   );
