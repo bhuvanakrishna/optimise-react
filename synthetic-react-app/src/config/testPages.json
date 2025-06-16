@@ -1,0 +1,17 @@
+[
+    {
+      "pageName": "PropDrillingTest1",
+      "layout": "column",
+      "depth": 3,
+      "pattern": "prop-drilling",
+      "components": ["Input", "Button"]
+    },
+    {
+      "pageName": "UnstablePropsTest1",
+      "layout": "row",
+      "depth": 2,
+      "pattern": "unstable-props",
+      "components": ["Input", "Select"]
+    }
+  ]
+  

@@ -1,0 +1,13 @@
+import React from 'react';
+import Parent from './Parent';
+
+const <%= pageName %> = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: '<%= layout %>' }}>
+      <h2><%= pageName %></h2>
+      <Parent />
+    </div>
+  );
+};
+
+export default <%= pageName %>;
