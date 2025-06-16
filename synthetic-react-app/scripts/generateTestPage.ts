@@ -14,14 +14,21 @@ const renderAndWrite = async (templateFile: string, outputPath: string, data: an
   await fs.outputFile(outputPath, content);
 };
 
-const generateComponentChain = async (depth: number, pageDir: string) => {
-  for (let i = depth; i >= 1; i--) {
-    const name = i === depth ? "Child" : i === 1 ? "Parent" : `Level${i}`;
+const generateComponentChain = async (
+  depth: number,
+  pattern: string,
+  pageDir: string,
+  components: string[]
+) => {
+  for (let i = 1; i <= depth; i++) {
+    const name = i === 1 ? 'Parent' : i === depth ? 'Child' : `Level${i}`;
+    const nextName = i < depth ? (i + 1 === depth ? 'Child' : `Level${i + 1}`) : '';
+    const uiComponent = components[i - 1] || components[(i - 1) % components.length];
     const file = path.join(pageDir, `${name}.tsx`);
     await renderAndWrite(
       path.join(templatesDir, 'Component.ejs'),
       file,
-      { name, depth: i }
+      { name, nextName, pattern, uiComponent }
     );
   }
 };
@@ -35,12 +42,21 @@ const generateComponentChain = async (depth: number, pageDir: string) => {
     await renderAndWrite(
       path.join(templatesDir, 'Page.ejs'),
       path.join(pageDir, 'index.tsx'),
-      { pageName: config.pageName, layout: config.layout }
+      { pageName: config.pageName, layout: config.layout, pattern: config.pattern }
     );
 
     // Generate component chain
-    await generateComponentChain(config.depth, pageDir);
+    await generateComponentChain(
+      config.depth,
+      config.pattern,
+      pageDir,
+      config.components || []
+    );
   }
+
+  const indexData = pagesConfig.map((p: any) => ({ name: p.pageName, pattern: p.pattern, depth: p.depth }));
+  const indexContent = `// src/test-data/index.ts\nexport const testPages = ${JSON.stringify(indexData, null, 2)};\n`;
+  await fs.outputFile(path.join(outputBase, 'index.ts'), indexContent);
 
   console.log('✅ Test data pages generated successfully!');
 })();

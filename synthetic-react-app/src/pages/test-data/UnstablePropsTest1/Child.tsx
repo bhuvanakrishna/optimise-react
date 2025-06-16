@@ -1,13 +1,20 @@
-import React from 'react';
-import Child from './Child';
+import React, { useEffect } from 'react';
 
-const Parent = (props: any) => {
+
+
+const Child = (props: any) => {
+  
+  
+  
   return (
     <div>
-      <h4>Parent</h4>
-      <Child user={props.user} />
+      <h4>Child</h4>
+      
+        <div>User: {props.user}</div>
+        
+      
     </div>
   );
 };
 
-export default Parent;
+export default Child;
