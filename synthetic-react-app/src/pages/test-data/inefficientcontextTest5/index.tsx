@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const inefficientcontextTest5 = () => {
+const InefficientcontextTest5 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h2>inefficientcontextTest5</h2>
@@ -10,4 +10,4 @@ const inefficientcontextTest5 = () => {
   );
 };
 
-export default inefficientcontextTest5;
+export default InefficientcontextTest5;

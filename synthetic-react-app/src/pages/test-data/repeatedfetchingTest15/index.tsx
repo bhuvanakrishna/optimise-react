@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const repeatedfetchingTest15 = () => {
+const RepeatedfetchingTest15 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h2>repeatedfetchingTest15</h2>
@@ -10,4 +10,4 @@ const repeatedfetchingTest15 = () => {
   );
 };
 
-export default repeatedfetchingTest15;
+export default RepeatedfetchingTest15;

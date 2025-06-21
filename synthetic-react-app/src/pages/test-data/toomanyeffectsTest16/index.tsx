@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const toomanyeffectsTest16 = () => {
+const ToomanyeffectsTest16 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <h2>toomanyeffectsTest16</h2>
@@ -10,4 +10,4 @@ const toomanyeffectsTest16 = () => {
   );
 };
 
-export default toomanyeffectsTest16;
+export default ToomanyeffectsTest16;

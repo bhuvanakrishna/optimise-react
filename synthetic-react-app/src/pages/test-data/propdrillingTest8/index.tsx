@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const propdrillingTest8 = () => {
+const PropdrillingTest8 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <h2>propdrillingTest8</h2>
@@ -10,4 +10,4 @@ const propdrillingTest8 = () => {
   );
 };
 
-export default propdrillingTest8;
+export default PropdrillingTest8;

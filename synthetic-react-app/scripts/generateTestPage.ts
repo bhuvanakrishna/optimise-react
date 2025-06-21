@@ -4,6 +4,8 @@ import path from 'path';
 import ejs from 'ejs';
 
 const baseDir = path.resolve(__dirname, '..');
+const toPascalCase = (str: string) =>
+  str.replace(/(^\w|-\w)/g, (s) => s.replace('-', '').toUpperCase());
 const pagesConfig = require(path.join(baseDir, 'src/config/testPages.json'));
 const templatesDir = path.join(baseDir, 'src/templates');
 const outputBase = path.join(baseDir, 'src/pages/test-data');
@@ -43,10 +45,11 @@ const generateComponentChain = async (
     const pageDir = path.join(outputBase, config.pageName);
     await fs.ensureDir(pageDir);
 
+    const componentName = toPascalCase(config.pageName);
     await renderAndWrite(
       path.join(templatesDir, 'Page.ejs'),
       path.join(pageDir, 'index.tsx'),
-      { pageName: config.pageName, layout: config.layout, pattern: config.pattern }
+      { pageName: config.pageName, componentName, layout: config.layout, pattern: config.pattern }
     );
 
     await generateComponentChain(

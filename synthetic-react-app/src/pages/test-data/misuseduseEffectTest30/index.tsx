@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const misuseduseEffectTest30 = () => {
+const MisuseduseEffectTest30 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <h2>misuseduseEffectTest30</h2>
@@ -10,4 +10,4 @@ const misuseduseEffectTest30 = () => {
   );
 };
 
-export default misuseduseEffectTest30;
+export default MisuseduseEffectTest30;
