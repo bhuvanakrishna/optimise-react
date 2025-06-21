@@ -21,3 +21,14 @@ The generator can create pages exhibiting the following anti-patterns:
 - lazy loading
 - inline handlers
 - effects without dependency arrays
+
+## SHAP Analysis
+
+After training the models you can generate feature importance plots using
+`shap_analysis.py`. The script saves a SHAP summary plot, bar plot and a
+dependence plot for the most influential feature to the `shap_results`
+directory. Run:
+
+```bash
+python shap_analysis.py
+```
