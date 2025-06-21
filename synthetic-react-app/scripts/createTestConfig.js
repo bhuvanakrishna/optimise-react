@@ -32,8 +32,11 @@ const patterns = {
 
 // Create page configurations
 const pages = [];
+// Increase the number of generated pages per pattern so that the
+// resulting dataset contains far more samples. With 10 patterns,
+// generating 500 pages for each yields 5000 test pages in total.
 for (const [pattern, flags] of Object.entries(patterns)) {
-  for (let i = 1; i <= 30; i++) {
+  for (let i = 1; i <= 500; i++) {
     pages.push({
       pageName: `${pattern.replace(/-/g, '')}Test${i}`,
       layout: i % 2 === 0 ? 'row' : 'column',
