@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Spin';
+import UI from '../../../components/InputNumber';
 
 import Level2 from './Level2';
 
@@ -57,11 +57,9 @@ const Parent = (props: any) => {
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 

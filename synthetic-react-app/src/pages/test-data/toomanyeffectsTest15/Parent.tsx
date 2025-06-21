@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Collapse';
+import UI from '../../../components/Dropdown';
 
 import Level2 from './Level2';
 
@@ -37,19 +37,22 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
+
+  
+
+  
+
+  
+
+
+  
   useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -101,17 +104,6 @@ const Parent = (props: any) => {
     
       
 
-      
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
       
       
     </div>

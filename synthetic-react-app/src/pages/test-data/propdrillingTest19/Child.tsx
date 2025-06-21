@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tooltip';
+import UI from '../../../components/Tabs';
 
 
 // Context setup for inefficient-context pattern
@@ -62,6 +62,8 @@ const Child = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   

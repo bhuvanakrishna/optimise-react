@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Upload';
+import UI from '../../../components/Slider';
 
 
 // Context setup for inefficient-context pattern

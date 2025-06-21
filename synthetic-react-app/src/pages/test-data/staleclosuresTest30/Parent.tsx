@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tooltip';
+import UI from '../../../components/Dropdown';
 
 import Level2 from './Level2';
 
@@ -52,11 +52,9 @@ const Parent = (props: any) => {
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -93,6 +91,10 @@ const Parent = (props: any) => {
         <Level2 count={count}  />
       
 
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
       
 
       

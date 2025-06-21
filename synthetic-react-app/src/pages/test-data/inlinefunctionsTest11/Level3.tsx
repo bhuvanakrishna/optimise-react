@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Affix';
+import UI from '../../../components/Upload';
 
 import Level4 from './Level4';
 
@@ -43,11 +43,6 @@ const Level3 = (props: any) => {
   }, []);
   
 
-  
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Card';
+import UI from '../../../components/Drawer';
 
 
 // Context setup for inefficient-context pattern
@@ -48,11 +48,6 @@ const Child = (props: any) => {
   }, []);
   
 
-  
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
   
 
   

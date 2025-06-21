@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/TextArea';
+import UI from '../../../components/Input';
 
 import Level3 from './Level3';
 
@@ -43,11 +43,6 @@ const Level2 = (props: any) => {
   }, []);
   
 
-  
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
   
 
   

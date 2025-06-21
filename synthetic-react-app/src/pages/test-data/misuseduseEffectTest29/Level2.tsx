@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Input';
+import UI from '../../../components/Affix';
 
 import Child from './Child';
 
@@ -40,11 +40,6 @@ const Level2 = (props: any) => {
 
   
 
-  
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
   
 
   
@@ -91,6 +86,10 @@ const Level2 = (props: any) => {
         <Child count={count}  />
       
 
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
       
 
       

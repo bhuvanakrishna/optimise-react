@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Collapse';
+import UI from '../../../components/Card';
 
 import Child from './Child';
 
@@ -39,9 +39,19 @@ const Level4 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
+  
 
   
 
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
   
 
   
@@ -49,9 +59,11 @@ const Level4 = (props: any) => {
 
   
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 

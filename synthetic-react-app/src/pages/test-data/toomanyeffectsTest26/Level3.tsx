@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tag';
+import UI from '../../../components/PasswordInput';
 
 import Child from './Child';
 
@@ -37,9 +37,24 @@ const Level3 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
   
 
+  
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
+
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
   
 
   
@@ -77,6 +92,9 @@ const Level3 = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
+      
 
       <h3>Level3</h3>
       <p>Count: {count}</p>
@@ -96,6 +114,17 @@ const Level3 = (props: any) => {
     
       
 
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
       
       
     </div>

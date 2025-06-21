@@ -33,7 +33,7 @@ const patterns = {
 // Create page configurations
 const pages = [];
 for (const [pattern, flags] of Object.entries(patterns)) {
-  for (let i = 1; i <= 30; i++) {
+  for (let i = 1; i <= 300; i++) {
     pages.push({
       pageName: `${pattern.replace(/-/g, '')}Test${i}`,
       layout: i % 2 === 0 ? 'row' : 'column',

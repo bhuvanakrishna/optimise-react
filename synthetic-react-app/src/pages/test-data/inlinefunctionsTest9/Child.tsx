@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Affix';
+import UI from '../../../components/Checkbox';
 
 
 // Context setup for inefficient-context pattern
@@ -34,11 +34,6 @@ const Child = (props: any) => {
   const [showImage, setShowImage] = useState(false);
   const [shifted, setShifted] = useState(false);
 
-  
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
   
 
   

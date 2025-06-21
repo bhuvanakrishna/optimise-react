@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tabs';
+import UI from '../../../components/Message';
 
 
 // Context setup for inefficient-context pattern
@@ -43,6 +43,11 @@ const Child = (props: any) => {
 
   
 
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
   
 
   
@@ -85,6 +90,12 @@ const Child = (props: any) => {
         ))}
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
       
 
     

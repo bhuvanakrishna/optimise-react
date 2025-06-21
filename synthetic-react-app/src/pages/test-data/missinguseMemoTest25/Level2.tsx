@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Affix';
+import UI from '../../../components/BackTop';
 
 import Child from './Child';
 
@@ -44,22 +44,20 @@ const Level2 = (props: any) => {
   
 
   
+
+  
+
+  
+
+
+  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
-  
-
-  
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
-  
-
-  
-
-
   
 
   
@@ -79,9 +77,6 @@ const Level2 = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
-      
 
       <h3>Level2</h3>
       <p>Count: {count}</p>
@@ -96,6 +91,10 @@ const Level2 = (props: any) => {
         <Child count={count}  />
       
 
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
       
 
       

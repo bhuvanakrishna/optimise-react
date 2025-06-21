@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Empty';
+import UI from '../../../components/BackTop';
 
 import Child from './Child';
 
@@ -36,11 +36,6 @@ const Level2 = (props: any) => {
   const [showImage, setShowImage] = useState(false);
   const [shifted, setShifted] = useState(false);
 
-  
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
   
 
   

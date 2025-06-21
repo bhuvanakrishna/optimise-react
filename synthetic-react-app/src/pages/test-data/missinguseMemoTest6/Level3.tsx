@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Input';
+import UI from '../../../components/MultiSelect';
 
 import Child from './Child';
 
@@ -46,15 +46,18 @@ const Level3 = (props: any) => {
   
 
   
+
+  
+
+
+  
   useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
-  
-
-  
-
-
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/MultiSelect';
+import UI from '../../../components/Slider';
 
 import Level3 from './Level3';
 
@@ -38,6 +38,11 @@ const Level2 = (props: any) => {
   const [showImage, setShowImage] = useState(false);
   const [shifted, setShifted] = useState(false);
 
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
   
 
   

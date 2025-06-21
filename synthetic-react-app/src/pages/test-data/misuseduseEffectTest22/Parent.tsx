@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Input';
+import UI from '../../../components/PasswordInput';
 
 import Level2 from './Level2';
 
@@ -70,6 +70,8 @@ const Parent = (props: any) => {
   }, []);
   
   
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
+  
 
   
 
@@ -94,10 +96,6 @@ const Parent = (props: any) => {
         <Level2 count={count}  />
       
 
-      
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
       
 
       

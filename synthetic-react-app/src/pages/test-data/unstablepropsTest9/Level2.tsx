@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Alert';
+import UI from '../../../components/Descriptions';
 
 import Child from './Child';
 
@@ -46,6 +46,11 @@ const Level2 = (props: any) => {
   
 
   
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
 
   
 
@@ -72,8 +77,6 @@ const Level2 = (props: any) => {
   }, []);
   
   
-    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
-  
 
   
 
@@ -97,6 +100,12 @@ const Level2 = (props: any) => {
 
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
       
 
     

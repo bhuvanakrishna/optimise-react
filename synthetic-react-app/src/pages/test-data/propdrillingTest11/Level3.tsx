@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/DatePicker';
+import UI from '../../../components/Collapse';
 
 import Level4 from './Level4';
 
@@ -44,7 +44,17 @@ const Level3 = (props: any) => {
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
 
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
   
 
   
@@ -77,6 +87,9 @@ const Level3 = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
+      
 
       <h3>Level3</h3>
       <p>Count: {count}</p>
@@ -97,6 +110,12 @@ const Level3 = (props: any) => {
         ))}
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
       
 
     

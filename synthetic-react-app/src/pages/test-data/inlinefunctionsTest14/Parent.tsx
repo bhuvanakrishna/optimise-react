@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Switch';
+import UI from '../../../components/Button';
 
 import Level2 from './Level2';
 
@@ -40,6 +40,11 @@ const Parent = (props: any) => {
 
   
 
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
   
 
   

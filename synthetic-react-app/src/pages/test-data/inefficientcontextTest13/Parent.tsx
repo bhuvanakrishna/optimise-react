@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/MultiSelect';
+import UI from '../../../components/Avatar';
 
 import Level2 from './Level2';
 

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tag';
+import UI from '../../../components/RadioGroup';
 
 import Child from './Child';
 

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Table';
+import UI from '../../../components/Modal';
 
 import Level3 from './Level3';
 
@@ -43,11 +43,6 @@ const Level2 = (props: any) => {
   }, []);
   
 
-  
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
   
 
   
@@ -84,9 +79,6 @@ const Level2 = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
-      
 
       <h3>Level2</h3>
       <p>Count: {count}</p>
@@ -101,10 +93,6 @@ const Level2 = (props: any) => {
         <Level3 count={count}  />
       
 
-      
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
       
 
       

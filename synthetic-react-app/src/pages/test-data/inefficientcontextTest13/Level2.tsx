@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Table';
+import UI from '../../../components/Checkbox';
 
 import Child from './Child';
 

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Badge';
+import UI from '../../../components/Alert';
 
 import Level3 from './Level3';
 
@@ -45,6 +45,11 @@ const Level2 = (props: any) => {
 
   
 
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
   
 
   

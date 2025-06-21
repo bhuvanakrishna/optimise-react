@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Select';
+import UI from '../../../components/Dropdown';
 
 import Child from './Child';
 
@@ -43,6 +43,11 @@ const Parent = (props: any) => {
   }, []);
   
 
+  
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
   
 
   
@@ -77,6 +82,9 @@ const Parent = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
+      
 
       <h3>Parent</h3>
       <p>Count: {count}</p>
@@ -93,12 +101,6 @@ const Parent = (props: any) => {
 
       
 
-      
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
       
 
     

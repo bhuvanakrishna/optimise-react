@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/RangePicker';
+import UI from '../../../components/Table';
 
 import Level4 from './Level4';
 

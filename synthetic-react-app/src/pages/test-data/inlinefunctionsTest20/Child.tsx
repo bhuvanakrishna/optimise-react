@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Empty';
+import UI from '../../../components/Badge';
 
 
 // Context setup for inefficient-context pattern
@@ -35,14 +35,14 @@ const Child = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
-
-  
   useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
   }, []);
+  
+
+  
+
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Alert';
+import UI from '../../../components/DatePicker';
 
 import Level2 from './Level2';
 
@@ -38,6 +38,11 @@ const Parent = (props: any) => {
   const [showImage, setShowImage] = useState(false);
   const [shifted, setShifted] = useState(false);
 
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/TextArea';
+import UI from '../../../components/Progress';
 
 
 // Context setup for inefficient-context pattern

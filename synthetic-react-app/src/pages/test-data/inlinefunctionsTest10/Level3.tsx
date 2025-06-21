@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/PasswordInput';
+import UI from '../../../components/Spin';
 
 import Child from './Child';
 
@@ -37,14 +37,14 @@ const Level3 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
-
-  
   useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
   }, []);
+  
+
+  
+
   
 
   

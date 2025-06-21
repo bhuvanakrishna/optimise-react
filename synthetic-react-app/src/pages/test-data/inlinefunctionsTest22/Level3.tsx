@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/PasswordInput';
+import UI from '../../../components/Modal';
 
 import Child from './Child';
 
@@ -36,11 +36,6 @@ const Level3 = (props: any) => {
   const [showImage, setShowImage] = useState(false);
   const [shifted, setShifted] = useState(false);
 
-  
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
   
 
   
@@ -69,6 +64,8 @@ const Level3 = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   

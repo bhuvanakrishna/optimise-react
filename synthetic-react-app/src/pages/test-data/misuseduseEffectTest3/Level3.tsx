@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Slider';
+import UI from '../../../components/RadioGroup';
 
 import Level4 from './Level4';
 
@@ -45,11 +45,6 @@ const Level3 = (props: any) => {
 
   
 
-  
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
   
 
   
@@ -98,12 +93,6 @@ const Level3 = (props: any) => {
 
       
 
-      
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
       
 
     

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Checkbox';
+import UI from '../../../components/MultiSelect';
 
 import Level2 from './Level2';
 

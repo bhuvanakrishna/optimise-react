@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/PasswordInput';
+import UI from '../../../components/RadioGroup';
 
 
 // Context setup for inefficient-context pattern
@@ -37,26 +37,24 @@ const Child = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
-
-  
   useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
   }, []);
   
 
   
 
+  
+
+  
+
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 

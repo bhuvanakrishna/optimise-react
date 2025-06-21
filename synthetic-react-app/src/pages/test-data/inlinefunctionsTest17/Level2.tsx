@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/List';
+import UI from '../../../components/RadioGroup';
 
 import Child from './Child';
 
@@ -50,11 +50,6 @@ const Level2 = (props: any) => {
   }, []);
   
 
-  
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/TimePicker';
+import UI from '../../../components/BackTop';
 
 import Level3 from './Level3';
 
@@ -97,12 +97,6 @@ const Level2 = (props: any) => {
         ))}
       
 
-      
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
       
 
     
