@@ -1,15 +1,31 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
+<%
+  const hasLargeImage = webVitalsFlags?.hasLargeImage;
+  const causesLayoutShift = webVitalsFlags?.causesLayoutShift;
+  const slowClickHandler = webVitalsFlags?.slowClickHandler;
+  const slowNetwork = realismFlags?.slowNetwork;
+  const expensiveEffects = realismFlags?.expensiveEffects;
+  const fakeImageAssets = realismFlags?.fakeImageAssets;
+  const deepComponentTree = realismFlags?.deepComponentTree;
+  const bulkDOMNodes = realismFlags?.bulkDOMNodes;
+
+  const reactImports = new Set(['useState']);
+  const needsEffect =
+    hasLargeImage ||
+    fakeImageAssets ||
+    causesLayoutShift ||
+    expensiveEffects ||
+    slowNetwork ||
+    pattern !== 'missing-useMemo';
+  if (needsEffect) reactImports.add('useEffect');
+  if (pattern !== 'missing-useMemo' && pattern !== 'too-many-effects') reactImports.add('useMemo');
+  if (!slowClickHandler) {
+    reactImports.add('useCallback');
+    reactImports.add('startTransition');
+  }
+  if (pattern === 'inefficient-context') reactImports.add('createContext');
+  if (pattern !== 'missing-useMemo') reactImports.add('memo');
+%>
+import React, { <%= Array.from(reactImports).join(', ') %> } from 'react';
 
 import UI from '../../../components/<%= uiComponent %>';
 <% if (nextName) { %>
@@ -22,21 +38,16 @@ const InefficientContext = createContext({});
 <% } %>
 
 // Safe guards
-<% const hasLargeImage = typeof webVitalsFlags !== 'undefined' && webVitalsFlags.hasLargeImage; %>
-<% const causesLayoutShift = typeof webVitalsFlags !== 'undefined' && webVitalsFlags.causesLayoutShift; %>
-<% const slowClickHandler = typeof webVitalsFlags !== 'undefined' && webVitalsFlags.slowClickHandler; %>
-
-<% const deepComponentTree = realismFlags && realismFlags.deepComponentTree; %>
-<% const bulkDOMNodes = realismFlags && realismFlags.bulkDOMNodes; %>
-<% const slowNetwork = realismFlags && realismFlags.slowNetwork; %>
-<% const expensiveEffects = realismFlags && realismFlags.expensiveEffects; %>
-<% const fakeImageAssets = realismFlags && realismFlags.fakeImageAssets; %>
 
 const <%= name %> = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  <% if (hasLargeImage || fakeImageAssets) { %>
   const [showImage, setShowImage] = useState(false);
+  <% } %>
+  <% if (causesLayoutShift) { %>
   const [shifted, setShifted] = useState(false);
+  <% } %>
 
   <% if (hasLargeImage || fakeImageAssets) { %>
   useEffect(() => {
