@@ -18,7 +18,7 @@ if (!fs.existsSync(metricsDir)) fs.mkdirSync(metricsDir);
 
   for (const config of pages) {
     const pageName = config.pageName;
-    const url = `http://localhost:3000/pages/test-data/${pageName}/`;
+    const url = `http://localhost:3002/test/${pageName}`;
 
     console.log(`🔍 Navigating to ${pageName}...`);
 

@@ -1,30 +1,31 @@
-import csv
+import pandas as pd
 from pathlib import Path
-
-try:
-    from sklearn.model_selection import train_test_split
-    from sklearn.tree import DecisionTreeClassifier
-    from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-    import joblib
-except Exception as e:  # pylint: disable=broad-except
-    print("Required ML packages not installed:", e)
-    DecisionTreeClassifier = RandomForestClassifier = GradientBoostingClassifier = None
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.metrics import classification_report
+import joblib
 
 DATASET = Path(__file__).with_name('dataset.csv')
 MODELS_DIR = Path(__file__).with_name('models')
+LABEL_COLUMN = 'label'
 
+def main():
+    df = pd.read_csv(DATASET)
 
-def main() -> None:
-    with DATASET.open() as f:
-        reader = csv.DictReader(f)
-        rows = list(reader)
-    X = [[int(r['depth'])] for r in rows]
-    y = [r['pattern'] for r in rows]
+    # Target
+    y = df[LABEL_COLUMN]
 
-    if DecisionTreeClassifier is None:
-        print("Scikit-learn not available; skipping model training")
-        return
+    # Features to drop
+    drop_cols = ['pageName', 'pattern', LABEL_COLUMN]
 
+    # Handle categorical encoding
+    df_encoded = pd.get_dummies(df.drop(columns=drop_cols), columns=['layout'], drop_first=True)
+
+    # Ensure all data is numeric
+    X = df_encoded.astype(float)
+
+    # Train/test split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     MODELS_DIR.mkdir(exist_ok=True)
@@ -37,8 +38,12 @@ def main() -> None:
 
     for name, model in models.items():
         model.fit(X_train, y_train)
+        preds = model.predict(X_test)
+        print(f"--- {name} ---")
+        print(classification_report(y_test, preds))
         joblib.dump(model, MODELS_DIR / f'{name}.joblib')
-        print(f'{name} trained and saved')
+        print(f'{name} model saved')
+
 
 if __name__ == '__main__':
     main()

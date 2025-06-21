@@ -46,5 +46,13 @@ for page in test_pages:
 
 # Write to CSV
 df = pd.DataFrame(rows)
+
+def label_performance(row):
+    if row["LCP"] > 4000 or row["TBT"] > 1000 or row["FID"] > 500:
+        return "slow"
+    return "fast"
+
+df["label"] = df.apply(label_performance, axis=1)
+
 df.to_csv(output_csv, index=False)
 print(f"✅ Dataset written to {output_csv} with {len(df)} rows.")

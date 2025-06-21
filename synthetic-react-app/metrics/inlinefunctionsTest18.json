@@ -1,0 +1,11 @@
+{
+  "pageName": "inlinefunctionsTest18",
+  "LCP": 2277.836,
+  "FID": 144,
+  "CLS": 0,
+  "TBT": 213,
+  "renderTime": 792.6477519844054,
+  "jsBundleSizeKB": 10.671875,
+  "hasJank": false,
+  "imageLoadTime": 0
+}
