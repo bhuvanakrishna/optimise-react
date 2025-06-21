@@ -18,7 +18,10 @@ if (!fs.existsSync(metricsDir)) fs.mkdirSync(metricsDir);
 
   for (const config of pages) {
     const pageName = config.pageName;
-    const url = `http://localhost:3000/pages/test-data/${pageName}/`;
+    // Use the same route structure as the React router.  Each test page is
+    // served under `/test/:pageName`, so we should point Lighthouse to that
+    // path instead of the old `/pages/test-data` location.
+    const url = `http://localhost:3000/test/${pageName}`;
 
     console.log(`🔍 Navigating to ${pageName}...`);
 
