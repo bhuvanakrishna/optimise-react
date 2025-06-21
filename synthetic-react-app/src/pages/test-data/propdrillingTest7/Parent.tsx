@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Alert';
+import UI from '../../../components/Switch';
 
 import Level2 from './Level2';
 
@@ -53,6 +53,9 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -70,6 +73,9 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   
@@ -97,6 +103,9 @@ const Parent = (props: any) => {
 
       
 
+      
+
+    
       
 
       

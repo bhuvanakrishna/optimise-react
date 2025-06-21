@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Image';
+import UI from '../../../components/Table';
 
 import Level2 from './Level2';
 
@@ -45,12 +45,13 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -64,6 +65,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

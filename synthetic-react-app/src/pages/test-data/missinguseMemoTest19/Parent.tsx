@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/BackTop';
+import UI from '../../../components/InputNumber';
 
 import Level2 from './Level2';
 
@@ -37,12 +37,12 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
   }, []);
+  
+
   
 
   
@@ -51,6 +51,9 @@ const Parent = (props: any) => {
     while (performance.now() - now < 500) {} // simulate jank
   }, []);
   
+
+  
+
 
   
 
@@ -63,15 +66,13 @@ const Parent = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
-      
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
       
 
       <h3>Parent</h3>
@@ -88,9 +89,27 @@ const Parent = (props: any) => {
       
 
       
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
 
       
 
+    
+      
+
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
       
       
     </div>

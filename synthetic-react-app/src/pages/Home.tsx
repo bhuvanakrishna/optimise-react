@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { testPages } from './test-data';
+import { testPages } from './test-data/index';
 
 const Home = () => {
   return (

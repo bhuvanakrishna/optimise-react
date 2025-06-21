@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Dropdown';
+import UI from '../../../components/Select';
 
 import Child from './Child';
 
@@ -39,17 +39,7 @@ const Level2 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
-  
 
-  
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
   
 
   
@@ -60,10 +50,15 @@ const Level2 = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -77,6 +72,7 @@ const Level2 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

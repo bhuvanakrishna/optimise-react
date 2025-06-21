@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tabs';
+import UI from '../../../components/Spin';
 
 import Level2 from './Level2';
 
@@ -60,6 +60,9 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -77,6 +80,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tabs';
+import UI from '../../../components/Badge';
 
 import Level2 from './Level2';
 
@@ -39,10 +39,23 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
+
+  
+
+  
+
 
   
   useEffect(() => {
@@ -62,6 +75,9 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   

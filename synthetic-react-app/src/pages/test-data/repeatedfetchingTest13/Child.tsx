@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Slider';
+import UI from '../../../components/Avatar';
 
 
 // Context setup for inefficient-context pattern
@@ -35,10 +35,23 @@ const Child = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
   
 
   
+
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
+
+  
+
 
   
   useEffect(() => {
@@ -58,6 +71,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -79,9 +93,33 @@ const Child = (props: any) => {
       
 
       
-
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
+      
+
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
       
       
     </div>

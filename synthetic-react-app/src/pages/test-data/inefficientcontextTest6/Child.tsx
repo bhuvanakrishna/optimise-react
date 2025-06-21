@@ -44,13 +44,16 @@ const Child = (props: any) => {
   
 
   
+
+  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
   }, []);
   
 
   
+
 
   
   useEffect(() => {
@@ -70,6 +73,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

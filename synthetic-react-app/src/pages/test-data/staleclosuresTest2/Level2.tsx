@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Card';
+import UI from '../../../components/Popover';
 
 import Level3 from './Level3';
 
@@ -39,19 +39,24 @@ const Level2 = (props: any) => {
   
 
   
+
+  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
   }, []);
   
 
   
 
+
   
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -66,15 +71,13 @@ const Level2 = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
-      
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
       
 
       <h3>Level2</h3>
@@ -91,6 +94,10 @@ const Level2 = (props: any) => {
       
 
       
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
 
       
         <ul>
@@ -98,6 +105,9 @@ const Level2 = (props: any) => {
             <li key={i}>Item #{i}</li>
           ))}
         </ul>
+      
+
+    
       
 
       

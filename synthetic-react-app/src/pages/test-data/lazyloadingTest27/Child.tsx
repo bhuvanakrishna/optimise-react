@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Modal';
+import UI from '../../../components/Tabs';
 
 
 // Context setup for inefficient-context pattern
@@ -46,10 +46,15 @@ const Child = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -63,6 +68,9 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   
@@ -84,7 +92,14 @@ const Child = (props: any) => {
       
 
       
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
 
+      
+
+    
       
 
       

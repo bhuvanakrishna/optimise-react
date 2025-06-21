@@ -48,12 +48,13 @@ const Level2 = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -64,11 +65,10 @@ const Level2 = (props: any) => {
   
 
   
-  const handleClick = () => {
-    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
-    setData({ items });
-    setCount(c => c + 1);
-  };
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
   
 
   
@@ -93,6 +93,9 @@ const Level2 = (props: any) => {
 
       
 
+      
+
+    
       
 
       

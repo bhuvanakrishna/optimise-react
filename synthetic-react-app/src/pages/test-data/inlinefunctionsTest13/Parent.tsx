@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/RangePicker';
+import UI from '../../../components/Dropdown';
 
 import Level2 from './Level2';
 
@@ -53,6 +53,9 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -70,6 +73,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

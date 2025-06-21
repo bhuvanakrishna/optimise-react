@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/RadioGroup';
+import UI from '../../../components/Input';
 
 import Child from './Child';
 
@@ -53,6 +53,9 @@ const Level2 = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -70,6 +73,7 @@ const Level2 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -93,7 +97,20 @@ const Level2 = (props: any) => {
       
 
       
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
       
 
       

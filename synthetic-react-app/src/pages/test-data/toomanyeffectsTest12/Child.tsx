@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/MultiSelect';
+import UI from '../../../components/Affix';
 
 
 // Context setup for inefficient-context pattern
@@ -47,12 +47,16 @@ const Child = (props: any) => {
 
   
 
+
+  
+
   
 
   
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -92,6 +96,15 @@ const Child = (props: any) => {
         ))}
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
       
 
       

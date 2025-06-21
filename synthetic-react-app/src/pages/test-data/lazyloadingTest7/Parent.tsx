@@ -48,10 +48,15 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -65,6 +70,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -89,6 +95,9 @@ const Parent = (props: any) => {
 
       
 
+      
+
+    
       
 
       

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tag';
+import UI from '../../../components/Checkbox';
 
 import Child from './Child';
 
@@ -39,8 +39,16 @@ const Level2 = (props: any) => {
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
 
   
+
+  
+
 
   
   useEffect(() => {
@@ -60,6 +68,7 @@ const Level2 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

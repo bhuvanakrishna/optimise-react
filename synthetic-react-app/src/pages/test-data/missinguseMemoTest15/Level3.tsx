@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Avatar';
+import UI from '../../../components/Alert';
 
 import Level4 from './Level4';
 
@@ -49,6 +49,9 @@ const Level3 = (props: any) => {
 
   
 
+
+  
+
   
   const computed = Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   
@@ -57,6 +60,7 @@ const Level3 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -81,6 +85,9 @@ const Level3 = (props: any) => {
 
       
 
+      
+
+    
       
 
       

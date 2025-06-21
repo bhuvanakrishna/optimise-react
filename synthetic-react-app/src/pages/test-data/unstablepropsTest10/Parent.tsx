@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Avatar';
+import UI from '../../../components/Badge';
 
 import Level2 from './Level2';
 
@@ -46,6 +46,14 @@ const Parent = (props: any) => {
   
 
   
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
+
+  
+
 
   
   useEffect(() => {
@@ -66,6 +74,7 @@ const Parent = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
@@ -84,15 +93,14 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level2 count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Level2 count={count} data={{ foo: Math.random() }} />
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+
       
 
+    
       
 
       

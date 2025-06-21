@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/BackTop';
+import UI from '../../../components/Popover';
 
 
 // Context setup for inefficient-context pattern
@@ -44,6 +44,14 @@ const Child = (props: any) => {
   
 
   
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
+
+  
+
 
   
 
@@ -55,6 +63,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -76,11 +85,10 @@ const Child = (props: any) => {
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+
       
 
+    
       
 
       

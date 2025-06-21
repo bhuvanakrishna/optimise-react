@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tabs';
+import UI from '../../../components/Alert';
 
 
 // Context setup for inefficient-context pattern
@@ -46,6 +46,9 @@ const Child = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     setTimeout(() => {
       fetch('/api/data')
@@ -65,6 +68,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

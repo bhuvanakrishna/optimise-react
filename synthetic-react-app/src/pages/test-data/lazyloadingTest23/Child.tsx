@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tooltip';
+import UI from '../../../components/Alert';
 
 
 // Context setup for inefficient-context pattern
@@ -35,23 +35,24 @@ const Child = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
-
-  
   useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
   }, []);
   
 
   
+
+  
+
+  
+
+
+  
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -65,6 +66,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -89,6 +91,20 @@ const Child = (props: any) => {
 
       
 
+    
+      
+
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
       
       
     </div>

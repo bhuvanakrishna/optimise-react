@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Switch';
+import UI from '../../../components/Button';
 
 import Child from './Child';
 
@@ -39,21 +39,17 @@ const Level2 = (props: any) => {
   
 
   
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
-  
 
   
 
   
+
+
+  
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -68,15 +64,13 @@ const Level2 = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
-      
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
       
 
       <h3>Level2</h3>
@@ -104,6 +98,9 @@ const Level2 = (props: any) => {
             <li key={i}>Item #{i}</li>
           ))}
         </ul>
+      
+
+    
       
 
       

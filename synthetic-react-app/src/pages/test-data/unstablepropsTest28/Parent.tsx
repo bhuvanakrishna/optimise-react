@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Progress';
+import UI from '../../../components/Drawer';
 
 import Child from './Child';
 
@@ -37,23 +37,24 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
+
+  
+
+  
   useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
   }, []);
   
 
   
 
-  
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -67,6 +68,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -86,28 +88,22 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Child count={count} data={{ [String(Math.random())]: Math.random() }} />
-      
-
-      
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+        <Child count={count} data={{ foo: Math.random() }} />
       
 
       
 
       
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
+      
+
       
       
     </div>

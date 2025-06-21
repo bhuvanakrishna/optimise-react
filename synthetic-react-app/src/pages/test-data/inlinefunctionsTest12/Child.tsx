@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Affix';
+import UI from '../../../components/PasswordInput';
 
 
 // Context setup for inefficient-context pattern
@@ -35,15 +35,18 @@ const Child = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
   }, []);
   
 
   
+
+  
+
+  
+
 
   
   useEffect(() => {
@@ -60,9 +63,12 @@ const Child = (props: any) => {
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
+  const handleClick = () => {
+    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
+    setData({ items });
+    setCount(c => c + 1);
+  };
+  
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/BackTop';
+import UI from '../../../components/DatePicker';
 
 import Level2 from './Level2';
 
@@ -48,12 +48,13 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -67,6 +68,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -86,17 +88,14 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level2 count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Level2 count={count} data={{ foo: Math.random() }} />
       
 
       
 
       
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
+
+    
       
 
       

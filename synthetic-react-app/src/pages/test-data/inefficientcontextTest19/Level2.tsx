@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Card';
+import UI from '../../../components/BackTop';
 
 import Level3 from './Level3';
 
@@ -50,6 +50,9 @@ const Level2 = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -67,6 +70,7 @@ const Level2 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/RangePicker';
+import UI from '../../../components/Table';
 
 import Level2 from './Level2';
 
@@ -48,6 +48,9 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     setTimeout(() => {
       fetch('/api/data')
@@ -68,6 +71,9 @@ const Parent = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
+  
 
   
 
@@ -86,7 +92,7 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level2 count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Level2 count={count} data={{ foo: Math.random() }} />
       
 
       
@@ -95,6 +101,9 @@ const Parent = (props: any) => {
         ))}
       
 
+      
+
+    
       
 
       

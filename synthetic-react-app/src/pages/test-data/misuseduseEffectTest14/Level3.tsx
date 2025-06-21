@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Dropdown';
+import UI from '../../../components/Input';
 
 import Child from './Child';
 
@@ -48,6 +48,9 @@ const Level3 = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -65,6 +68,7 @@ const Level3 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -88,17 +92,10 @@ const Level3 = (props: any) => {
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
-      
 
       
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
+
+    
       
 
       

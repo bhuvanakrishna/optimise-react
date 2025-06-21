@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/DatePicker';
+import UI from '../../../components/TextArea';
 
 import Child from './Child';
 
@@ -46,13 +46,11 @@ const Parent = (props: any) => {
   
 
   
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
+
   
 
   
+
 
   
   useEffect(() => {
@@ -72,6 +70,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

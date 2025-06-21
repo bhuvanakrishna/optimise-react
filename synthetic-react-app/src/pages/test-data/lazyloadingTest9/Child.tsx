@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Slider';
+import UI from '../../../components/List';
 
 
 // Context setup for inefficient-context pattern
@@ -35,16 +35,31 @@ const Child = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
-
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
   
 
   
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
+
+  
+
+  
+
+
+  
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -59,12 +74,16 @@ const Child = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Child</h3>
@@ -82,6 +101,20 @@ const Child = (props: any) => {
 
       
 
+    
+      
+
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
       
       
     </div>

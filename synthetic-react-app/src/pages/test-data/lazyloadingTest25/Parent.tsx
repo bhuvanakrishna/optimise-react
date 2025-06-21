@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/TextArea';
+import UI from '../../../components/Tabs';
 
 import Level2 from './Level2';
 
@@ -48,6 +48,9 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -65,6 +68,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -90,11 +94,8 @@ const Parent = (props: any) => {
       
 
       
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
+
+    
       
 
       

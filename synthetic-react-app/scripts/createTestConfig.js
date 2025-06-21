@@ -51,7 +51,8 @@ for (const [pattern, flags] of Object.entries(patterns)) {
         bulkDOMNodes: Math.random() < 0.3,
         slowNetwork: Math.random() < 0.3,
         expensiveEffects: Math.random() < 0.3,
-        fakeImageAssets: Math.random() < 0.5
+        fakeImageAssets: Math.random() < 0.5,
+        largeJsonState: Math.random() < 0.2
       }
     });
     

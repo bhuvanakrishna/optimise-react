@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Affix';
+import UI from '../../../components/Input';
 
 import Level3 from './Level3';
 
@@ -37,39 +37,28 @@ const Level2 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
+
+  
   useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
   }, []);
   
 
   
 
   
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
+
+
+  
+
+  
+
+  
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
   }, []);
   
-
-  
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
-  }, []);
-  
-
-  
-
-  
-  const handleClick = () => {
-    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
-    setData({ items });
-    setCount(c => c + 1);
-  };
   
 
   
@@ -93,6 +82,9 @@ const Level2 = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
+      
 
       <h3>Level2</h3>
       <p>Count: {count}</p>
@@ -108,18 +100,16 @@ const Level2 = (props: any) => {
       
 
       
-
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
       
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
+
+    
+      
+
       
       
     </div>

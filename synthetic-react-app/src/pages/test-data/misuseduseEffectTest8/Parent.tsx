@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Switch';
+import UI from '../../../components/Modal';
 
 import Child from './Child';
 
@@ -48,6 +48,9 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -67,6 +70,7 @@ const Parent = (props: any) => {
     setData({ items });
     setCount(c => c + 1);
   };
+  
   
 
   
@@ -94,6 +98,9 @@ const Parent = (props: any) => {
 
       
 
+      
+
+    
       
 
       

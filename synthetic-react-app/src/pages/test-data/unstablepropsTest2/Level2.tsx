@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Checkbox';
+import UI from '../../../components/Descriptions';
 
 import Level3 from './Level3';
 
@@ -37,15 +37,13 @@ const Level2 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
-  
 
   
 
   
+
+  
+
 
   
   useEffect(() => {
@@ -68,6 +66,9 @@ const Level2 = (props: any) => {
     setCount(c => c + 1);
   };
   
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
+  
 
   
 
@@ -86,28 +87,22 @@ const Level2 = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level3 count={count} data={{ [String(Math.random())]: Math.random() }} />
-      
-
-      
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+        <Level3 count={count} data={{ foo: Math.random() }} />
       
 
       
 
       
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
+      
+
       
       
     </div>

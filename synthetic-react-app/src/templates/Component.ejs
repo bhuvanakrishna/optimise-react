@@ -59,6 +59,9 @@ const <%= name %> = (props: any) => {
   }, []);
   <% } %>
 
+  <% const needsUnstableProps = pattern === 'unstable-props'; %>
+<% const dataProp = needsUnstableProps ? 'data={{ foo: Math.random() }}' : ''; %>
+
   <% if (slowNetwork) { %>
   useEffect(() => {
     setTimeout(() => {
@@ -93,6 +96,9 @@ const <%= name %> = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  <% } %>
+  <% if (realismFlags && realismFlags.largeJsonState) { %>
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   <% } %>
 
   <% if (pattern === 'too-many-effects') { %>
@@ -150,7 +156,7 @@ const <%= name %> = (props: any) => {
       <UI onClick={handleClick} />
 
       <% if (nextName) { %>
-        <<%= nextName %> count={count} <% if (pattern === 'unstable-props') { %>data={{ [String(Math.random())]: Math.random() }}<% } %> />
+        <<%= nextName %> count={count} <%- dataProp %> />
       <% } %>
 
       <% if (deepComponentTree) { %>
@@ -166,6 +172,9 @@ const <%= name %> = (props: any) => {
           ))}
         </ul>
       <% } %>
+
+    
+      
 
       <% if (hasLargeImage || fakeImageAssets) { %>
         {showImage && (

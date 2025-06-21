@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Alert';
+import UI from '../../../components/Collapse';
 
 
 // Context setup for inefficient-context pattern
@@ -37,8 +37,16 @@ const Child = (props: any) => {
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
 
   
+
+  
+
 
   
   useEffect(() => {
@@ -61,12 +69,18 @@ const Child = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Child</h3>
@@ -82,6 +96,9 @@ const Child = (props: any) => {
 
       
 
+      
+
+    
       
 
       

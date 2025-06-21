@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Drawer';
+import UI from '../../../components/PasswordInput';
 
 import Child from './Child';
 
@@ -37,10 +37,18 @@ const Level3 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
+  
+
+  
 
   
 
   
+
 
   
   useEffect(() => {
@@ -60,6 +68,7 @@ const Level3 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

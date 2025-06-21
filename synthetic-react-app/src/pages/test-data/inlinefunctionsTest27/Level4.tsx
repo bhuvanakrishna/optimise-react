@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Progress';
+import UI from '../../../components/Collapse';
 
 import Child from './Child';
 
@@ -44,6 +44,11 @@ const Level4 = (props: any) => {
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
 
   
   useEffect(() => {
@@ -53,10 +58,15 @@ const Level4 = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -70,6 +80,7 @@ const Level4 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

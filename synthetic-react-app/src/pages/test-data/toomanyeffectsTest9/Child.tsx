@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/RadioGroup';
+import UI from '../../../components/Affix';
 
 
 // Context setup for inefficient-context pattern
@@ -46,13 +46,8 @@ const Child = (props: any) => {
   
 
   
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
-  }, []);
+
+
   
 
   
@@ -63,6 +58,7 @@ const Child = (props: any) => {
     setData({ items });
     setCount(c => c + 1);
   };
+  
   
 
   
@@ -101,6 +97,9 @@ const Child = (props: any) => {
 
       
 
+      
+
+    
       
 
       

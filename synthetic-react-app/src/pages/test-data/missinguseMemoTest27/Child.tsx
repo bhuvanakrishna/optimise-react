@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/DatePicker';
+import UI from '../../../components/Card';
 
 
 // Context setup for inefficient-context pattern
@@ -52,6 +52,9 @@ const Child = (props: any) => {
 
   
 
+
+  
+
   
   const computed = Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   
@@ -60,6 +63,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -81,7 +85,20 @@ const Child = (props: any) => {
       
 
       
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
       
 
       

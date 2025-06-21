@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Badge';
+import UI from '../../../components/Collapse';
 
 import Level2 from './Level2';
 
@@ -37,28 +37,19 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
-  
 
   
 
   
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
+
   
+
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -72,6 +63,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -97,24 +89,10 @@ const Parent = (props: any) => {
       
 
       
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
+
+    
       
 
-      
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
       
       
     </div>

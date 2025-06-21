@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Checkbox';
+import UI from '../../../components/Modal';
 
 import Child from './Child';
 
@@ -44,13 +44,11 @@ const Level2 = (props: any) => {
   
 
   
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
+
   
 
   
+
 
   
   useEffect(() => {
@@ -71,15 +69,13 @@ const Level2 = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
-      
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
       
 
       <h3>Level2</h3>
@@ -92,21 +88,14 @@ const Level2 = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Child count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Child count={count} data={{ foo: Math.random() }} />
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
-      
 
       
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
+
+    
       
 
       

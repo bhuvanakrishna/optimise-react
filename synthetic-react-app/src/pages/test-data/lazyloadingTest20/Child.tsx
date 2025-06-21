@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/MultiSelect';
+import UI from '../../../components/Affix';
 
 
 // Context setup for inefficient-context pattern
@@ -44,11 +44,9 @@ const Child = (props: any) => {
   
 
   
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
+
   
+
 
   
   useEffect(() => {
@@ -70,6 +68,9 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   
@@ -96,6 +97,15 @@ const Child = (props: any) => {
         ))}
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
       
 
       

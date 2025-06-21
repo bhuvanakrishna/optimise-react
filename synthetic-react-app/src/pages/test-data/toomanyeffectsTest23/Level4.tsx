@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Select';
+import UI from '../../../components/Drawer';
 
 import Child from './Child';
 
@@ -37,15 +37,13 @@ const Level4 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
-  
 
   
 
   
+
+  
+
 
   
   useEffect(() => {
@@ -65,6 +63,9 @@ const Level4 = (props: any) => {
     setData({ items });
     setCount(c => c + 1);
   };
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   
@@ -114,17 +115,9 @@ const Level4 = (props: any) => {
         </ul>
       
 
+    
       
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
+
       
       
     </div>

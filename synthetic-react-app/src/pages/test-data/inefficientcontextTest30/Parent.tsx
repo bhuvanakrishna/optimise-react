@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Image';
+import UI from '../../../components/BackTop';
 
 import Level2 from './Level2';
 
@@ -39,25 +39,13 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
+
   
 
   
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
-  
 
   
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
-  
+
 
   
   useEffect(() => {
@@ -77,6 +65,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

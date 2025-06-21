@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Empty';
+import UI from '../../../components/TextArea';
 
 import Level4 from './Level4';
 
@@ -46,15 +46,15 @@ const Level3 = (props: any) => {
   
 
   
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
 
   
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
-  }, []);
+
+
   
 
   
@@ -65,6 +65,7 @@ const Level3 = (props: any) => {
     setData({ items });
     setCount(c => c + 1);
   };
+  
   
 
   
@@ -102,6 +103,9 @@ const Level3 = (props: any) => {
 
       
 
+      
+
+    
       
 
       

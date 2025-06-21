@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Message';
+import UI from '../../../components/Alert';
 
 
 // Context setup for inefficient-context pattern
@@ -37,10 +37,23 @@ const Child = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
+
+  
+
+  
+
 
   
   useEffect(() => {
@@ -57,11 +70,10 @@ const Child = (props: any) => {
   
 
   
-  const handleClick = () => {
-    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
-    setData({ items });
-    setCount(c => c + 1);
-  };
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
   
 
   

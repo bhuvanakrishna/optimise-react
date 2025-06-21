@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Spin';
+import UI from '../../../components/Table';
 
 import Level2 from './Level2';
 
@@ -48,6 +48,9 @@ const Parent = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
     fetch('/api/data')
       .then((res) => res.json())
@@ -62,11 +65,10 @@ const Parent = (props: any) => {
   
 
   
-  const handleClick = () => {
-    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
-    setData({ items });
-    setCount(c => c + 1);
-  };
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
   
 
   
@@ -101,6 +103,9 @@ const Parent = (props: any) => {
             <li key={i}>Item #{i}</li>
           ))}
         </ul>
+      
+
+    
       
 
       

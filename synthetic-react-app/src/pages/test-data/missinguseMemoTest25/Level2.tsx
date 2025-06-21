@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/BackTop';
+import UI from '../../../components/Affix';
 
 import Child from './Child';
 
@@ -37,7 +37,17 @@ const Level2 = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
+  
 
+  
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
   
 
   
@@ -48,13 +58,8 @@ const Level2 = (props: any) => {
   
 
   
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
-  }, []);
+
+
   
 
   
@@ -66,12 +71,16 @@ const Level2 = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Level2</h3>
@@ -90,13 +99,21 @@ const Level2 = (props: any) => {
       
 
       
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
+
+    
       
 
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
       
       
     </div>

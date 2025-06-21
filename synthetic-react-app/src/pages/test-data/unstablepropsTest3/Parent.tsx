@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Input';
+import UI from '../../../components/Dropdown';
 
 import Level2 from './Level2';
 
@@ -46,19 +46,15 @@ const Parent = (props: any) => {
   
 
   
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
+
   
+
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -72,6 +68,9 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   
@@ -91,15 +90,20 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level2 count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Level2 count={count} data={{ foo: Math.random() }} />
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
       
 
+    
       
 
       

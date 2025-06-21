@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Empty';
+import UI from '../../../components/DatePicker';
 
 
 // Context setup for inefficient-context pattern
@@ -44,6 +44,14 @@ const Child = (props: any) => {
   
 
   
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
+
+  
+
 
   
   useEffect(() => {
@@ -65,6 +73,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

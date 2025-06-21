@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Input';
+import UI from '../../../components/Tabs';
 
 import Child from './Child';
 
@@ -46,6 +46,14 @@ const Parent = (props: any) => {
   
 
   
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
+
+  
+
 
   
   useEffect(() => {
@@ -64,11 +72,10 @@ const Parent = (props: any) => {
   
 
   
-  const handleClick = () => {
-    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
-    setData({ items });
-    setCount(c => c + 1);
-  };
+  const handleClick = useCallback(() => {
+    startTransition(() => setCount((c) => c + 1));
+  }, []);
+  
   
 
   
@@ -88,15 +95,14 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Child count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Child count={count} data={{ foo: Math.random() }} />
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+
       
 
+    
       
 
       

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Switch';
+import UI from '../../../components/TextArea';
 
 import Child from './Child';
 
@@ -46,19 +46,15 @@ const Level3 = (props: any) => {
   
 
   
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
+
   
+
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -72,6 +68,9 @@ const Level3 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   
@@ -91,7 +90,7 @@ const Level3 = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Child count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Child count={count} data={{ foo: Math.random() }} />
       
 
       
@@ -100,6 +99,9 @@ const Level3 = (props: any) => {
         ))}
       
 
+      
+
+    
       
 
       

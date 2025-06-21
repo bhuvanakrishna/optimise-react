@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Spin';
+import UI from '../../../components/InputNumber';
 
 
 // Context setup for inefficient-context pattern
@@ -47,6 +47,9 @@ const Child = (props: any) => {
 
   
 
+
+  
+
   
   const computed = Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   
@@ -55,6 +58,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -77,6 +81,9 @@ const Child = (props: any) => {
 
       
 
+      
+
+    
       
 
       

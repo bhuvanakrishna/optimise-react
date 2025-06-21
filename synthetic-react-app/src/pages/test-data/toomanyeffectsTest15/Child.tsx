@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Avatar';
+import UI from '../../../components/Button';
 
 
 // Context setup for inefficient-context pattern
@@ -46,13 +46,8 @@ const Child = (props: any) => {
   
 
   
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
-  }, []);
+
+
   
 
   
@@ -61,6 +56,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -95,11 +91,10 @@ const Child = (props: any) => {
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+
       
 
+    
       
 
       

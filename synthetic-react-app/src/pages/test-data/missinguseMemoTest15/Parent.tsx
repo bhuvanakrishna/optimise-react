@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Popover';
+import UI from '../../../components/Image';
 
 import Level2 from './Level2';
 
@@ -49,6 +49,9 @@ const Parent = (props: any) => {
 
   
 
+
+  
+
   
   const computed = Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   
@@ -57,6 +60,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -81,6 +85,9 @@ const Parent = (props: any) => {
 
       
 
+      
+
+    
       
 
       

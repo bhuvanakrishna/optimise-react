@@ -47,6 +47,9 @@ const Child = (props: any) => {
 
   
 
+
+  
+
   
   const computed = Array(10000).fill(0).map((_, i) => i * count).reduce((a, b) => a + b, 0);
   
@@ -55,6 +58,7 @@ const Child = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
@@ -81,6 +85,15 @@ const Child = (props: any) => {
         ))}
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
       
 
       

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/RadioGroup';
+import UI from '../../../components/Card';
 
 import Child from './Child';
 
@@ -44,18 +44,11 @@ const Level4 = (props: any) => {
   
 
   
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
+
   
 
   
-  useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
-  }, []);
-  
+
 
   
   useEffect(() => {
@@ -76,15 +69,13 @@ const Level4 = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
-      
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
       
 
       <h3>Level4</h3>
@@ -102,6 +93,15 @@ const Level4 = (props: any) => {
 
       
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
       
 
       

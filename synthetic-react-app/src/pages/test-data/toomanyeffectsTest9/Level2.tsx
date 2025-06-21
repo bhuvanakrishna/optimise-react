@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Upload';
+import UI from '../../../components/InputNumber';
 
 import Child from './Child';
 
@@ -48,13 +48,8 @@ const Level2 = (props: any) => {
   
 
   
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
-  }, []);
+
+
   
 
   
@@ -65,6 +60,7 @@ const Level2 = (props: any) => {
     setData({ items });
     setCount(c => c + 1);
   };
+  
   
 
   
@@ -105,6 +101,9 @@ const Level2 = (props: any) => {
 
       
 
+      
+
+    
       
 
       

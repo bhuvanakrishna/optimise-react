@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Slider';
+import UI from '../../../components/Alert';
 
 import Child from './Child';
 
@@ -44,12 +44,18 @@ const Parent = (props: any) => {
 
   
 
+
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
+
+  
+  const handleClick = () => {
+    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
+    setData({ items });
+    setCount(c => c + 1);
+  };
+  
   
 
   
@@ -91,6 +97,9 @@ const Parent = (props: any) => {
         ))}
       
 
+      
+
+    
       
 
       

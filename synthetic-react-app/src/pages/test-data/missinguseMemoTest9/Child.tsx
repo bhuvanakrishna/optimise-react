@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Empty';
+import UI from '../../../components/BackTop';
 
 
 // Context setup for inefficient-context pattern
@@ -42,8 +42,16 @@ const Child = (props: any) => {
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
 
   
+
+  
+
 
   
 
@@ -56,12 +64,16 @@ const Child = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Child</h3>
@@ -76,7 +88,20 @@ const Child = (props: any) => {
       
 
       
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
 
+      
+        <ul>
+          {Array.from({ length: 300 }).map((_, i) => (
+            <li key={i}>Item #{i}</li>
+          ))}
+        </ul>
+      
+
+    
       
 
       

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Upload';
+import UI from '../../../components/Alert';
 
 import Child from './Child';
 
@@ -48,10 +48,15 @@ const Level4 = (props: any) => {
   
 
   
+
+
+  
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -67,6 +72,7 @@ const Level4 = (props: any) => {
     setData({ items });
     setCount(c => c + 1);
   };
+  
   
 
   
@@ -90,7 +96,14 @@ const Level4 = (props: any) => {
       
 
       
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
+      
 
+      
+
+    
       
 
       

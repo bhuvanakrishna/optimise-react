@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Switch';
+import UI from '../../../components/TextArea';
 
 import Level2 from './Level2';
 
@@ -48,13 +48,8 @@ const Parent = (props: any) => {
   
 
   
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
-  }, []);
+
+
   
 
   
@@ -65,6 +60,7 @@ const Parent = (props: any) => {
     setData({ items });
     setCount(c => c + 1);
   };
+  
   
 
   
@@ -105,6 +101,9 @@ const Parent = (props: any) => {
 
       
 
+      
+
+    
       
 
       

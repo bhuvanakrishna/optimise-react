@@ -46,6 +46,14 @@ const Level2 = (props: any) => {
   
 
   
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
+  
+
+  
+
 
   
   useEffect(() => {
@@ -66,6 +74,7 @@ const Level2 = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
@@ -84,15 +93,14 @@ const Level2 = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level3 count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Level3 count={count} data={{ foo: Math.random() }} />
       
 
       
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
+
       
 
+    
       
 
       

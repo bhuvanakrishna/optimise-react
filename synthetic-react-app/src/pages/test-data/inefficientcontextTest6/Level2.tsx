@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Drawer';
+import UI from '../../../components/PasswordInput';
 
 import Level3 from './Level3';
 
@@ -46,13 +46,16 @@ const Level2 = (props: any) => {
   
 
   
+
+  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
   }, []);
   
 
   
+
 
   
   useEffect(() => {
@@ -72,6 +75,7 @@ const Level2 = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   

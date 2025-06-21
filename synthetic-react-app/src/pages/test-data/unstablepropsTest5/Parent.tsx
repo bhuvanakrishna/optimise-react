@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Image';
+import UI from '../../../components/Table';
 
 import Level2 from './Level2';
 
@@ -37,9 +37,11 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
+
+  
   useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
   }, []);
   
 
@@ -47,13 +49,12 @@ const Parent = (props: any) => {
 
   
 
+
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -68,12 +69,16 @@ const Parent = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Parent</h3>
@@ -86,13 +91,9 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level2 count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Level2 count={count} data={{ foo: Math.random() }} />
       
 
-      
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
       
 
       
@@ -103,17 +104,9 @@ const Parent = (props: any) => {
         </ul>
       
 
+    
       
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
+
       
       
     </div>

@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Avatar';
+import UI from '../../../components/Message';
 
 import Level2 from './Level2';
 
@@ -37,11 +37,6 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
-  
 
   
   useEffect(() => {
@@ -51,6 +46,9 @@ const Parent = (props: any) => {
   
 
   
+
+  
+
 
   
   useEffect(() => {
@@ -69,9 +67,14 @@ const Parent = (props: any) => {
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
+  const handleClick = () => {
+    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
+    setData({ items });
+    setCount(c => c + 1);
+  };
+  
+  
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
   
 
   
@@ -94,24 +97,20 @@ const Parent = (props: any) => {
       <UI onClick={handleClick} />
 
       
-        <Level2 count={count} data={{ [String(Math.random())]: Math.random() }} />
+        <Level2 count={count} data={{ foo: Math.random() }} />
+      
+
+      
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
+        ))}
       
 
       
 
+    
       
 
-      
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
       
       
     </div>

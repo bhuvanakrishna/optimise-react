@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Tabs';
+import UI from '../../../components/Switch';
 
 import Child from './Child';
 
@@ -44,6 +44,11 @@ const Parent = (props: any) => {
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
 
   
   useEffect(() => {
@@ -52,6 +57,17 @@ const Parent = (props: any) => {
   }, []);
   
 
+  
+
+
+  
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
+  }, []);
   
 
   
@@ -63,12 +79,16 @@ const Parent = (props: any) => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
   
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Parent</h3>
@@ -90,6 +110,9 @@ const Parent = (props: any) => {
         ))}
       
 
+      
+
+    
       
 
       

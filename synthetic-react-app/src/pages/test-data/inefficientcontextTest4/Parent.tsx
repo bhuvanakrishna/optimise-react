@@ -11,7 +11,7 @@ import React, {
   createContext,
 } from 'react';
 
-import UI from '../../../components/Affix';
+import UI from '../../../components/Button';
 
 import Child from './Child';
 
@@ -39,15 +39,18 @@ const Parent = (props: any) => {
   const [shifted, setShifted] = useState(false);
 
   
-
-  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
   }, []);
   
 
   
+
+  
+
+  
+
 
   
   useEffect(() => {
@@ -67,6 +70,7 @@ const Parent = (props: any) => {
   const handleClick = useCallback(() => {
     startTransition(() => setCount((c) => c + 1));
   }, []);
+  
   
 
   
