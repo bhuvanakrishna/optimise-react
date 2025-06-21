@@ -1,29 +1,50 @@
+import os
 import json
-from pathlib import Path
-import csv
+import pandas as pd
 
-CONFIG = Path(__file__).resolve().parents[1] / 'synthetic-react-app' / 'src' / 'config' / 'testPages.json'
-OUTPUT = Path(__file__).with_name('dataset.csv')
+# Paths
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+config_path = os.path.join(base_dir, 'synthetic-react-app', 'src', 'config', 'testPages.json')
+metrics_dir = os.path.join(base_dir, 'synthetic-react-app', 'metrics')
+output_csv = os.path.join(base_dir, 'ml', 'dataset.csv')
 
-def main() -> None:
-    with CONFIG.open() as f:
-        pages = json.load(f)
+# Load static page configs
+with open(config_path) as f:
+    test_pages = json.load(f)
 
-    records = []
-    for p in pages:
-        records.append({
-            'name': p['pageName'],
-            'pattern': p['pattern'],
-            'depth': p['depth'],
-            'layout': p['layout'],
-            'num_components': len(p.get('components', []))
-        })
+rows = []
 
-    with OUTPUT.open('w', newline='') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=records[0].keys())
-        writer.writeheader()
-        writer.writerows(records)
-    print(f"Dataset written to {OUTPUT}")
+for page in test_pages:
+    page_name = page['pageName']
+    metrics_file = os.path.join(metrics_dir, f'{page_name}.json')
+    
+    if not os.path.exists(metrics_file):
+        print(f'⚠️ Skipping {page_name} — no runtime metrics found.')
+        continue
 
-if __name__ == '__main__':
-    main()
+    with open(metrics_file) as f:
+        runtime_metrics = json.load(f)
+    
+    # Merge static + dynamic
+    merged = {
+        'pageName': page_name,
+        'pattern': page['pattern'],
+        'depth': page['depth'],
+        'layout': page['layout'],
+        'hasLargeImage': page['webVitalsFlags'].get('hasLargeImage', False),
+        'causesLayoutShift': page['webVitalsFlags'].get('causesLayoutShift', False),
+        'slowClickHandler': page['webVitalsFlags'].get('slowClickHandler', False),
+        'deepComponentTree': page['realismFlags'].get('deepComponentTree', False),
+        'bulkDOMNodes': page['realismFlags'].get('bulkDOMNodes', False),
+        'slowNetwork': page['realismFlags'].get('slowNetwork', False),
+        'expensiveEffects': page['realismFlags'].get('expensiveEffects', False),
+        'largeJsonState': page['realismFlags'].get('largeJsonState', False),
+        **runtime_metrics  # dynamic fields like LCP, FID, TBT, etc.
+    }
+
+    rows.append(merged)
+
+# Write to CSV
+df = pd.DataFrame(rows)
+df.to_csv(output_csv, index=False)
+print(f"✅ Dataset written to {output_csv} with {len(df)} rows.")
