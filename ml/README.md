@@ -30,5 +30,6 @@ dependence plot for the most influential feature to the `shap_results`
 directory. Run:
 
 ```bash
+pip install -r requirements.txt
 python shap_analysis.py
 ```

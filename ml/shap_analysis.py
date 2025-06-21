@@ -18,22 +18,37 @@ def main() -> None:
     """Create SHAP summary, bar and dependence plots."""
     df = pd.read_csv(DATASET)
 
-    X = df.drop(columns=["pageName", "pattern", "label"])
+    drop_cols = [
+        "pageName",
+        "pattern",
+        "LCP",
+        "FID",
+        "TBT",
+        "label",
+    ]
+
+    X = df.drop(columns=drop_cols)
 
     # Cast boolean columns to integers so SHAP can handle them
     for col in X.select_dtypes(include="bool").columns:
         X[col] = X[col].astype(int)
 
     # Handle categorical encoding
-    X_encoded = pd.get_dummies(X)
+    X_encoded = pd.get_dummies(X, columns=["layout"], drop_first=True)
 
     model = joblib.load(MODEL)
 
     explainer = shap.TreeExplainer(model)
     shap_values = explainer.shap_values(X_encoded)
 
-    # Binary classification returns a list of arrays
-    values = shap_values[1] if isinstance(shap_values, list) else shap_values
+    if isinstance(shap_values, list):
+        # Older versions return a list by class index
+        values = shap_values[1]
+    elif shap_values.ndim == 3:
+        # Newer versions return (n_samples, n_features, n_classes)
+        values = shap_values[:, :, 1]
+    else:
+        values = shap_values
 
     OUTPUT_DIR.mkdir(exist_ok=True)
 
