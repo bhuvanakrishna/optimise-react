@@ -17,7 +17,17 @@ def main():
     y = df[LABEL_COLUMN]
 
     # Features to drop
-    drop_cols = ['pageName', 'pattern', LABEL_COLUMN]
+    # Exclude metrics that were used to derive the label to avoid
+    # information leakage during training. Otherwise models can
+    # trivially achieve perfect accuracy by looking at these fields.
+    drop_cols = [
+        'pageName',
+        'pattern',
+        'LCP',
+        'FID',
+        'TBT',
+        LABEL_COLUMN,
+    ]
 
     # Handle categorical encoding
     df_encoded = pd.get_dummies(df.drop(columns=drop_cols), columns=['layout'], drop_first=True)
