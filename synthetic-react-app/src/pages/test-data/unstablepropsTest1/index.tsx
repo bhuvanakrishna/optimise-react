@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const unstablepropsTest1 = () => {
+const UnstablepropsTest1 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h2>unstablepropsTest1</h2>
@@ -10,4 +10,4 @@ const unstablepropsTest1 = () => {
   );
 };
 
-export default unstablepropsTest1;
+export default UnstablepropsTest1;

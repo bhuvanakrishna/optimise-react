@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const staleclosuresTest19 = () => {
+const StaleclosuresTest19 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h2>staleclosuresTest19</h2>
@@ -10,4 +10,4 @@ const staleclosuresTest19 = () => {
   );
 };
 
-export default staleclosuresTest19;
+export default StaleclosuresTest19;

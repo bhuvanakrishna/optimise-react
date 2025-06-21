@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const lazyloadingTest28 = () => {
+const LazyloadingTest28 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <h2>lazyloadingTest28</h2>
@@ -10,4 +10,4 @@ const lazyloadingTest28 = () => {
   );
 };
 
-export default lazyloadingTest28;
+export default LazyloadingTest28;

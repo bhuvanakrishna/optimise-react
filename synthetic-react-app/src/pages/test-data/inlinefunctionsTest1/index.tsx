@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const inlinefunctionsTest1 = () => {
+const InlinefunctionsTest1 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h2>inlinefunctionsTest1</h2>
@@ -10,4 +10,4 @@ const inlinefunctionsTest1 = () => {
   );
 };
 
-export default inlinefunctionsTest1;
+export default InlinefunctionsTest1;

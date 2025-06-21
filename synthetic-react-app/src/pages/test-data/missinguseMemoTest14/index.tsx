@@ -1,7 +1,7 @@
 import React from 'react';
 import Parent from './Parent';
 
-const missinguseMemoTest14 = () => {
+const MissinguseMemoTest14 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <h2>missinguseMemoTest14</h2>
@@ -10,4 +10,4 @@ const missinguseMemoTest14 = () => {
   );
 };
 
-export default missinguseMemoTest14;
+export default MissinguseMemoTest14;
