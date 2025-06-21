@@ -12,4 +12,5 @@ synthetic-react-app/node_modules
 synthetic-react-app/build
 synthetic-react-app/.env
 synthetic-react-app/.DS_Store
+synthetic-react-app/src/pages/test-data
 ml/models
