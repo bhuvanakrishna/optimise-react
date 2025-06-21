@@ -1,4 +1,5 @@
 pandas
 scikit-learn
 matplotlib
+scipy<1.12
 shap
