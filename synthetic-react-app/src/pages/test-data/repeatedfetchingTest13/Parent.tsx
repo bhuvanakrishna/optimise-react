@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Popover';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/InputNumber';
 
 import Level2 from './Level2';
 
@@ -21,20 +11,15 @@ import Level2 from './Level2';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Parent = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
+  
+  
   const [shifted, setShifted] = useState(false);
+  
 
   
   useEffect(() => {
@@ -44,12 +29,12 @@ const Parent = (props: any) => {
   
 
   
-
-  
   useEffect(() => {
-    const now = performance.now();
-    while (performance.now() - now < 500) {} // simulate jank
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
   }, []);
+  
+
   
 
   
@@ -81,6 +66,9 @@ const Parent = (props: any) => {
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Parent</h3>

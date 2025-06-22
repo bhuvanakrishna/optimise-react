@@ -1,0 +1,11 @@
+{
+  "pageName": "staleclosuresTest43",
+  "LCP": 5553.294,
+  "FID": 5025.147,
+  "CLS": 0.15901122293798026,
+  "TBT": 4979.129999999999,
+  "renderTime": 5804,
+  "jsBundleSizeKB": 12.7861328125,
+  "hasJank": true,
+  "imageLoadTime": 0
+}

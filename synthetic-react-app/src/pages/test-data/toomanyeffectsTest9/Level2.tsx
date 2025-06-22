@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Tooltip';
+import React, { useState, useEffect, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/PasswordInput';
 
 import Child from './Child';
 
@@ -21,20 +11,13 @@ import Child from './Child';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Level2 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
-  const [shifted, setShifted] = useState(false);
+  
+  
 
   
   useEffect(() => {

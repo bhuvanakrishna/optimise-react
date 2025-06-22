@@ -1,0 +1,11 @@
+{
+  "pageName": "inefficientcontextTest257",
+  "LCP": 526.135,
+  "FID": 35.447,
+  "CLS": 0,
+  "TBT": 0,
+  "renderTime": 477,
+  "jsBundleSizeKB": 8.3271484375,
+  "hasJank": false,
+  "imageLoadTime": 0
+}

@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Empty';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/Affix';
 
 import Level4 from './Level4';
 
@@ -21,20 +11,13 @@ import Level4 from './Level4';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Level3 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
-  const [shifted, setShifted] = useState(false);
+  
+  
 
   
   useEffect(() => {
@@ -93,12 +76,6 @@ const Level3 = (props: any) => {
 
       
 
-      
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
       
 
     

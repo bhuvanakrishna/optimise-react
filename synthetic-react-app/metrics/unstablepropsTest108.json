@@ -1,0 +1,11 @@
+{
+  "pageName": "unstablepropsTest108",
+  "LCP": 2230.3248000000003,
+  "FID": 437,
+  "CLS": 0.09704380371174401,
+  "TBT": 471,
+  "renderTime": 1889.268300024099,
+  "jsBundleSizeKB": 7.8076171875,
+  "hasJank": true,
+  "imageLoadTime": 0
+}

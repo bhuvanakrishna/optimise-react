@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Card';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, createContext, memo } from 'react';
+
+import UI from '../../../components/Table';
 
 import Level3 from './Level3';
 
@@ -23,30 +13,21 @@ const InefficientContext = createContext({});
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Level2 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
-  const [showImage, setShowImage] = useState(false);
-  const [shifted, setShifted] = useState(false);
+  
+  
+
+  
+
+  
 
   
   useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
   }, []);
-  
-
-  
-
   
 
   

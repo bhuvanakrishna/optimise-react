@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/MultiSelect';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/Message';
 
 import Child from './Child';
 
@@ -21,20 +11,15 @@ import Child from './Child';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Level4 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
+  
+  
   const [shifted, setShifted] = useState(false);
+  
 
   
   useEffect(() => {
@@ -44,6 +29,11 @@ const Level4 = (props: any) => {
   
 
   
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
+  
 
   
 
@@ -52,11 +42,9 @@ const Level4 = (props: any) => {
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -78,6 +66,9 @@ const Level4 = (props: any) => {
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Level4</h3>

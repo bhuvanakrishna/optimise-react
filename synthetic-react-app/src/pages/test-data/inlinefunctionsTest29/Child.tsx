@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/RangePicker';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/BackTop';
 
 
 // Context setup for inefficient-context pattern
@@ -19,20 +9,13 @@ import UI from '../../../components/RangePicker';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Child = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
-  const [shifted, setShifted] = useState(false);
+  
+  
 
   
   useEffect(() => {
@@ -41,11 +24,6 @@ const Child = (props: any) => {
   }, []);
   
 
-  
-  useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
-  }, []);
   
 
   

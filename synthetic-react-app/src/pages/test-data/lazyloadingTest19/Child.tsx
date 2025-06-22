@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Input';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/Popover';
 
 
 // Context setup for inefficient-context pattern
@@ -19,26 +9,12 @@ import UI from '../../../components/Input';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Child = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
-  const [showImage, setShowImage] = useState(false);
-  const [shifted, setShifted] = useState(false);
-
   
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
-  }, []);
+  
+
   
 
   
@@ -50,11 +26,9 @@ const Child = (props: any) => {
 
   
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/api/data')
-        .then(res => res.json())
-        .then(setData);
-    }, 1500);
+    fetch('/api/data')
+      .then((res) => res.json())
+      .then(setData);
   }, []);
   
 
@@ -96,17 +70,6 @@ const Child = (props: any) => {
     
       
 
-      
-        {showImage && (
-          <img
-            src="/assets/hero1.jpg"
-            alt="Big Banner"
-            width="100%"
-            height="400"
-            loading="eager"
-            style={{ marginTop: 24 }}
-          />
-        )}
       
       
     </div>

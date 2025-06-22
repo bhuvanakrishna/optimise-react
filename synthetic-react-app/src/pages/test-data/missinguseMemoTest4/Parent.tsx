@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/List';
+import React, { useState, useEffect, useCallback, startTransition } from 'react';
+
+import UI from '../../../components/Descriptions';
 
 import Child from './Child';
 
@@ -21,20 +11,13 @@ import Child from './Child';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Parent = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
-  const [showImage, setShowImage] = useState(false);
+  
+  
   const [shifted, setShifted] = useState(false);
+  
 
   
 
@@ -45,6 +28,11 @@ const Parent = (props: any) => {
   }, []);
   
 
+  
+  useEffect(() => {
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
+  }, []);
   
 
   
@@ -70,8 +58,6 @@ const Parent = (props: any) => {
   }, []);
   
   
-    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
-  
 
   
 
@@ -96,10 +82,6 @@ const Parent = (props: any) => {
         <Child count={count}  />
       
 
-      
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} style={{ padding: 10 }}>Nested Level {i}</div>
-        ))}
       
 
       

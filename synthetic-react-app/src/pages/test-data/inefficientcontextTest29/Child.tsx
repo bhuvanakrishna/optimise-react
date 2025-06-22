@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Modal';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, createContext, memo } from 'react';
+
+import UI from '../../../components/TimePicker';
 
 
 // Context setup for inefficient-context pattern
@@ -21,28 +11,21 @@ const InefficientContext = createContext({});
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Child = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
-  const [showImage, setShowImage] = useState(false);
+  
+  
   const [shifted, setShifted] = useState(false);
+  
+
+  
 
   
   useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
-    return () => clearTimeout(timer);
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
   }, []);
-  
-
   
 
   

@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Select';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/Checkbox';
 
 import Level2 from './Level2';
 
@@ -21,20 +11,15 @@ import Level2 from './Level2';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Parent = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
+  
+  
   const [shifted, setShifted] = useState(false);
+  
 
   
   useEffect(() => {
@@ -43,6 +28,11 @@ const Parent = (props: any) => {
   }, []);
   
 
+  
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
   
 
   
@@ -70,12 +60,17 @@ const Parent = (props: any) => {
   }, []);
   
   
+    const [bigData] = useState(() => Array(10000).fill({ x: Math.random(), y: 'a'.repeat(1000) }));
+  
 
   
 
   
   return (
     <div style={{ padding: 12 }}>
+      
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
       
 
       <h3>Parent</h3>

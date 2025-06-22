@@ -1,0 +1,11 @@
+{
+  "pageName": "toomanyeffectsTest210",
+  "LCP": 2389.3107499999996,
+  "FID": 426,
+  "CLS": 0,
+  "TBT": 456,
+  "renderTime": 2033.0922980002401,
+  "jsBundleSizeKB": 8.681640625,
+  "hasJank": true,
+  "imageLoadTime": 0
+}

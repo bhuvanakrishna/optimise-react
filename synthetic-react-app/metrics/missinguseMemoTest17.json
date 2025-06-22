@@ -1,11 +1,11 @@
 {
   "pageName": "missinguseMemoTest17",
-  "LCP": 5143.72395,
-  "FID": 6097,
-  "CLS": 0.1329006667781172,
-  "TBT": 6615.587425,
-  "renderTime": 8409.803375987964,
-  "jsBundleSizeKB": 11.0419921875,
+  "LCP": 1976.1369000000002,
+  "FID": 421,
+  "CLS": 0,
+  "TBT": 438.0000000000002,
+  "renderTime": 2185.9361380483724,
+  "jsBundleSizeKB": 7.51953125,
   "hasJank": true,
   "imageLoadTime": 0
 }

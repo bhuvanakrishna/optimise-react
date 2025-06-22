@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Progress';
+import React, { useState, useEffect, useCallback, startTransition } from 'react';
+
+import UI from '../../../components/Badge';
 
 
 // Context setup for inefficient-context pattern
@@ -19,20 +9,13 @@ import UI from '../../../components/Progress';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Child = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
-  const [shifted, setShifted] = useState(false);
+  
+  
 
   
   useEffect(() => {

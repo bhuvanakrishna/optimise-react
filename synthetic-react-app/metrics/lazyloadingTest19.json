@@ -1,11 +1,11 @@
 {
   "pageName": "lazyloadingTest19",
-  "LCP": 2122.8087499999997,
-  "FID": 147,
-  "CLS": 0.2347068948882552,
-  "TBT": 193.50000000000045,
-  "renderTime": 2286.204590025902,
-  "jsBundleSizeKB": 13.6669921875,
+  "LCP": 2744.1474999999996,
+  "FID": 430,
+  "CLS": 0,
+  "TBT": 446,
+  "renderTime": 1655.9016720203877,
+  "jsBundleSizeKB": 13.8955078125,
   "hasJank": true,
   "imageLoadTime": 0
 }

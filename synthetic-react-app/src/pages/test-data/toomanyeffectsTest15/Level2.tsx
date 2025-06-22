@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/BackTop';
+import React, { useState, useEffect, memo } from 'react';
+
+import UI from '../../../components/Alert';
 
 import Level3 from './Level3';
 
@@ -21,23 +11,28 @@ import Level3 from './Level3';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Level2 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
+  
+  
   const [shifted, setShifted] = useState(false);
-
   
 
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImage(true), 2000); // simulate delayed LCP
+    return () => clearTimeout(timer);
+  }, []);
+  
+
+  
+  useEffect(() => {
+    const shiftTimer = setTimeout(() => setShifted(true), 1500);
+    return () => clearTimeout(shiftTimer);
+  }, []);
   
 
   
@@ -58,9 +53,11 @@ const Level2 = (props: any) => {
   
 
   
-  const handleClick = useCallback(() => {
-    startTransition(() => setCount((c) => c + 1));
-  }, []);
+  const handleClick = () => {
+    const items = Array(1000000).fill(0).map((_, i) => i ** 2).reduce((a, b) => a + b, 0);
+    setData({ items });
+    setCount(c => c + 1);
+  };
   
   
 
@@ -85,6 +82,9 @@ const Level2 = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
+        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
+
+      
 
       <h3>Level2</h3>
       <p>Count: {count}</p>
@@ -104,6 +104,17 @@ const Level2 = (props: any) => {
     
       
 
+      
+        {showImage && (
+          <img
+            src="/assets/hero1.jpg"
+            alt="Big Banner"
+            width="100%"
+            height="400"
+            loading="eager"
+            style={{ marginTop: 24 }}
+          />
+        )}
       
       
     </div>

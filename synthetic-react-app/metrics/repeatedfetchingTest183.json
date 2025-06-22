@@ -1,0 +1,11 @@
+{
+  "pageName": "repeatedfetchingTest183",
+  "LCP": 521.372,
+  "FID": 41.475,
+  "CLS": 0,
+  "TBT": 0,
+  "renderTime": 489,
+  "jsBundleSizeKB": 12.4267578125,
+  "hasJank": false,
+  "imageLoadTime": 0
+}

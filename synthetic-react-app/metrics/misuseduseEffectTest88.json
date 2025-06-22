@@ -1,0 +1,11 @@
+{
+  "pageName": "misuseduseEffectTest88",
+  "LCP": 2561.874,
+  "FID": 2024.673,
+  "CLS": 0,
+  "TBT": 1974.6729999999998,
+  "renderTime": 2414,
+  "jsBundleSizeKB": 9.208984375,
+  "hasJank": true,
+  "imageLoadTime": 0
+}

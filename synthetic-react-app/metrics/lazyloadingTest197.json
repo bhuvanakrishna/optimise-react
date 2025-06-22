@@ -1,0 +1,11 @@
+{
+  "pageName": "lazyloadingTest197",
+  "LCP": 3534.129,
+  "FID": 3034.263,
+  "CLS": 0,
+  "TBT": 2984.263,
+  "renderTime": 3425,
+  "jsBundleSizeKB": 7.4482421875,
+  "hasJank": true,
+  "imageLoadTime": 0
+}

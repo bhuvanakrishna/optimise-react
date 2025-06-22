@@ -1,0 +1,11 @@
+{
+  "pageName": "propdrillingTest47",
+  "LCP": 2741.4555000000005,
+  "FID": 413,
+  "CLS": 0,
+  "TBT": 437,
+  "renderTime": 1724.5722620251267,
+  "jsBundleSizeKB": 13.8955078125,
+  "hasJank": true,
+  "imageLoadTime": 0
+}

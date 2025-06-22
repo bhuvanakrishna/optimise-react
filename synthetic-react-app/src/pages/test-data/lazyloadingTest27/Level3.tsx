@@ -1,17 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useContext,
-  Suspense,
-  lazy,
-  memo,
-  startTransition,
-  createContext,
-} from 'react';
 
-import UI from '../../../components/Progress';
+import React, { useState, useEffect, useMemo, useCallback, startTransition, memo } from 'react';
+
+import UI from '../../../components/Badge';
 
 import Level4 from './Level4';
 
@@ -21,20 +11,13 @@ import Level4 from './Level4';
 
 // Safe guards
 
-
-
-
-
-
-
-
-
-
 const Level3 = (props: any) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<any>(null);
+  
   const [showImage, setShowImage] = useState(false);
-  const [shifted, setShifted] = useState(false);
+  
+  
 
   
   useEffect(() => {
@@ -44,22 +27,24 @@ const Level3 = (props: any) => {
   
 
   
+
+  
   useEffect(() => {
-    const shiftTimer = setTimeout(() => setShifted(true), 1500);
-    return () => clearTimeout(shiftTimer);
+    const now = performance.now();
+    while (performance.now() - now < 500) {} // simulate jank
   }, []);
   
 
   
 
-  
-
 
   
   useEffect(() => {
-    fetch('/api/data')
-      .then((res) => res.json())
-      .then(setData);
+    setTimeout(() => {
+      fetch('/api/data')
+        .then(res => res.json())
+        .then(setData);
+    }, 1500);
   }, []);
   
 
@@ -82,9 +67,6 @@ const Level3 = (props: any) => {
   return (
     <div style={{ padding: 12 }}>
       
-        <div style={{ height: shifted ? 300 : 150, background: '#f0f0f0' }} />
-
-      
 
       <h3>Level3</h3>
       <p>Count: {count}</p>
@@ -101,12 +83,6 @@ const Level3 = (props: any) => {
 
       
 
-      
-        <ul>
-          {Array.from({ length: 300 }).map((_, i) => (
-            <li key={i}>Item #{i}</li>
-          ))}
-        </ul>
       
 
     

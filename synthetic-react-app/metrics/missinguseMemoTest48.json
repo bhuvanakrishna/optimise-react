@@ -1,0 +1,11 @@
+{
+  "pageName": "missinguseMemoTest48",
+  "LCP": 1681.36505,
+  "FID": 449,
+  "CLS": 0.08212225728968787,
+  "TBT": 426.5000000000001,
+  "renderTime": 1863.4945319914486,
+  "jsBundleSizeKB": 2.8271484375,
+  "hasJank": true,
+  "imageLoadTime": 0
+}
