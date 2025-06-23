@@ -54,7 +54,6 @@ def main():
     X = df.drop(columns=drop_cols)
 
     # Handle boolean & categorical
-    # Handle boolean & categorical
     for col in X.select_dtypes(include="bool").columns:
         X[col] = X[col].astype(int)
 
@@ -62,6 +61,13 @@ def main():
 
     # Fix: ensure no nulls and all float type
     X_encoded = X_encoded.fillna(0).astype("float32")
+
+    # Apply the same scaler used during training if available
+    scaler_path = MODELS_DIR / "scaler.joblib"
+    if scaler_path.exists():
+        scaler = joblib.load(scaler_path)
+        scaled_array = scaler.transform(X_encoded)
+        X_encoded = pd.DataFrame(scaled_array, columns=X_encoded.columns)
 
 
     # Encode label if needed (for some models like XGBoost)
