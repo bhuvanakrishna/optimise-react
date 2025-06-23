@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import shap
 import joblib
-from sklearn.preprocessing import LabelEncoder
+
 
 DATASET = Path(__file__).with_name("dataset.csv")
 MODELS_DIR = Path(__file__).with_name("models")
@@ -33,7 +33,12 @@ def get_explainer(model, X_encoded, model_name):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str, default="random_forest", help="Model name without .joblib")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="random_forest",
+        help="Model name without .joblib",
+    )
     args = parser.parse_args()
 
     model_name = args.model
@@ -59,9 +64,7 @@ def main():
         X_encoded = pd.DataFrame(scaled_array, columns=X_encoded.columns)
 
 
-    # Encode label if needed (for some models like XGBoost)
-    label_encoder = LabelEncoder()
-    y = label_encoder.fit_transform(df["label"])
+
 
     shap.initjs()
     explainer = get_explainer(model, X_encoded, model_name)
