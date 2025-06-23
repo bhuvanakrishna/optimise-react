@@ -2,12 +2,11 @@ import argparse
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+
 import numpy as np
 import pandas as pd
 import shap
 import joblib
-
-from sklearn.preprocessing import LabelEncoder
 
 DATASET = Path(__file__).with_name("dataset.csv")
 MODELS_DIR = Path(__file__).with_name("models")
@@ -24,10 +23,9 @@ def load_model(model_name: str):
 def get_explainer(model, X_encoded, model_name):
     """Return the appropriate SHAP explainer based on model type"""
     if model_name == "xgboost":
-        import xgboost as xgb
+        # Tree booster models handle their own data internally
         return shap.Explainer(model)
     elif model_name == "lightgbm":
-        import lightgbm as lgb
         return shap.Explainer(model)
     elif hasattr(model, "predict_proba"):
         # Tree-based or linear
@@ -38,7 +36,12 @@ def get_explainer(model, X_encoded, model_name):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str, default="random_forest", help="Model name without .joblib")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="random_forest",
+        help="Model name without .joblib",
+    )
     args = parser.parse_args()
 
     model_name = args.model
@@ -68,12 +71,6 @@ def main():
         scaler = joblib.load(scaler_path)
         scaled_array = scaler.transform(X_encoded)
         X_encoded = pd.DataFrame(scaled_array, columns=X_encoded.columns)
-
-
-    # Encode label if needed (for some models like XGBoost)
-    label_encoder = LabelEncoder()
-    y = label_encoder.fit_transform(df["label"])
-
     explainer = get_explainer(model, X_encoded, model_name)
     shap_values = explainer(X_encoded)
 
