@@ -1,12 +1,10 @@
 import argparse
 from pathlib import Path
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import shap
 import joblib
-
 from sklearn.preprocessing import LabelEncoder
 
 DATASET = Path(__file__).with_name("dataset.csv")
@@ -24,13 +22,10 @@ def load_model(model_name: str):
 def get_explainer(model, X_encoded, model_name):
     """Return the appropriate SHAP explainer based on model type"""
     if model_name == "xgboost":
-        import xgboost as xgb
         return shap.Explainer(model)
     elif model_name == "lightgbm":
-        import lightgbm as lgb
         return shap.Explainer(model)
     elif hasattr(model, "predict_proba"):
-        # Tree-based or linear
         return shap.Explainer(model, X_encoded)
     else:
         raise ValueError(f"No suitable SHAP explainer found for {model_name}")
@@ -47,19 +42,13 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(DATASET)
-
-    drop_cols = [
-        "pageName", "pattern", "LCP", "FID", "TBT", "label"
-    ]
+    drop_cols = ["pageName", "pattern", "LCP", "FID", "TBT", "label"]
     X = df.drop(columns=drop_cols)
 
     # Handle boolean & categorical
     for col in X.select_dtypes(include="bool").columns:
         X[col] = X[col].astype(int)
-
     X_encoded = pd.get_dummies(X, columns=["layout"], drop_first=True)
-
-    # Fix: ensure no nulls and all float type
     X_encoded = X_encoded.fillna(0).astype("float32")
 
     # Apply the same scaler used during training if available
@@ -74,47 +63,63 @@ def main():
     label_encoder = LabelEncoder()
     y = label_encoder.fit_transform(df["label"])
 
+    shap.initjs()
     explainer = get_explainer(model, X_encoded, model_name)
     shap_values = explainer(X_encoded)
 
-    # Summary (beeswarm)
+    # ---- PNG Summary Plot ----
     plt.figure()
     shap.summary_plot(shap_values, X_encoded, show=False)
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / "summary.png")
     plt.close()
 
-    # Bar plot
+    # ---- PNG Bar Plot ----
     plt.figure()
     shap.summary_plot(shap_values, X_encoded, plot_type="bar", show=False)
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / "bar.png")
     plt.close()
 
-    # Dependence plot for top feature
+    # ---- Top Feature Dependence Plot ----
     if hasattr(shap_values, "values"):
         shap_array = shap_values.values
     else:
         shap_array = shap_values
 
-    # If list output (e.g., from predict_proba), take class 1
     if isinstance(shap_array, list):
         shap_array = shap_array[1]
-
-    # Handle multi-class outputs
     if getattr(shap_array, "ndim", np.array(shap_array).ndim) == 3:
         shap_array = np.array(shap_array)[:, :, 1]
 
     mean_abs_shap = np.abs(shap_array).mean(axis=0)
     top_feature = X_encoded.columns[np.argmax(mean_abs_shap)]
     plt.figure()
-
-    # Now safe to call
     shap.dependence_plot(top_feature, shap_array, X_encoded, show=False)
-
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / f"{top_feature}_dependence.png")
     plt.close()
+
+    # ---- HTML Interactive Summary Plot ----
+    # SHAP interactive summary plot (HTML)
+    shap.initjs()
+    shap_html_path = OUTPUT_DIR / "summary.html"
+    shap.save_html(str(shap_html_path), shap.summary_plot(shap_values, X_encoded, show=False))
+
+
+    # ---- HTML Force Plots (Top 10 Rows) ----
+    force_html_path = OUTPUT_DIR / "force_plots.html"
+    with open(force_html_path, "w") as f:
+        f.write("<html><head>" + shap.getjs() + "</head><body>\n")
+        for i in range(min(10, len(X_encoded))):
+            force = shap.plots.force(
+                explainer.expected_value if isinstance(explainer.expected_value, (int, float)) else explainer.expected_value[1],
+                shap_array[i],
+                X_encoded.iloc[i],
+                matplotlib=False,
+            )
+            f.write(force.html() + "<br><br>\n")
+        f.write("</body></html>")
 
     print(f"✅ SHAP plots saved in {OUTPUT_DIR}")
 
