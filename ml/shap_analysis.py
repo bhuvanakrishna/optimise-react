@@ -44,7 +44,7 @@ def main():
     model_name = args.model
     model = load_model(model_name)
     OUTPUT_DIR = OUTPUT_ROOT / model_name
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(DATASET)
 
@@ -86,19 +86,22 @@ def main():
     plt.close()
 
     # Dependence plot for top feature
-    mean_abs_shap = np.abs(shap_values.values).mean(axis=0)
-    top_feature = X_encoded.columns[np.argmax(mean_abs_shap)]
-    plt.figure()
-    
-    # Determine proper SHAP values shape
     if hasattr(shap_values, "values"):
         shap_array = shap_values.values
-    elif isinstance(shap_values, list):
-        shap_array = shap_values[1]  # For binary classifier: class 1
-    elif shap_values.ndim == 3:
-        shap_array = shap_values[:, :, 1]
     else:
         shap_array = shap_values
+
+    # If list output (e.g., from predict_proba), take class 1
+    if isinstance(shap_array, list):
+        shap_array = shap_array[1]
+
+    # Handle multi-class outputs
+    if getattr(shap_array, "ndim", np.array(shap_array).ndim) == 3:
+        shap_array = np.array(shap_array)[:, :, 1]
+
+    mean_abs_shap = np.abs(shap_array).mean(axis=0)
+    top_feature = X_encoded.columns[np.argmax(mean_abs_shap)]
+    plt.figure()
 
     # Now safe to call
     shap.dependence_plot(top_feature, shap_array, X_encoded, show=False)
