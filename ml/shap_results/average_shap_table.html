@@ -1,0 +1,65 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Top SHAP Features</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 2rem;
+            background-color: #fafafa;
+            color: #333;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #eef6ff;
+        }
+        td {
+            border-bottom: 1px solid #eee;
+        }
+        .right {
+            text-align: right;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+    </head>
+    <body>
+    <h2>Top Features by SHAP (Averaged Across Models)</h2>
+    <table>
+        <tr>
+        <th class="center">Rank</th>
+        <th>Feature</th>
+        <th class="right">Avg SHAP</th>
+        <th>Interpretation</th>
+        </tr>
+        <tr><td class='center'>1</td><td>expensiveEffects</td><td class='right'>2.0857</td><td>Heavy useEffect logic slowing down render</td></tr><tr><td class='center'>2</td><td>pattern_too-many-effects</td><td class='right'>0.8509</td><td>Too many useEffects triggering re-renders</td></tr><tr><td class='center'>3</td><td>pattern_unstable-props</td><td class='right'>0.8324</td><td>Unstable props causing unnecessary updates</td></tr><tr><td class='center'>4</td><td>pattern_prop-drilling</td><td class='right'>0.8155</td><td>Deep prop passing leading to inefficiency</td></tr><tr><td class='center'>5</td><td>pattern_missing-useMemo</td><td class='right'>0.8078</td><td>Missing useMemo for heavy computations</td></tr><tr><td class='center'>6</td><td>depth</td><td class='right'>0.4267</td><td>Deep component nesting increases rendering cost</td></tr><tr><td class='center'>7</td><td>bulkDOMNodes</td><td class='right'>0.3812</td><td>Too many DOM nodes rendered simultaneously</td></tr><tr><td class='center'>8</td><td>causesLayoutShift</td><td class='right'>0.1510</td><td>Causes layout instability (contributes to CLS)</td></tr><tr><td class='center'>9</td><td>slowNetwork</td><td class='right'>0.1361</td><td>Network slowness delays critical content load</td></tr><tr><td class='center'>10</td><td>hasLargeImage</td><td class='right'>0.1335</td><td>Large image assets impacting performance</td></tr><tr><td class='center'>11</td><td>deepComponentTree</td><td class='right'>0.1227</td><td>Many nested components increase processing</td></tr><tr><td class='center'>12</td><td>layout_row</td><td class='right'>0.1147</td><td>Layout row usage may increase layout calculation cost</td></tr><tr><td class='center'>13</td><td>pattern_inline-functions</td><td class='right'>0.1055</td><td>Inline functions break memoization</td></tr><tr><td class='center'>14</td><td>slowClickHandler</td><td class='right'>0.0804</td><td>Heavy logic inside click handlers</td></tr><tr><td class='center'>15</td><td>largeJsonState</td><td class='right'>0.0681</td><td>Huge state objects increase memory and processing time</td></tr><tr><td class='center'>16</td><td>pattern_lazy-loading</td><td class='right'>0.0480</td><td>Lazy loading logic delaying critical resources</td></tr><tr><td class='center'>17</td><td>pattern_misused-useEffect</td><td class='right'>0.0412</td><td>Improper dependencies or misuse of useEffect</td></tr><tr><td class='center'>18</td><td>pattern_repeated-fetching</td><td class='right'>0.0407</td><td>Unnecessary or duplicate API calls</td></tr><tr><td class='center'>19</td><td>pattern_stale-closures</td><td class='right'>0.0175</td><td>Closures referring to outdated state/props</td></tr>
+    </table>
+    </body>
+    </html>
+    

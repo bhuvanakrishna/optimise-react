@@ -1,3 +1,6 @@
+# this file runs manually for one model given through cli 
+
+
 import argparse
 from pathlib import Path
 import matplotlib.pyplot as plt
@@ -11,6 +14,11 @@ DATASET = Path(__file__).with_name("dataset.csv")
 MODELS_DIR = Path(__file__).with_name("models")
 OUTPUT_ROOT = Path(__file__).with_name("shap_results")
 
+LABEL_COLUMN = "label"
+DYNAMIC_METRICS = [
+    "LCP", "FID", "CLS", "TBT", "renderTime", "jsBundleSizeKB",
+    "imageLoadTime", "hasJank",
+]
 
 def load_model(model_name: str):
     path = MODELS_DIR / f"{model_name}.joblib"
@@ -47,7 +55,7 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(DATASET)
-    drop_cols = ["pageName", "pattern", "LCP", "FID", "TBT", "label"]
+    drop_cols = ["pageName", "pattern", LABEL_COLUMN] + DYNAMIC_METRICS
     X = df.drop(columns=drop_cols)
 
     # Handle boolean & categorical
