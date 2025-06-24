@@ -96,18 +96,25 @@ def main():
         shap_array = np.array(shap_array)[:, :, 1]
 
     mean_abs_shap = np.abs(shap_array).mean(axis=0)
-    top_feature = X_encoded.columns[np.argmax(mean_abs_shap)]
-    plt.figure()
-    shap.dependence_plot(top_feature, shap_array, X_encoded, show=False)
-    plt.tight_layout()
-    plt.savefig(OUTPUT_DIR / f"{top_feature}_dependence.png")
-    plt.close()
+    top_indices = np.argsort(mean_abs_shap)[-5:][::-1]
+    for i in top_indices:
+        feature_name = X_encoded.columns[i]
+        plt.figure()
+        shap.dependence_plot(feature_name, shap_array, X_encoded, show=False)
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / f"{feature_name}_dependence.png")
+        plt.close()
 
     # ---- HTML Interactive Summary Plot ----
     # SHAP interactive summary plot (HTML)
     shap.initjs()
     shap_html_path = OUTPUT_DIR / "summary.html"
-    shap.save_html(str(shap_html_path), shap.summary_plot(shap_values, X_encoded, show=False))
+    summary_force = shap.plots.force(
+        explainer.expected_value if isinstance(explainer.expected_value, (int, float)) else explainer.expected_value[1],
+        shap_array,
+        X_encoded,
+    )
+    shap.save_html(str(shap_html_path), summary_force)
 
 
     # ---- HTML Force Plots (Top 10 Rows) ----

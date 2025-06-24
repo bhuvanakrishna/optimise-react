@@ -24,7 +24,7 @@ for page in test_pages:
 
     with open(metrics_file) as f:
         runtime_metrics = json.load(f)
-    
+
     # Merge static + dynamic
     merged = {
         'pageName': page_name,
@@ -44,15 +44,23 @@ for page in test_pages:
 
     rows.append(merged)
 
-# Write to CSV
+# Create DataFrame
 df = pd.DataFrame(rows)
 
+# Improved composite label logic
 def label_performance(row):
-    if row["LCP"] > 4000 or row["TBT"] > 1000 or row["FID"] > 500:
-        return "slow"
-    return "fast"
+    return "slow" if (
+        row.get("LCP", 0) > 4000 or
+        row.get("TBT", 0) > 1000 or
+        row.get("FID", 0) > 500 or
+        row.get("CLS", 0) > 0.25 or
+        row.get("renderTime", 0) > 3000 or
+        row.get("imageLoadTime", 0) > 3000 or
+        row.get("hasJank", False)
+    ) else "fast"
 
 df["label"] = df.apply(label_performance, axis=1)
 
+# Save
 df.to_csv(output_csv, index=False)
 print(f"✅ Dataset written to {output_csv} with {len(df)} rows.")

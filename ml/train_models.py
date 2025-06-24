@@ -12,32 +12,25 @@ import lightgbm as lgb
 import joblib
 from sklearn.preprocessing import LabelEncoder
 
-
 DATASET = Path(__file__).with_name('dataset.csv')
 MODELS_DIR = Path(__file__).with_name('models')
 LABEL_COLUMN = 'label'
 
+# These are the runtime/dynamic metrics we must exclude from input features
+DYNAMIC_METRICS = ['LCP', 'FID', 'CLS', 'TBT', 'renderTime', 'jsBundleSizeKB', 'imageLoadTime', 'hasJank']
+
 def main():
     df = pd.read_csv(DATASET)
+
+    # Drop dynamic metrics from inputs
+    drop_cols = ['pageName', 'pattern', LABEL_COLUMN] + DYNAMIC_METRICS
+    X = pd.get_dummies(df.drop(columns=drop_cols), columns=['layout'], drop_first=True).astype(float)
     y = df[LABEL_COLUMN]
-
-    drop_cols = [
-        'pageName',
-        'pattern',
-        'LCP',
-        'FID',
-        'TBT',
-        LABEL_COLUMN,
-    ]
-
-    # Encode categorical
-    df_encoded = pd.get_dummies(df.drop(columns=drop_cols), columns=['layout'], drop_first=True)
-    X = df_encoded.astype(float)
 
     # Split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    # Scale features
+    # Scale
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
@@ -61,26 +54,24 @@ def main():
         ], voting='hard')
     }
 
-    # Label encoding for XGBoost
+    # Encode for XGBoost (if needed)
     le = LabelEncoder()
     y_encoded = le.fit_transform(y)
 
-
     for name, model in models.items():
+        print(f"\n--- Training {name} ---")
         if name == 'xgboost':
             model.fit(X_train_scaled, y_encoded[y_train.index])
             preds = model.predict(X_test_scaled)
             preds_decoded = le.inverse_transform(preds)
-            print(f"--- {name} ---")
             print(classification_report(y_test, preds_decoded))
         else:
             model.fit(X_train_scaled, y_train)
             preds = model.predict(X_test_scaled)
-            print(f"--- {name} ---")
             print(classification_report(y_test, preds))
 
         joblib.dump(model, MODELS_DIR / f'{name}.joblib')
-        print(f'{name} model saved')
+        print(f'{name} model saved ✔️')
 
 if __name__ == '__main__':
     main()
