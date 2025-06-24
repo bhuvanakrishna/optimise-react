@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import classification_report
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import (
@@ -14,49 +14,37 @@ from sklearn.svm import SVC
 import xgboost as xgb
 import lightgbm as lgb
 import joblib
-from sklearn.preprocessing import LabelEncoder
 
+# Paths and constants
 DATASET = Path(__file__).with_name("dataset.csv")
 MODELS_DIR = Path(__file__).with_name("models")
+MODELS_DIR.mkdir(exist_ok=True)
 LABEL_COLUMN = "label"
-
-# These are the runtime/dynamic metrics we must exclude from input features
 DYNAMIC_METRICS = [
-    "LCP",
-    "FID",
-    "CLS",
-    "TBT",
-    "renderTime",
-    "jsBundleSizeKB",
-    "imageLoadTime",
-    "hasJank",
+    "LCP", "FID", "CLS", "TBT", "renderTime", "jsBundleSizeKB",
+    "imageLoadTime", "hasJank",
 ]
-
 
 def main():
     df = pd.read_csv(DATASET)
 
-    # Drop dynamic metrics from inputs
+    # Prepare features
     drop_cols = ["pageName", "pattern", LABEL_COLUMN] + DYNAMIC_METRICS
-    X = pd.get_dummies(
-        df.drop(columns=drop_cols), columns=["layout"], drop_first=True
-    ).astype(float)
+    X = pd.get_dummies(df.drop(columns=drop_cols), columns=["layout"], drop_first=True).astype(float)
     y = df[LABEL_COLUMN]
 
-    # Split
+    # Train/test split
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
 
-    # Scale
+    # Scaling
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
-
-    # Save scaler
-    MODELS_DIR.mkdir(exist_ok=True)
     joblib.dump(scaler, MODELS_DIR / "scaler.joblib")
 
+    # Models and parameters
     models = {
         "decision_tree": DecisionTreeClassifier(),
         "random_forest": RandomForestClassifier(),
@@ -100,39 +88,56 @@ def main():
         },
     }
 
-    # Encode for XGBoost (if needed)
+    # Label encoding for XGBoost
     le = LabelEncoder()
     y_encoded = le.fit_transform(y)
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
+    all_results = []
+
     for name, model in models.items():
         print(f"\n--- Training {name} ---")
         grid_params = param_grids.get(name)
 
+        # Use label-encoded y if needed
+        target = y_encoded[y_train.index] if name == "xgboost" else y_train
+
         if grid_params:
-            search = GridSearchCV(
-                model, grid_params, cv=cv, n_jobs=-1, scoring="accuracy"
-            )
-            target = y_encoded[y_train.index] if name == "xgboost" else y_train
+            search = GridSearchCV(model, grid_params, cv=cv, n_jobs=-1, scoring="accuracy")
             search.fit(X_train_scaled, target)
             best_model = search.best_estimator_
             print(f"Best params: {search.best_params_}")
         else:
-            best_model = model.fit(
-                X_train_scaled,
-                y_encoded[y_train.index] if name == "xgboost" else y_train,
-            )
+            best_model = model.fit(X_train_scaled, target)
 
+        # Predict and evaluate
         preds = best_model.predict(X_test_scaled)
         if name == "xgboost":
             preds = le.inverse_transform(preds)
-        report = classification_report(y_test, preds)
-        print(report)
 
+        report = classification_report(y_test, preds, output_dict=True)
+        print(classification_report(y_test, preds))
+
+        # Save model
         joblib.dump(best_model, MODELS_DIR / f"{name}.joblib")
         print(f"{name} model saved ✔️")
 
+        # Store summary for CSV
+        all_results.append({
+            "model": name,
+            "accuracy": report["accuracy"],
+            "precision_fast": report["fast"]["precision"],
+            "recall_fast": report["fast"]["recall"],
+            "f1_fast": report["fast"]["f1-score"],
+            "precision_slow": report["slow"]["precision"],
+            "recall_slow": report["slow"]["recall"],
+            "f1_slow": report["slow"]["f1-score"],
+        })
+
+    # Save to CSV
+    pd.DataFrame(all_results).to_csv(MODELS_DIR / "model_scores.csv", index=False)
+    print("\n✅ All model scores saved to model_scores.csv")
 
 if __name__ == "__main__":
     main()
