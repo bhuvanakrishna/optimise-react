@@ -1,16 +1,10 @@
 import argparse
-import json
 import re
-import subprocess
-import os
-from datetime import datetime
 from pathlib import Path
-import difflib
 import logging
 import joblib
 import pandas as pd
 import shap
-import traceback
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -150,6 +144,8 @@ def iter_code_files(base: Path):
 
 
 def generate_prompts(repo_path: Path, features: dict, top_feats: list[tuple[str, float]]):
+    """Generate a single optimisation prompt covering all project files."""
+
     prompt_dir = Path(__file__).parent / "prompts"
     prompt_dir.mkdir(exist_ok=True)
     all_prompts_path = prompt_dir / f"{repo_path.name}_prompt.txt"
@@ -162,32 +158,49 @@ def generate_prompts(repo_path: Path, features: dict, top_feats: list[tuple[str,
         for name, _ in active_feats
     ]
 
+    file_entries = []
+    for code_path in iter_code_files(repo_path):
+        try:
+            code_text = code_path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        relative = code_path.relative_to(repo_path)
+        file_entries.append((relative, code_text, code_path.suffix.lstrip(".")))
+
+    if not file_entries:
+        return
+
+    header_lines = [
+        "You are an expert React performance engineer.",
+        "",
+        "For each of the following files:",
+    ]
+    header_lines += [str(p[0]) for p in file_entries] + ["", "Apply the following performance optimizations:"]
+    header_lines += ["- " + h for h in hints]
+    header_lines += [
+        "",
+        "For each file, apply the optimizations directly to the code provided below.",
+        "Then, return a single ZIP file (base64 encoded) with the original folder structure preserved and no placeholders or dummy files.",
+        "\u26a0\ufe0f Do not include explanations, only the optimized code.",
+        "",
+        "=== Begin Files ===",
+        "",
+    ]
+
+    file_lines = []
+    for rel, text, suffix in file_entries:
+        lang = suffix if suffix else "txt"
+        file_lines.append(f"--- {rel} ---")
+        file_lines.append(f"```{lang}")
+        file_lines.append(text)
+        file_lines.append("```")
+        file_lines.append("")
+
+    prompt = "\n".join(header_lines + file_lines)
+
     with open(all_prompts_path, "w", encoding="utf-8") as f:
-        for code_path in iter_code_files(repo_path):
-            try:
-                code_text = code_path.read_text(encoding="utf-8")
-            except Exception:
-                continue
-
-            relative_path = code_path.relative_to(repo_path)
-            prompt = (
-                f"=== Prompt for {relative_path} ===\n\n"
-                "You are an expert React performance engineer. Do not add new features.\n"
-                "Focus only on the listed optimizations.\n\n"
-                "You must apply the listed performance optimizations to each file's actual content before archiving.\n"
-                "Apply these suggestions:\n- " + "\n- ".join(hints) + "\n\n" +
-                "Example:\n"
-                "Bad:\n  <button onClick={() => setCount(c => c + 1)}>Click</button>\n\n"
-                "Better:\n  const handleClick = useCallback(() => setCount(c => c + 1), []);\n"
-                "  <button onClick={handleClick}>Click</button>\n\n"
-                f"Code:\n{code_text}\n\n"
-                "First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.\n"
-                "Do not include any additional explanation or commentary. Give me the downloadable zip file.\n"
-                "Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.\n"
-            )
-
-            print(prompt)
-            f.write(prompt + "\n")
+        print(prompt)
+        f.write(prompt + "\n")
 
 
 def main():
