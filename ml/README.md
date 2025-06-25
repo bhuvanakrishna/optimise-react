@@ -39,7 +39,9 @@ python shap_analysis.py
 `optimise_cli.py` can analyse a React project and optionally generate optimised
 code with an LLM. You may use a local transformers model with `--llm` or call a
 remote OpenAI model with `--openai-model`. Pass `--verbose` to see detailed logs
-during the generation step.
+during the generation step, including progress messages while a local model is
+loading.
+
 
 ### Local model
 
