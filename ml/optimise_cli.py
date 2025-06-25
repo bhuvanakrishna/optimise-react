@@ -341,6 +341,7 @@ def main():
                             )
                             generated = ""
                             continue
+
                         gen_kwargs = {
                             **inputs,
                             "max_new_tokens": output_limit,
