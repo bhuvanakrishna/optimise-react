@@ -42,6 +42,7 @@ remote OpenAI model with `--openai-model`. Pass `--verbose` to see detailed logs
 during the generation step, including progress messages while a local model is
 loading.
 
+
 ### Local model
 
 ```bash

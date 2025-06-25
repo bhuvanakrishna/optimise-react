@@ -289,6 +289,7 @@ def main():
                         # Fall back to local generation using transformers
                         logging.info("Falling back to local model generation")
                         logging.info("Loading local model %s", args.llm)
+
                         tokenizer = AutoTokenizer.from_pretrained(args.llm)
                         model = AutoModelForCausalLM.from_pretrained(
                             args.llm,
