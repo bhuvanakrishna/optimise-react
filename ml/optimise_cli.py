@@ -3,6 +3,7 @@ import json
 import re
 import subprocess
 import tempfile
+import os
 from datetime import datetime
 from pathlib import Path
 import difflib
@@ -162,7 +163,9 @@ def iter_code_files(base: Path):
 def main():
     parser = argparse.ArgumentParser(description="Analyse React code for performance patterns")
     parser.add_argument("path", help="Path to React project")
-    parser.add_argument("--llm", help="Path to local transformers model for code generation")
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--llm", help="Path to local transformers model for code generation")
+    group.add_argument("--openai-model", help="Name of OpenAI model for remote generation")
     args = parser.parse_args()
 
     repo_path = Path(args.path)
@@ -180,12 +183,24 @@ def main():
     for name, val in top_feats:
         print(f"  {name}: {val:+.4f}")
 
-    if args.llm:
+    if args.llm or args.openai_model:
         try:
-            from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+            os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+            tokenizer = None
+            model = None
+            use_openai = bool(args.openai_model)
+            if args.llm:
+                from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-            tokenizer = AutoTokenizer.from_pretrained(args.llm)
-            model = AutoModelForSeq2SeqLM.from_pretrained(args.llm)
+                tokenizer = AutoTokenizer.from_pretrained(args.llm)
+                model = AutoModelForSeq2SeqLM.from_pretrained(args.llm)
+            else:
+                import openai
+                if not os.getenv("OPENAI_API_KEY"):
+                    raise RuntimeError("OPENAI_API_KEY environment variable is not set")
+                openai.api_key = os.environ["OPENAI_API_KEY"]
+                if os.getenv("OPENAI_API_BASE"):
+                    openai.api_base = os.environ["OPENAI_API_BASE"]
 
             out_root = Path(__file__).resolve().parent / "final_output"
             out_root.mkdir(exist_ok=True)
@@ -203,9 +218,22 @@ def main():
                     + "\nCode:\n"
                     + code_text
                 )
-                inputs = tokenizer(prompt, return_tensors="pt")
-                outputs = model.generate(**inputs, max_length=512)
-                generated = tokenizer.decode(outputs[0], skip_special_tokens=True)
+                if use_openai:
+                    resp = openai.ChatCompletion.create(
+                        model=args.openai_model,
+                        messages=[{"role": "user", "content": prompt}],
+                        max_tokens=512,
+                    )
+                    generated = resp["choices"][0]["message"]["content"].strip()
+                else:
+                    inputs = tokenizer(
+                        prompt,
+                        return_tensors="pt",
+                        truncation=True,
+                        max_length=tokenizer.model_max_length,
+                    )
+                    outputs = model.generate(**inputs, max_new_tokens=512)
+                    generated = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
                 rel = code_path.relative_to(repo_path).with_suffix("")
                 out_dir = run_dir / rel
@@ -240,7 +268,7 @@ def main():
                 save_comparison_html(orig_feat, upd_feat, orig_pred, upd_pred, out_dir / "metrics.html")
 
                 summary = {
-                    "model": args.llm,
+                    "model": args.llm if args.llm else args.openai_model,
                     "original_prediction": orig_pred,
                     "original_confidence": orig_conf,
                     "updated_prediction": upd_pred,
