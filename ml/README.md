@@ -40,7 +40,8 @@ python shap_analysis.py
 code with an LLM. You may use a local transformers model with `--llm` or call a
 remote OpenAI model with `--openai-model`. Pass `--verbose` to see detailed logs
 during the generation step, including progress messages while a local model is
-loading.
+loading. Both decoder-only and sequence-to-sequence models are supported; the
+CLI automatically detects the correct architecture when loading a local model.
 
 
 ### Local model

@@ -17,7 +17,11 @@ from dotenv import load_dotenv
 load_dotenv()
 import traceback
 
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import (
+    AutoTokenizer,
+    AutoModelForCausalLM,
+    AutoModelForSeq2SeqLM,
+)
 import torch
 
 
@@ -289,19 +293,34 @@ def main():
                         # Fall back to local generation using transformers
                         logging.info("Falling back to local model generation")
                         logging.info("Loading local model %s", args.llm)
-
                         tokenizer = AutoTokenizer.from_pretrained(args.llm)
-                        model = AutoModelForCausalLM.from_pretrained(
-                            args.llm,
-                            torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-                            device_map="auto"
-                        )
+                        try:
+                            model = AutoModelForCausalLM.from_pretrained(
+                                args.llm,
+                                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                                device_map="auto",
+                            )
+                        except ValueError:
+                            logging.debug("Model is seq2seq; using AutoModelForSeq2SeqLM")
+                            model = AutoModelForSeq2SeqLM.from_pretrained(
+                                args.llm,
+                                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                                device_map="auto",
+                            )
+
                         logging.info("Local model loaded")
                         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
                         logging.info("Generating with local model")
                         with torch.no_grad():
-                            output_limit = min(1024, model.config.max_position_embeddings - len(inputs['input_ids'][0]))
-                            outputs = model.generate(**inputs, max_new_tokens=output_limit, do_sample=False)
+                            max_pos = getattr(
+                                model.config,
+                                "max_position_embeddings",
+                                getattr(model.config, "n_positions", 2048),
+                            )
+                            output_limit = min(1024, max_pos - len(inputs['input_ids'][0]))
+                            outputs = model.generate(
+                                **inputs, max_new_tokens=output_limit, do_sample=False
+                            )
 
                         generated = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
                         logging.debug("Local generation complete")
