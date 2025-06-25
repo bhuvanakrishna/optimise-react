@@ -7,6 +7,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 import difflib
+import logging
 
 import joblib
 import pandas as pd
@@ -16,7 +17,11 @@ from dotenv import load_dotenv
 load_dotenv()
 import traceback
 
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import (
+    AutoTokenizer,
+    AutoModelForCausalLM,
+    AutoModelForSeq2SeqLM,
+)
 import torch
 
 
@@ -185,6 +190,11 @@ def main():
         description="Analyse React code for performance patterns"
     )
     parser.add_argument("path", help="Path to React project")
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Enable verbose logging for LLM generation",
+    )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
         "--llm",
@@ -194,6 +204,12 @@ def main():
         "--openai-model", help="Name of OpenAI model (e.g. gpt-4 or gpt-3.5-turbo)"
     )
     args = parser.parse_args()
+
+    logging.basicConfig(
+        level=logging.DEBUG if args.verbose else logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+    )
+    logging.debug("Verbose logging enabled")
 
     repo_path = Path(args.path)
     if not repo_path.exists():
@@ -214,6 +230,9 @@ def main():
         try:
             os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
             use_openai = bool(args.openai_model)
+            logging.info(
+                "Using %s for generation", "OpenAI" if use_openai else "Hugging Face"
+            )
             if args.llm:
                 from huggingface_hub import InferenceClient
 
@@ -248,6 +267,7 @@ def main():
                     code_text = code_path.read_text(encoding="utf-8")
                 except Exception:
                     continue
+                logging.info("Generating update for %s", code_path)
                 prompt = (
                     "You are an expert React developer. Do not add new features. Optimise the following code based on these hints: "
                     + ", ".join(f"{n} ({v:+.2f})" for n, v in top_feats)
@@ -255,31 +275,54 @@ def main():
                     + code_text
                 )
                 if use_openai:
+                    logging.debug("Calling OpenAI model %s", args.openai_model)
                     resp = openai.ChatCompletion.create(
                         model=args.openai_model,
                         messages=[{"role": "user", "content": prompt}],
                         max_tokens=512,
                     )
                     generated = resp["choices"][0]["message"]["content"].strip()
+                    logging.debug("OpenAI generation complete")
                 else:
                     try:
                         # Attempt hosted generation via Hugging Face Hub
+                        logging.debug("Calling Hugging Face Inference API: %s", args.llm)
                         generated = client.text_generation(prompt, max_new_tokens=512).strip()
+                        logging.debug("HF generation complete")
                     except Exception:
                         # Fall back to local generation using transformers
-                        print("Falling back to local model generation...")
+                        logging.info("Falling back to local model generation")
+                        logging.info("Loading local model %s", args.llm)
                         tokenizer = AutoTokenizer.from_pretrained(args.llm)
-                        model = AutoModelForCausalLM.from_pretrained(
-                            args.llm,
-                            torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-                            device_map="auto"
-                        )
+                        try:
+                            model = AutoModelForCausalLM.from_pretrained(
+                                args.llm,
+                                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                                device_map="auto",
+                            )
+                        except ValueError:
+                            logging.debug("Model is seq2seq; using AutoModelForSeq2SeqLM")
+                            model = AutoModelForSeq2SeqLM.from_pretrained(
+                                args.llm,
+                                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                                device_map="auto",
+                            )
+                        logging.info("Local model loaded")
                         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+                        logging.info("Generating with local model")
                         with torch.no_grad():
-                            output_limit = min(1024, model.config.max_position_embeddings - len(inputs['input_ids'][0]))
-                            outputs = model.generate(**inputs, max_new_tokens=output_limit, do_sample=False)
+                            max_pos = getattr(
+                                model.config,
+                                "max_position_embeddings",
+                                getattr(model.config, "n_positions", 2048),
+                            )
+                            output_limit = min(1024, max_pos - len(inputs['input_ids'][0]))
+                            outputs = model.generate(
+                                **inputs, max_new_tokens=output_limit, do_sample=False
+                            )
 
                         generated = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
+                        logging.debug("Local generation complete")
 
 
                 if "```" in generated:
@@ -312,7 +355,7 @@ def main():
                             check=True,
                         )
                     except Exception as e:
-                        print(f"Performance check failed for {src}: {e}")
+                        logging.warning("Performance check failed for %s: %s", src, e)
 
                 orig_feat = extract_features_from_text(code_text)
                 upd_feat = extract_features_from_text(generated)
@@ -336,12 +379,13 @@ def main():
                 (out_dir / "summary.json").write_text(
                     json.dumps(summary, indent=2), encoding="utf-8"
                 )
+                logging.info("Finished processing %s", code_path)
 
-            print(f"\nResults saved to {run_dir}")
+            logging.info("Results saved to %s", run_dir)
             
 
         except Exception as e:
-            print(f"LLM generation failed: {e}")
+            logging.error("LLM generation failed: %s", e)
             traceback.print_exc()
 
 
