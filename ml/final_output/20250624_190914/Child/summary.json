@@ -1,0 +1,31 @@
+{
+  "model": "google/flan-t5-small",
+  "original_prediction": "fast",
+  "original_confidence": 0.0415592654408182,
+  "updated_prediction": "fast",
+  "updated_confidence": 0.2523952012815308,
+  "top_features": [
+    [
+      "pattern_unstable-props",
+      0.0
+    ],
+    [
+      "largeJsonState",
+      0.0
+    ],
+    [
+      "hasLargeImage",
+      0.0
+    ],
+    [
+      "causesLayoutShift",
+      0.0
+    ],
+    [
+      "slowClickHandler",
+      0.0
+    ]
+  ],
+  "perf_original": "/Users/krishna/Desktop/mtech_ml_project/ml/final_output/20250624_190914/Child/perf_original.json",
+  "perf_updated": "/Users/krishna/Desktop/mtech_ml_project/ml/final_output/20250624_190914/Child/perf_updated.json"
+}

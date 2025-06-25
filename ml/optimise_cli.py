@@ -107,7 +107,7 @@ def predict(features: dict):
         df = pd.DataFrame(scaler.transform(df), columns=df.columns)
     pred = model.predict(df)[0]
     conf = float(model.predict_proba(df)[0][1]) if hasattr(model, "predict_proba") else float(pred)
-    explainer = shap.Explainer(model, df)
+    explainer = shap.Explainer(model)
     shap_values = explainer(df)
     vals = shap_values.values[0]
     top_idx = list(reversed(vals.argsort()[-5:]))

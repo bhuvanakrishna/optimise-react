@@ -1,0 +1,1 @@
+; export default memo(Child); ; import default memo(Child); 
