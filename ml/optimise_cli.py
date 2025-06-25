@@ -78,13 +78,14 @@ def extract_features(repo_path: Path) -> dict:
             continue
         if "React.lazy" in text or "import(" in text:
             features["pattern_lazy-loading"] = 1
-        inline_matches = re.findall(r"on\\w+\\s*={(?:\\(.*?\\)\\s*=>|function)", text)
+        inline_matches = re.findall(r"on\w+\s*={(?:\(.*?\)\s*=>|function)", text)
         if inline_matches:
             features["pattern_inline-functions"] = 1
-        features["pattern_too-many-effects"] += len(re.findall(r"useEffect\\s*\\(", text))
+        # Count useEffect hooks to detect potential overuse
+        features["pattern_too-many-effects"] += len(re.findall(r"useEffect\s*\(", text))
         if "useMemo(" not in text:
             features["pattern_missing-useMemo"] = 1
-        if re.search(r"useEffect\\([^)]*\\)\\s*(?!,\\s*\\[)", text):
+        if re.search(r"useEffect\([^)]*\)\s*(?!,\s*\[)", text):
             features["pattern_misused-useEffect"] = 1
         features["pattern_prop-drilling"] += text.count("props.")
         features["pattern_repeated-fetching"] += text.count("fetch(")
@@ -140,6 +141,43 @@ def iter_code_files(base: Path):
                 yield file
 
 
+def generate_prompts(repo_path: Path, features: dict, top_feats: list[tuple[str, float]]):
+    """Write optimisation prompts for each source file and print them."""
+    prompt_dir = Path(__file__).parent / "prompts"
+    prompt_dir.mkdir(exist_ok=True)
+    all_prompts_path = prompt_dir / f"{repo_path.name}_prompt.txt"
+
+    active_feats = top_feats or [
+        (name, 1.0) for name, val in features.items() if val
+    ]
+    hints = [
+        FEATURE_PROMPT_HINTS.get(name, f"Address issue: {name}")
+        for name, _ in active_feats
+    ]
+
+    with open(all_prompts_path, "w", encoding="utf-8") as f:
+        for code_path in iter_code_files(repo_path):
+            try:
+                code_text = code_path.read_text(encoding="utf-8")
+            except Exception:
+                continue
+
+            prompt = (
+                f"=== Prompt for {code_path.relative_to(repo_path)} ===\n\n"
+                "You are an expert React performance engineer. Do not add new features."\
+                "\nFocus only on the listed optimizations.\n\n"
+                "Apply these suggestions:\n- " + "\n- ".join(hints) + "\n\n" +
+                "Example:\n"
+                "Bad:\n  <button onClick={() => setCount(c => c + 1)}>Click</button>\n\n"
+                "Better:\n  const handleClick = useCallback(() => setCount(c => c + 1), []);\n"
+                "  <button onClick={handleClick}>Click</button>\n\n"
+                f"Code:\n{code_text}\n\n"
+            )
+
+            print(prompt)
+            f.write(prompt + "\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Analyse React code for performance patterns")
     parser.add_argument("path", help="Path to React project")
@@ -158,50 +196,24 @@ def main():
         return
 
     features = extract_features(repo_path)
-    prediction, confidence, top_feats = predict(features)
+    prediction = confidence = None
+    top_feats = []
+    try:
+        if not args.print_prompt_only or DEFAULT_MODEL.exists():
+            prediction, confidence, top_feats = predict(features)
+    except Exception as e:
+        logging.warning("Prediction failed: %s", e)
 
-    print("\n=== Prediction ===")
-    print(f"Predicted label: {prediction}")
-    print(f"Confidence: {confidence:.4f}")
-    print("Top SHAP features:")
-    for name, val in top_feats:
-        print(f"  {name}: {val:+.4f}")
+    if prediction is not None:
+        print("\n=== Prediction ===")
+        print(f"Predicted label: {prediction}")
+        print(f"Confidence: {confidence:.4f}")
+        print("Top SHAP features:")
+        for name, val in top_feats:
+            print(f"  {name}: {val:+.4f}")
 
     if args.print_prompt_only:
-        prompt_dir = Path(__file__).parent / "prompts"
-        prompt_dir.mkdir(exist_ok=True)
-        all_prompts_path = prompt_dir / f"{repo_path.name}_prompt.txt"
-
-        with open(all_prompts_path, "w", encoding="utf-8") as f:
-            for code_path in iter_code_files(repo_path):
-                try:
-                    code_text = code_path.read_text(encoding="utf-8")
-                except Exception:
-                    continue
-
-                hints = [
-                    FEATURE_PROMPT_HINTS.get(name, f"Address issue: {name}")
-                    for name, _ in top_feats
-                ]
-
-                example_block = (
-                    "Example:\n"
-                    "Bad:\n  <button onClick={() => setCount(c => c + 1)}>Click</button>\n\n"
-                    "Better:\n  const handleClick = useCallback(() => setCount(c => c + 1), []);\n"
-                    "  <button onClick={handleClick}>Click</button>\n\n"
-                )
-
-                prompt = (
-                    f"=== Prompt for {code_path.relative_to(repo_path)} ===\n\n"
-                    f"You are an expert React performance engineer. Do not add new features.\n"
-                    f"Focus only on the listed optimizations.\n\n"
-                    f"Apply these suggestions:\n- " + "\n- ".join(hints) + "\n\n" +
-                    example_block +
-                    f"Code:\n{code_text}\n\n"
-                )
-
-                print(prompt)
-                f.write(prompt + "\n")
+        generate_prompts(repo_path, features, top_feats)
 
 if __name__ == "__main__":
     main()
