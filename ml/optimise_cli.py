@@ -164,8 +164,8 @@ def main():
     parser = argparse.ArgumentParser(description="Analyse React code for performance patterns")
     parser.add_argument("path", help="Path to React project")
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("--llm", help="Path to local transformers model for code generation")
-    group.add_argument("--openai-model", help="Name of OpenAI model for remote generation")
+    group.add_argument("--llm", help="Path to local OR Hugging Face hosted model (e.g. google/flan-t5-xl)")
+    group.add_argument("--openai-model", help="Name of OpenAI model (e.g. gpt-4 or gpt-3.5-turbo)")
     args = parser.parse_args()
 
     repo_path = Path(args.path)
@@ -190,10 +190,18 @@ def main():
             model = None
             use_openai = bool(args.openai_model)
             if args.llm:
-                from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+                from transformers import AutoModelForCausalLM, AutoTokenizer
 
-                tokenizer = AutoTokenizer.from_pretrained(args.llm)
-                model = AutoModelForSeq2SeqLM.from_pretrained(args.llm)
+                hf_token = os.getenv("HF_API_KEY")
+                from huggingface_hub import InferenceClient
+
+                
+                if not hf_token:
+                    raise RuntimeError("HF_TOKEN is not set")
+
+                client = InferenceClient(model=args.llm, token=hf_token)
+
+
             else:
                 import openai
                 if not os.getenv("OPENAI_API_KEY"):
@@ -226,14 +234,8 @@ def main():
                     )
                     generated = resp["choices"][0]["message"]["content"].strip()
                 else:
-                    inputs = tokenizer(
-                        prompt,
-                        return_tensors="pt",
-                        truncation=True,
-                        max_length=tokenizer.model_max_length,
-                    )
-                    outputs = model.generate(**inputs, max_new_tokens=512)
-                    generated = tokenizer.decode(outputs[0], skip_special_tokens=True)
+                    generated = client.text_generation(prompt, max_new_tokens=512).strip()
+
 
                 rel = code_path.relative_to(repo_path).with_suffix("")
                 out_dir = run_dir / rel
@@ -246,7 +248,6 @@ def main():
 
                 save_diff_html(code_text, generated, out_dir / "diff.html")
 
-                # Run Puppeteer performance checks
                 perf_orig = out_dir / "perf_original.json"
                 perf_upd = out_dir / "perf_updated.json"
                 for src, dest in [(orig_file, perf_orig), (upd_file, perf_upd)]:
