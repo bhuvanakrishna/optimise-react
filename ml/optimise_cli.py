@@ -307,6 +307,7 @@ def main():
                                 torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
                                 device_map="auto",
                             )
+
                         logging.info("Local model loaded")
                         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
                         logging.info("Generating with local model")

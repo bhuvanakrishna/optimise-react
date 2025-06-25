@@ -43,6 +43,7 @@ during the generation step, including progress messages while a local model is
 loading. Both decoder-only and sequence-to-sequence models are supported; the
 CLI automatically detects the correct architecture when loading a local model.
 
+
 ### Local model
 
 ```bash
