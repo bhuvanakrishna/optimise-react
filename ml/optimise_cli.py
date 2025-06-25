@@ -21,7 +21,9 @@ from transformers import (
     AutoTokenizer,
     AutoModelForCausalLM,
     AutoModelForSeq2SeqLM,
+    TextIteratorStreamer,
 )
+import threading
 import torch
 
 
@@ -311,18 +313,28 @@ def main():
                         logging.info("Local model loaded")
                         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
                         logging.info("Generating with local model")
-                        with torch.no_grad():
-                            max_pos = getattr(
-                                model.config,
-                                "max_position_embeddings",
-                                getattr(model.config, "n_positions", 2048),
-                            )
-                            output_limit = min(1024, max_pos - len(inputs['input_ids'][0]))
-                            outputs = model.generate(
-                                **inputs, max_new_tokens=output_limit, do_sample=False
-                            )
-
-                        generated = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
+                        streamer = TextIteratorStreamer(tokenizer, skip_special_tokens=True)
+                        max_pos = getattr(
+                            model.config,
+                            "max_position_embeddings",
+                            getattr(model.config, "n_positions", 2048),
+                        )
+                        output_limit = min(1024, max_pos - len(inputs["input_ids"][0]))
+                        gen_kwargs = {
+                            **inputs,
+                            "max_new_tokens": output_limit,
+                            "do_sample": False,
+                            "streamer": streamer,
+                        }
+                        thread = threading.Thread(target=model.generate, kwargs=gen_kwargs)
+                        thread.start()
+                        tokens = []
+                        for token in streamer:
+                            tokens.append(token)
+                            print(token, end="", flush=True)
+                        thread.join()
+                        print()
+                        generated = "".join(tokens).strip()
                         logging.debug("Local generation complete")
 
 
