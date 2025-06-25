@@ -174,15 +174,16 @@ def generate_prompts(repo_path: Path, features: dict, top_feats: list[tuple[str,
                 f"=== Prompt for {relative_path} ===\n\n"
                 "You are an expert React performance engineer. Do not add new features.\n"
                 "Focus only on the listed optimizations.\n\n"
+                "You must apply the listed performance optimizations to each file's actual content before archiving.\n"
                 "Apply these suggestions:\n- " + "\n- ".join(hints) + "\n\n" +
                 "Example:\n"
                 "Bad:\n  <button onClick={() => setCount(c => c + 1)}>Click</button>\n\n"
                 "Better:\n  const handleClick = useCallback(() => setCount(c => c + 1), []);\n"
                 "  <button onClick={handleClick}>Click</button>\n\n"
                 f"Code:\n{code_text}\n\n"
-                "Return a base64 encoded zip archive containing the optimized file at the "
-                "same relative path. The archive should preserve the original folder structure.\n"
-                "Do not include any additional explanation or commentary.\n"
+                "First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.\n"
+                "Do not include any additional explanation or commentary. Give me the downloadable zip file.\n"
+                "Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.\n"
             )
 
             print(prompt)

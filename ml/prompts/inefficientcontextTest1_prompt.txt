@@ -31,6 +31,8 @@ const InefficientcontextTest1 = () => {
 export default InefficientcontextTest1;
 
 
+Return a base64 encoded zip archive containing the optimized file at the same relative path. The archive should preserve the original folder structure.
+Do not include any additional explanation or commentary. Give me the downloadable zip file.
 
 === Prompt for Level2.tsx ===
 
@@ -130,6 +132,8 @@ const Level2 = (props: any) => {
 export default memo(Level2);
 
 
+Return a base64 encoded zip archive containing the optimized file at the same relative path. The archive should preserve the original folder structure.
+Do not include any additional explanation or commentary. Give me the downloadable zip file.
 
 === Prompt for Child.tsx ===
 
@@ -227,6 +231,8 @@ const Child = (props: any) => {
 export default memo(Child);
 
 
+Return a base64 encoded zip archive containing the optimized file at the same relative path. The archive should preserve the original folder structure.
+Do not include any additional explanation or commentary. Give me the downloadable zip file.
 
 === Prompt for Parent.tsx ===
 
@@ -326,4 +332,6 @@ const Parent = (props: any) => {
 export default memo(Parent);
 
 
+Return a base64 encoded zip archive containing the optimized file at the same relative path. The archive should preserve the original folder structure.
+Do not include any additional explanation or commentary. Give me the downloadable zip file.
 
