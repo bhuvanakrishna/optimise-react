@@ -89,7 +89,9 @@ def extract_features(repo_path: Path) -> dict:
 
     features["pattern_prop-drilling"] = int(features["pattern_prop-drilling"] > 20)
     features["pattern_too-many-effects"] = int(features["pattern_too-many-effects"] > 5)
-    features["pattern_repeated-fetching"] = int(features["pattern_repeated-fetching"] > 1)
+    features["pattern_repeated-fetching"] = int(
+        features["pattern_repeated-fetching"] > 1
+    )
     return features
 
 
@@ -107,7 +109,11 @@ def predict(features: dict):
     if scaler:
         df = pd.DataFrame(scaler.transform(df), columns=df.columns)
     pred = model.predict(df)[0]
-    conf = float(model.predict_proba(df)[0][1]) if hasattr(model, "predict_proba") else float(pred)
+    conf = (
+        float(model.predict_proba(df)[0][1])
+        if hasattr(model, "predict_proba")
+        else float(pred)
+    )
     explainer = shap.Explainer(model)
     shap_values = explainer(df)
     vals = shap_values.values[0]
@@ -124,7 +130,9 @@ def extract_features_from_text(text: str) -> dict:
         return extract_features(Path(tmpdir))
 
 
-def save_comparison_html(orig_feat: dict, upd_feat: dict, orig_pred: float, upd_pred: float, out_file: Path):
+def save_comparison_html(
+    orig_feat: dict, upd_feat: dict, orig_pred: float, upd_pred: float, out_file: Path
+):
     rows = [
         f"<tr><td>{name}</td><td>{orig_feat.get(name, 0)}</td><td>{upd_feat.get(name, 0)}</td></tr>"
         for name in FEATURE_COLUMNS
@@ -145,7 +153,10 @@ def save_comparison_html(orig_feat: dict, upd_feat: dict, orig_pred: float, upd_
 def save_diff_html(original: str, updated: str, out_file: Path):
     """Save side-by-side HTML diff using difflib."""
     diff = difflib.HtmlDiff().make_file(
-        original.splitlines(), updated.splitlines(), fromdesc="Original", todesc="Updated"
+        original.splitlines(),
+        updated.splitlines(),
+        fromdesc="Original",
+        todesc="Updated",
     )
     out_file.write_text(diff, encoding="utf-8")
 
@@ -161,11 +172,18 @@ def iter_code_files(base: Path):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Analyse React code for performance patterns")
+    parser = argparse.ArgumentParser(
+        description="Analyse React code for performance patterns"
+    )
     parser.add_argument("path", help="Path to React project")
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("--llm", help="Path to local OR Hugging Face hosted model (e.g. google/flan-t5-xl)")
-    group.add_argument("--openai-model", help="Name of OpenAI model (e.g. gpt-4 or gpt-3.5-turbo)")
+    group.add_argument(
+        "--llm",
+        help="Path to local OR Hugging Face hosted model (e.g. google/flan-t5-xl)",
+    )
+    group.add_argument(
+        "--openai-model", help="Name of OpenAI model (e.g. gpt-4 or gpt-3.5-turbo)"
+    )
     args = parser.parse_args()
 
     repo_path = Path(args.path)
@@ -186,24 +204,25 @@ def main():
     if args.llm or args.openai_model:
         try:
             os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
-            tokenizer = None
-            model = None
             use_openai = bool(args.openai_model)
             if args.llm:
-                from transformers import AutoModelForCausalLM, AutoTokenizer
-
-                hf_token = os.getenv("HF_API_KEY")
                 from huggingface_hub import InferenceClient
 
-                
+                hf_token = (
+                    os.getenv("HF_TOKEN")
+                    or os.getenv("HUGGING_FACE_HUB_TOKEN")
+                    or os.getenv("HF_API_KEY")
+                )
                 if not hf_token:
-                    raise RuntimeError("HF_TOKEN is not set")
+                    raise RuntimeError(
+                        "HF_TOKEN or HUGGING_FACE_HUB_TOKEN environment variable is not set"
+                    )
 
                 client = InferenceClient(model=args.llm, token=hf_token)
 
-
             else:
                 import openai
+
                 if not os.getenv("OPENAI_API_KEY"):
                     raise RuntimeError("OPENAI_API_KEY environment variable is not set")
                 openai.api_key = os.environ["OPENAI_API_KEY"]
@@ -234,8 +253,14 @@ def main():
                     )
                     generated = resp["choices"][0]["message"]["content"].strip()
                 else:
-                    generated = client.text_generation(prompt, max_new_tokens=512).strip()
+                    generated = client.text_generation(
+                        prompt, max_new_tokens=512
+                    ).strip()
 
+                if "```" in generated:
+                    parts = generated.split("```")
+                    if len(parts) >= 2:
+                        generated = parts[1].strip()
 
                 rel = code_path.relative_to(repo_path).with_suffix("")
                 out_dir = run_dir / rel
@@ -252,12 +277,15 @@ def main():
                 perf_upd = out_dir / "perf_updated.json"
                 for src, dest in [(orig_file, perf_orig), (upd_file, perf_upd)]:
                     try:
-                        subprocess.run([
-                            "node",
-                            str(PUPPETEER_SCRIPT),
-                            str(src),
-                            str(dest),
-                        ], check=True)
+                        subprocess.run(
+                            [
+                                "node",
+                                str(PUPPETEER_SCRIPT),
+                                str(src),
+                                str(dest),
+                            ],
+                            check=True,
+                        )
                     except Exception as e:
                         print(f"Performance check failed for {src}: {e}")
 
@@ -266,7 +294,9 @@ def main():
                 orig_pred, orig_conf, _ = predict(orig_feat)
                 upd_pred, upd_conf, _ = predict(upd_feat)
 
-                save_comparison_html(orig_feat, upd_feat, orig_pred, upd_pred, out_dir / "metrics.html")
+                save_comparison_html(
+                    orig_feat, upd_feat, orig_pred, upd_pred, out_dir / "metrics.html"
+                )
 
                 summary = {
                     "model": args.llm if args.llm else args.openai_model,
@@ -275,10 +305,12 @@ def main():
                     "updated_prediction": upd_pred,
                     "updated_confidence": upd_conf,
                     "top_features": top_feats,
-                    "perf_original": str(perf_orig),
-                    "perf_updated": str(perf_upd),
+                    "perf_original": str(perf_orig.relative_to(run_dir)),
+                    "perf_updated": str(perf_upd.relative_to(run_dir)),
                 }
-                (out_dir / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+                (out_dir / "summary.json").write_text(
+                    json.dumps(summary, indent=2), encoding="utf-8"
+                )
 
             print(f"\nResults saved to {run_dir}")
         except Exception as e:
