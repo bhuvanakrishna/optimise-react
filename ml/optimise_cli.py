@@ -319,7 +319,29 @@ def main():
                             "max_position_embeddings",
                             getattr(model.config, "n_positions", 2048),
                         )
-                        output_limit = min(1024, max_pos - len(inputs["input_ids"][0]))
+                        prompt_len = len(inputs["input_ids"][0])
+                        if prompt_len >= max_pos:
+                            logging.warning(
+                                "Prompt too long (%s tokens) for model context (%s); truncating",
+                                prompt_len,
+                                max_pos,
+                            )
+                            inputs = tokenizer(
+                                prompt,
+                                return_tensors="pt",
+                                truncation=True,
+                                max_length=max_pos - 1,
+                            ).to(model.device)
+                            prompt_len = len(inputs["input_ids"][0])
+                        output_limit = min(1024, max_pos - prompt_len)
+                        if output_limit <= 0:
+                            logging.error(
+                                "Prompt length (%s) leaves no room for generation; skipping",
+                                prompt_len,
+                            )
+                            generated = ""
+                            continue
+
                         gen_kwargs = {
                             **inputs,
                             "max_new_tokens": output_limit,
