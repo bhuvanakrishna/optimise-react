@@ -12,7 +12,7 @@ synthetic-react-app/node_modules
 synthetic-react-app/build
 synthetic-react-app/.env
 synthetic-react-app/.DS_Store
-**/pages/test-data/
+# **/pages/test-data/ 
 ml/models
 ml/venv
 

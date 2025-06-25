@@ -1,6 +1,10 @@
 // src/test-data/index.ts
 export const testPages = [
   {
+    name: 'propdrillingTest3-modified',
+    "pattern": "prop-drilling",
+  },
+  {
     "name": "propdrillingTest1",
     "pattern": "prop-drilling",
     "depth": 3
