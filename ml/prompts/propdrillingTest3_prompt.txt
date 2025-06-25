@@ -1,22 +1,28 @@
-=== Prompt for Level4.tsx ===
+You are an expert React performance engineer.
 
-You are an expert React performance engineer. Do not add new features.
-Focus only on the listed optimizations.
+For each of the following files:
+Level4.tsx, index.tsx, Level2.tsx, Level3.tsx, Child.tsx, Parent.tsx
 
-You must apply the listed performance optimizations to each file's actual content before archiving.
-Apply these suggestions:
-- Combine related useEffect hooks to reduce execution overhead.
-- Use useMemo to memoize expensive computations and avoid recomputation on each render.
+Apply only the following code-level performance optimizations:
+✅ Combine related useEffect hooks to reduce execution overhead.
+✅ Use useMemo to memoize expensive computations and avoid recomputation on each render.
 
-Example:
-Bad:
-  <button onClick={() => setCount(c => c + 1)}>Click</button>
+Important constraints:
+❌ Do not modify the import structure except for removing truly unused imports.
+❌ Do not insert any import for child components unless they already existed in the original file.
+❌ Do not guess or propagate imports from templates. Each file should be optimized independently.
+⚠️ Child.tsx should not include any import like import from './';.
 
-Better:
-  const handleClick = useCallback(() => setCount(c => c + 1), []);
-  <button onClick={handleClick}>Click</button>
+Finally, return a base64-encoded ZIP file with:
+✅ The same folder structure.
+✅ All files fully optimized.
+❌ No placeholder or broken code.
+⚠️ Do not include explanations. Only include the optimized code.
 
-Code:
+=== Begin Files ===
+
+--- Level4.tsx ---
+```tsx
 
 import React, { useState, useEffect, useMemo, memo } from 'react';
 
@@ -131,30 +137,10 @@ const Level4 = (props: any) => {
 
 export default memo(Level4);
 
+```
 
-First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.
-Do not include any additional explanation or commentary. Give me the downloadable zip file.
-Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.
-
-=== Prompt for index.tsx ===
-
-You are an expert React performance engineer. Do not add new features.
-Focus only on the listed optimizations.
-
-You must apply the listed performance optimizations to each file's actual content before archiving.
-Apply these suggestions:
-- Combine related useEffect hooks to reduce execution overhead.
-- Use useMemo to memoize expensive computations and avoid recomputation on each render.
-
-Example:
-Bad:
-  <button onClick={() => setCount(c => c + 1)}>Click</button>
-
-Better:
-  const handleClick = useCallback(() => setCount(c => c + 1), []);
-  <button onClick={handleClick}>Click</button>
-
-Code:
+--- index.tsx ---
+```tsx
 import React from 'react';
 import Parent from './Parent';
 
@@ -169,30 +155,10 @@ const PropdrillingTest3 = () => {
 
 export default PropdrillingTest3;
 
+```
 
-First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.
-Do not include any additional explanation or commentary. Give me the downloadable zip file.
-Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.
-
-=== Prompt for Level2.tsx ===
-
-You are an expert React performance engineer. Do not add new features.
-Focus only on the listed optimizations.
-
-You must apply the listed performance optimizations to each file's actual content before archiving.
-Apply these suggestions:
-- Combine related useEffect hooks to reduce execution overhead.
-- Use useMemo to memoize expensive computations and avoid recomputation on each render.
-
-Example:
-Bad:
-  <button onClick={() => setCount(c => c + 1)}>Click</button>
-
-Better:
-  const handleClick = useCallback(() => setCount(c => c + 1), []);
-  <button onClick={handleClick}>Click</button>
-
-Code:
+--- Level2.tsx ---
+```tsx
 
 import React, { useState, useEffect, useMemo, memo } from 'react';
 
@@ -307,30 +273,10 @@ const Level2 = (props: any) => {
 
 export default memo(Level2);
 
+```
 
-First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.
-Do not include any additional explanation or commentary. Give me the downloadable zip file.
-Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.
-
-=== Prompt for Level3.tsx ===
-
-You are an expert React performance engineer. Do not add new features.
-Focus only on the listed optimizations.
-
-You must apply the listed performance optimizations to each file's actual content before archiving.
-Apply these suggestions:
-- Combine related useEffect hooks to reduce execution overhead.
-- Use useMemo to memoize expensive computations and avoid recomputation on each render.
-
-Example:
-Bad:
-  <button onClick={() => setCount(c => c + 1)}>Click</button>
-
-Better:
-  const handleClick = useCallback(() => setCount(c => c + 1), []);
-  <button onClick={handleClick}>Click</button>
-
-Code:
+--- Level3.tsx ---
+```tsx
 
 import React, { useState, useEffect, useMemo, memo } from 'react';
 
@@ -445,30 +391,10 @@ const Level3 = (props: any) => {
 
 export default memo(Level3);
 
+```
 
-First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.
-Do not include any additional explanation or commentary. Give me the downloadable zip file.
-Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.
-
-=== Prompt for Child.tsx ===
-
-You are an expert React performance engineer. Do not add new features.
-Focus only on the listed optimizations.
-
-You must apply the listed performance optimizations to each file's actual content before archiving.
-Apply these suggestions:
-- Combine related useEffect hooks to reduce execution overhead.
-- Use useMemo to memoize expensive computations and avoid recomputation on each render.
-
-Example:
-Bad:
-  <button onClick={() => setCount(c => c + 1)}>Click</button>
-
-Better:
-  const handleClick = useCallback(() => setCount(c => c + 1), []);
-  <button onClick={handleClick}>Click</button>
-
-Code:
+--- Child.tsx ---
+```tsx
 
 import React, { useState, useEffect, useMemo, memo } from 'react';
 
@@ -579,30 +505,10 @@ const Child = (props: any) => {
 
 export default memo(Child);
 
+```
 
-First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.
-Do not include any additional explanation or commentary. Give me the downloadable zip file.
-Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.
-
-=== Prompt for Parent.tsx ===
-
-You are an expert React performance engineer. Do not add new features.
-Focus only on the listed optimizations.
-
-You must apply the listed performance optimizations to each file's actual content before archiving.
-Apply these suggestions:
-- Combine related useEffect hooks to reduce execution overhead.
-- Use useMemo to memoize expensive computations and avoid recomputation on each render.
-
-Example:
-Bad:
-  <button onClick={() => setCount(c => c + 1)}>Click</button>
-
-Better:
-  const handleClick = useCallback(() => setCount(c => c + 1), []);
-  <button onClick={handleClick}>Click</button>
-
-Code:
+--- Parent.tsx ---
+```tsx
 
 import React, { useState, useEffect, useMemo, memo } from 'react';
 
@@ -717,8 +623,5 @@ const Parent = (props: any) => {
 
 export default memo(Parent);
 
-
-First, apply the optimizations as listed above directly into the given code. Then, return a base64-encoded zip archive that includes these modified and optimized files, at the same relative path. Do not return placeholders or dummy files. Each file must be the result of actual transformation based on the optimization guidelines. The archive should preserve the original folder structure.
-Do not include any additional explanation or commentary. Give me the downloadable zip file.
-Do not use placeholder comments like /* optimized */. Each file must contain fully updated, executable React code with the optimizations applied.
+```
 
