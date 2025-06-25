@@ -2,7 +2,6 @@ import argparse
 import json
 import re
 import subprocess
-
 import os
 from datetime import datetime
 from pathlib import Path
@@ -78,14 +77,13 @@ def extract_features(repo_path: Path) -> dict:
             continue
         if "React.lazy" in text or "import(" in text:
             features["pattern_lazy-loading"] = 1
-        inline_matches = re.findall(r"on\w+\s*={(?:\(.*?\)\s*=>|function)", text)
+        inline_matches = re.findall(r"on\\w+\\s*={(?:\\(.*?\\)\\s*=>|function)", text)
         if inline_matches:
             features["pattern_inline-functions"] = 1
-        # Count useEffect hooks to detect potential overuse
-        features["pattern_too-many-effects"] += len(re.findall(r"useEffect\s*\(", text))
+        features["pattern_too-many-effects"] += len(re.findall(r"useEffect\\s*\\(", text))
         if "useMemo(" not in text:
             features["pattern_missing-useMemo"] = 1
-        if re.search(r"useEffect\([^)]*\)\s*(?!,\s*\[)", text):
+        if re.search(r"useEffect\\([^)]*\\)\\s*(?!,\\s*\\[)", text):
             features["pattern_misused-useEffect"] = 1
         features["pattern_prop-drilling"] += text.count("props.")
         features["pattern_repeated-fetching"] += text.count("fetch(")
@@ -142,7 +140,6 @@ def iter_code_files(base: Path):
 
 
 def generate_prompts(repo_path: Path, features: dict, top_feats: list[tuple[str, float]]):
-    """Write optimisation prompts for each source file and print them."""
     prompt_dir = Path(__file__).parent / "prompts"
     prompt_dir.mkdir(exist_ok=True)
     all_prompts_path = prompt_dir / f"{repo_path.name}_prompt.txt"
@@ -162,16 +159,18 @@ def generate_prompts(repo_path: Path, features: dict, top_feats: list[tuple[str,
             except Exception:
                 continue
 
+            relative_path = code_path.relative_to(repo_path)
             prompt = (
-                f"=== Prompt for {code_path.relative_to(repo_path)} ===\n\n"
-                "You are an expert React performance engineer. Do not add new features."\
-                "\nFocus only on the listed optimizations.\n\n"
+                f"=== Prompt for {relative_path} ===\n\n"
+                "You are an expert React performance engineer. Do not add new features.\n"
+                "Focus only on the listed optimizations.\n\n"
                 "Apply these suggestions:\n- " + "\n- ".join(hints) + "\n\n" +
                 "Example:\n"
                 "Bad:\n  <button onClick={() => setCount(c => c + 1)}>Click</button>\n\n"
                 "Better:\n  const handleClick = useCallback(() => setCount(c => c + 1), []);\n"
                 "  <button onClick={handleClick}>Click</button>\n\n"
                 f"Code:\n{code_text}\n\n"
+                "Output only the optimized source code. Do not include any explanation or commentary.\n"
             )
 
             print(prompt)
@@ -214,6 +213,7 @@ def main():
 
     if args.print_prompt_only:
         generate_prompts(repo_path, features, top_feats)
+
 
 if __name__ == "__main__":
     main()
