@@ -12,6 +12,15 @@ import joblib
 import pandas as pd
 import shap
 
+from dotenv import load_dotenv
+load_dotenv()
+import traceback
+
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+
+
+
 FEATURE_COLUMNS = [
     "depth",
     "hasLargeImage",
@@ -253,9 +262,25 @@ def main():
                     )
                     generated = resp["choices"][0]["message"]["content"].strip()
                 else:
-                    generated = client.text_generation(
-                        prompt, max_new_tokens=512
-                    ).strip()
+                    try:
+                        # Attempt hosted generation via Hugging Face Hub
+                        generated = client.text_generation(prompt, max_new_tokens=512).strip()
+                    except Exception:
+                        # Fall back to local generation using transformers
+                        print("Falling back to local model generation...")
+                        tokenizer = AutoTokenizer.from_pretrained(args.llm)
+                        model = AutoModelForCausalLM.from_pretrained(
+                            args.llm,
+                            torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                            device_map="auto"
+                        )
+                        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+                        with torch.no_grad():
+                            output_limit = min(1024, model.config.max_position_embeddings - len(inputs['input_ids'][0]))
+                            outputs = model.generate(**inputs, max_new_tokens=output_limit, do_sample=False)
+
+                        generated = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
+
 
                 if "```" in generated:
                     parts = generated.split("```")
@@ -313,8 +338,12 @@ def main():
                 )
 
             print(f"\nResults saved to {run_dir}")
+            
+
         except Exception as e:
             print(f"LLM generation failed: {e}")
+            traceback.print_exc()
+
 
 
 if __name__ == "__main__":

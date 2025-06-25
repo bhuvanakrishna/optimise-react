@@ -15,3 +15,6 @@ synthetic-react-app/.DS_Store
 **/pages/test-data/
 ml/models
 ml/venv
+
+
+ml/.env
