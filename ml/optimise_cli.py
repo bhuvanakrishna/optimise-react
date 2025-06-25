@@ -80,11 +80,21 @@ def extract_features(repo_path: Path) -> dict:
         inline_matches = re.findall(r"on\\w+\\s*={(?:\\(.*?\\)\\s*=>|function)", text)
         if inline_matches:
             features["pattern_inline-functions"] = 1
-        features["pattern_too-many-effects"] += len(re.findall(r"useEffect\\s*\\(", text))
+        # Count occurrences of the useEffect hook. A simple string count avoids
+        # regex compilation issues on some Python versions.
+        features["pattern_too-many-effects"] += text.count("useEffect(")
         if "useMemo(" not in text:
             features["pattern_missing-useMemo"] = 1
-        if re.search(r"useEffect\\([^)]*\\)\\s*(?!,\\s*\\[)", text):
-            features["pattern_misused-useEffect"] = 1
+        # Flag useEffect hooks that omit a dependency array. Avoid regular
+        # expressions here to prevent regex errors across Python versions.
+        if "useEffect(" in text:
+            try:
+                after = text.split("useEffect(", 1)[1]
+                params = after.split(")", 1)[0]
+                if "[" not in params:
+                    features["pattern_misused-useEffect"] = 1
+            except Exception:
+                pass
         features["pattern_prop-drilling"] += text.count("props.")
         features["pattern_repeated-fetching"] += text.count("fetch(")
         if "setTimeout" in text or "for(" in text:
@@ -170,7 +180,9 @@ def generate_prompts(repo_path: Path, features: dict, top_feats: list[tuple[str,
                 "Better:\n  const handleClick = useCallback(() => setCount(c => c + 1), []);\n"
                 "  <button onClick={handleClick}>Click</button>\n\n"
                 f"Code:\n{code_text}\n\n"
-                "Output only the optimized source code. Do not include any explanation or commentary.\n"
+                "Return a base64 encoded zip archive containing the optimized file at the "
+                "same relative path. The archive should preserve the original folder structure.\n"
+                "Do not include any additional explanation or commentary.\n"
             )
 
             print(prompt)
