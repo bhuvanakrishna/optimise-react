@@ -2,59 +2,53 @@ import argparse
 import json
 import re
 import subprocess
-import tempfile
+
 import os
 from datetime import datetime
 from pathlib import Path
 import difflib
 import logging
-
 import joblib
 import pandas as pd
 import shap
+import traceback
 
 from dotenv import load_dotenv
 load_dotenv()
-import traceback
-
-from transformers import (
-    AutoTokenizer,
-    AutoModelForCausalLM,
-    AutoModelForSeq2SeqLM,
-    TextIteratorStreamer,
-)
-import threading
-import torch
-
-
 
 FEATURE_COLUMNS = [
-    "depth",
-    "hasLargeImage",
-    "causesLayoutShift",
-    "slowClickHandler",
-    "deepComponentTree",
-    "bulkDOMNodes",
-    "slowNetwork",
-    "expensiveEffects",
-    "largeJsonState",
-    "layout_row",
-    "pattern_inline-functions",
-    "pattern_lazy-loading",
-    "pattern_missing-useMemo",
-    "pattern_misused-useEffect",
-    "pattern_prop-drilling",
-    "pattern_repeated-fetching",
-    "pattern_stale-closures",
-    "pattern_too-many-effects",
+    "depth", "hasLargeImage", "causesLayoutShift", "slowClickHandler",
+    "deepComponentTree", "bulkDOMNodes", "slowNetwork", "expensiveEffects",
+    "largeJsonState", "layout_row", "pattern_inline-functions", "pattern_lazy-loading",
+    "pattern_missing-useMemo", "pattern_misused-useEffect", "pattern_prop-drilling",
+    "pattern_repeated-fetching", "pattern_stale-closures", "pattern_too-many-effects",
     "pattern_unstable-props",
 ]
+
+FEATURE_PROMPT_HINTS = {
+    "pattern_inline-functions": "Inline functions in JSX cause unnecessary re-renders. Move them to named functions or useCallback.",
+    "pattern_lazy-loading": "Use React.lazy and Suspense to split large components and improve initial load time.",
+    "pattern_missing-useMemo": "Use useMemo to memoize expensive computations and avoid recomputation on each render.",
+    "pattern_misused-useEffect": "Ensure useEffect hooks have proper dependency arrays to prevent repeated execution.",
+    "pattern_prop-drilling": "Prop drilling can lead to tight coupling. Use context or state management libraries to simplify.",
+    "pattern_repeated-fetching": "Avoid making the same fetch call repeatedly. Cache or deduplicate API calls.",
+    "pattern_stale-closures": "Make sure closures in effects and callbacks capture the latest state.",
+    "pattern_too-many-effects": "Combine related useEffect hooks to reduce execution overhead.",
+    "pattern_unstable-props": "Avoid creating new object/function props inside render. Use useCallback or useMemo to stabilize.",
+    "hasLargeImage": "Large images can delay LCP. Compress or lazy-load them.",
+    "bulkDOMNodes": "Too many DOM nodes can slow down rendering. Consider breaking into smaller components or virtualizing.",
+    "layout_row": "Avoid fixed-width row layouts. Use responsive design patterns.",
+    "slowClickHandler": "Avoid heavy computations in event handlers. Debounce or move to background tasks.",
+    "expensiveEffects": "Expensive logic in useEffect should be optimized or debounced.",
+    "deepComponentTree": "Deep component trees slow down rendering. Flatten when possible.",
+    "slowNetwork": "Minimize bundle size and reduce API latency.",
+    "largeJsonState": "Avoid storing large objects in state. Keep state lean.",
+    "causesLayoutShift": "Avoid layout shifts by predefining sizes for images and components.",
+}
 
 MODELS_DIR = Path(__file__).with_name("models")
 DEFAULT_MODEL = MODELS_DIR / "gradient_boosting.joblib"
 SCALER_PATH = MODELS_DIR / "scaler.joblib"
-SCRIPT_DIR = Path(__file__).resolve().parents[1] / "synthetic-react-app" / "scripts"
-PUPPETEER_SCRIPT = SCRIPT_DIR / "perf_puppeteer.js"
 
 
 def compute_depth(base: Path) -> int:
@@ -84,13 +78,13 @@ def extract_features(repo_path: Path) -> dict:
             continue
         if "React.lazy" in text or "import(" in text:
             features["pattern_lazy-loading"] = 1
-        inline_matches = re.findall(r"on\w+\s*={(?:\(.*?\)\s*=>|function)", text)
+        inline_matches = re.findall(r"on\\w+\\s*={(?:\\(.*?\\)\\s*=>|function)", text)
         if inline_matches:
             features["pattern_inline-functions"] = 1
-        features["pattern_too-many-effects"] += len(re.findall(r"useEffect\s*\(", text))
+        features["pattern_too-many-effects"] += len(re.findall(r"useEffect\\s*\\(", text))
         if "useMemo(" not in text:
             features["pattern_missing-useMemo"] = 1
-        if re.search(r"useEffect\([^\)]*\)\s*(?!,\s*\[)", text):
+        if re.search(r"useEffect\\([^)]*\\)\\s*(?!,\\s*\\[)", text):
             features["pattern_misused-useEffect"] = 1
         features["pattern_prop-drilling"] += text.count("props.")
         features["pattern_repeated-fetching"] += text.count("fetch(")
@@ -105,9 +99,7 @@ def extract_features(repo_path: Path) -> dict:
 
     features["pattern_prop-drilling"] = int(features["pattern_prop-drilling"] > 20)
     features["pattern_too-many-effects"] = int(features["pattern_too-many-effects"] > 5)
-    features["pattern_repeated-fetching"] = int(
-        features["pattern_repeated-fetching"] > 1
-    )
+    features["pattern_repeated-fetching"] = int(features["pattern_repeated-fetching"] > 1)
     return features
 
 
@@ -134,84 +126,31 @@ def predict(features: dict):
     shap_values = explainer(df)
     vals = shap_values.values[0]
     top_idx = list(reversed(vals.argsort()[-5:]))
-    top_features = [(df.columns[i], float(vals[i])) for i in top_idx]
+    top_features = [(df.columns[i], float(vals[i])) for i in top_idx if vals[i] > 0.2]
     return pred, conf, top_features
-
-
-def extract_features_from_text(text: str) -> dict:
-    """Compute feature dictionary for a block of code text."""
-    with tempfile.TemporaryDirectory() as tmpdir:
-        tmp_path = Path(tmpdir) / "snippet.jsx"
-        tmp_path.write_text(text, encoding="utf-8")
-        return extract_features(Path(tmpdir))
-
-
-def save_comparison_html(
-    orig_feat: dict, upd_feat: dict, orig_pred: float, upd_pred: float, out_file: Path
-):
-    rows = [
-        f"<tr><td>{name}</td><td>{orig_feat.get(name, 0)}</td><td>{upd_feat.get(name, 0)}</td></tr>"
-        for name in FEATURE_COLUMNS
-    ]
-    html = (
-        "<html><body>\n"
-        "<h1>Prediction</h1>\n"
-        f"<p>Original: {orig_pred}</p>\n"
-        f"<p>Updated: {upd_pred}</p>\n"
-        "<h2>Feature Comparison</h2>\n"
-        "<table border='1'>\n<tr><th>Feature</th><th>Original</th><th>Updated</th></tr>\n"
-        + "\n".join(rows)
-        + "\n</table></body></html>"
-    )
-    out_file.write_text(html, encoding="utf-8")
-
-
-def save_diff_html(original: str, updated: str, out_file: Path):
-    """Save side-by-side HTML diff using difflib."""
-    diff = difflib.HtmlDiff().make_file(
-        original.splitlines(),
-        updated.splitlines(),
-        fromdesc="Original",
-        todesc="Updated",
-    )
-    out_file.write_text(diff, encoding="utf-8")
 
 
 def iter_code_files(base: Path):
     exts = {".js", ".jsx", ".ts", ".tsx"}
     if base.is_file() and base.suffix.lower() in exts:
         yield base
-        return
-    for file in base.rglob("*"):
-        if file.suffix.lower() in exts:
-            yield file
+    else:
+        for file in base.rglob("*"):
+            if file.suffix.lower() in exts:
+                yield file
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Analyse React code for performance patterns"
-    )
+    parser = argparse.ArgumentParser(description="Analyse React code for performance patterns")
     parser.add_argument("path", help="Path to React project")
-    parser.add_argument(
-        "--verbose",
-        action="store_true",
-        help="Enable verbose logging for LLM generation",
-    )
-    group = parser.add_mutually_exclusive_group()
-    group.add_argument(
-        "--llm",
-        help="Path to local OR Hugging Face hosted model (e.g. google/flan-t5-xl)",
-    )
-    group.add_argument(
-        "--openai-model", help="Name of OpenAI model (e.g. gpt-4 or gpt-3.5-turbo)"
-    )
-    args = parser.parse_args()
+    parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
+    parser.add_argument("--print-prompt-only", action="store_true", help="Only print generated prompt(s)")
 
+    args = parser.parse_args()
     logging.basicConfig(
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
     )
-    logging.debug("Verbose logging enabled")
 
     repo_path = Path(args.path)
     if not repo_path.exists():
@@ -228,202 +167,41 @@ def main():
     for name, val in top_feats:
         print(f"  {name}: {val:+.4f}")
 
-    if args.llm or args.openai_model:
-        try:
-            os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
-            use_openai = bool(args.openai_model)
-            logging.info(
-                "Using %s for generation", "OpenAI" if use_openai else "Hugging Face"
-            )
-            if args.llm:
-                from huggingface_hub import InferenceClient
+    if args.print_prompt_only:
+        prompt_dir = Path(__file__).parent / "prompts"
+        prompt_dir.mkdir(exist_ok=True)
+        all_prompts_path = prompt_dir / f"{repo_path.name}_prompt.txt"
 
-                hf_token = (
-                    os.getenv("HF_TOKEN")
-                    or os.getenv("HUGGING_FACE_HUB_TOKEN")
-                    or os.getenv("HF_API_KEY")
-                )
-                if not hf_token:
-                    raise RuntimeError(
-                        "HF_TOKEN or HUGGING_FACE_HUB_TOKEN environment variable is not set"
-                    )
-
-                client = InferenceClient(model=args.llm, token=hf_token)
-
-            else:
-                import openai
-
-                if not os.getenv("OPENAI_API_KEY"):
-                    raise RuntimeError("OPENAI_API_KEY environment variable is not set")
-                openai.api_key = os.environ["OPENAI_API_KEY"]
-                if os.getenv("OPENAI_API_BASE"):
-                    openai.api_base = os.environ["OPENAI_API_BASE"]
-
-            out_root = Path(__file__).resolve().parent / "final_output"
-            out_root.mkdir(exist_ok=True)
-            run_dir = out_root / datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-            run_dir.mkdir(parents=True)
-
+        with open(all_prompts_path, "w", encoding="utf-8") as f:
             for code_path in iter_code_files(repo_path):
                 try:
                     code_text = code_path.read_text(encoding="utf-8")
                 except Exception:
                     continue
-                logging.info("Generating update for %s", code_path)
+
+                hints = [
+                    FEATURE_PROMPT_HINTS.get(name, f"Address issue: {name}")
+                    for name, _ in top_feats
+                ]
+
+                example_block = (
+                    "Example:\n"
+                    "Bad:\n  <button onClick={() => setCount(c => c + 1)}>Click</button>\n\n"
+                    "Better:\n  const handleClick = useCallback(() => setCount(c => c + 1), []);\n"
+                    "  <button onClick={handleClick}>Click</button>\n\n"
+                )
+
                 prompt = (
-                    "You are an expert React developer. Do not add new features. Optimise the following code based on these hints: "
-                    + ", ".join(f"{n} ({v:+.2f})" for n, v in top_feats)
-                    + "\nCode:\n"
-                    + code_text
-                )
-                if use_openai:
-                    logging.debug("Calling OpenAI model %s", args.openai_model)
-                    resp = openai.ChatCompletion.create(
-                        model=args.openai_model,
-                        messages=[{"role": "user", "content": prompt}],
-                        max_tokens=512,
-                    )
-                    generated = resp["choices"][0]["message"]["content"].strip()
-                    logging.debug("OpenAI generation complete")
-                else:
-                    try:
-                        # Attempt hosted generation via Hugging Face Hub
-                        logging.debug("Calling Hugging Face Inference API: %s", args.llm)
-                        generated = client.text_generation(prompt, max_new_tokens=512).strip()
-                        logging.debug("HF generation complete")
-                    except Exception:
-                        # Fall back to local generation using transformers
-                        logging.info("Falling back to local model generation")
-                        logging.info("Loading local model %s", args.llm)
-                        tokenizer = AutoTokenizer.from_pretrained(args.llm)
-                        try:
-                            model = AutoModelForCausalLM.from_pretrained(
-                                args.llm,
-                                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-                                device_map="auto",
-                            )
-                        except ValueError:
-                            logging.debug("Model is seq2seq; using AutoModelForSeq2SeqLM")
-                            model = AutoModelForSeq2SeqLM.from_pretrained(
-                                args.llm,
-                                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-                                device_map="auto",
-                            )
-
-                        logging.info("Local model loaded")
-                        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-                        logging.info("Generating with local model")
-                        streamer = TextIteratorStreamer(tokenizer, skip_special_tokens=True)
-                        max_pos = getattr(
-                            model.config,
-                            "max_position_embeddings",
-                            getattr(model.config, "n_positions", 2048),
-                        )
-                        prompt_len = len(inputs["input_ids"][0])
-                        if prompt_len >= max_pos:
-                            logging.warning(
-                                "Prompt too long (%s tokens) for model context (%s); truncating",
-                                prompt_len,
-                                max_pos,
-                            )
-                            inputs = tokenizer(
-                                prompt,
-                                return_tensors="pt",
-                                truncation=True,
-                                max_length=max_pos - 1,
-                            ).to(model.device)
-                            prompt_len = len(inputs["input_ids"][0])
-                        output_limit = min(1024, max_pos - prompt_len)
-                        if output_limit <= 0:
-                            logging.error(
-                                "Prompt length (%s) leaves no room for generation; skipping",
-                                prompt_len,
-                            )
-                            generated = ""
-                            continue
-
-                        gen_kwargs = {
-                            **inputs,
-                            "max_new_tokens": output_limit,
-                            "do_sample": False,
-                            "streamer": streamer,
-                        }
-                        thread = threading.Thread(target=model.generate, kwargs=gen_kwargs)
-                        thread.start()
-                        tokens = []
-                        for token in streamer:
-                            tokens.append(token)
-                            print(token, end="", flush=True)
-                        thread.join()
-                        print()
-                        generated = "".join(tokens).strip()
-                        logging.debug("Local generation complete")
-
-
-                if "```" in generated:
-                    parts = generated.split("```")
-                    if len(parts) >= 2:
-                        generated = parts[1].strip()
-
-                rel = code_path.relative_to(repo_path).with_suffix("")
-                out_dir = run_dir / rel
-                out_dir.mkdir(parents=True, exist_ok=True)
-
-                orig_file = out_dir / f"original{code_path.suffix}"
-                upd_file = out_dir / f"updated{code_path.suffix}"
-                orig_file.write_text(code_text, encoding="utf-8")
-                upd_file.write_text(generated, encoding="utf-8")
-
-                save_diff_html(code_text, generated, out_dir / "diff.html")
-
-                perf_orig = out_dir / "perf_original.json"
-                perf_upd = out_dir / "perf_updated.json"
-                for src, dest in [(orig_file, perf_orig), (upd_file, perf_upd)]:
-                    try:
-                        subprocess.run(
-                            [
-                                "node",
-                                str(PUPPETEER_SCRIPT),
-                                str(src),
-                                str(dest),
-                            ],
-                            check=True,
-                        )
-                    except Exception as e:
-                        logging.warning("Performance check failed for %s: %s", src, e)
-
-                orig_feat = extract_features_from_text(code_text)
-                upd_feat = extract_features_from_text(generated)
-                orig_pred, orig_conf, _ = predict(orig_feat)
-                upd_pred, upd_conf, _ = predict(upd_feat)
-
-                save_comparison_html(
-                    orig_feat, upd_feat, orig_pred, upd_pred, out_dir / "metrics.html"
+                    f"=== Prompt for {code_path.relative_to(repo_path)} ===\n\n"
+                    f"You are an expert React performance engineer. Do not add new features.\n"
+                    f"Focus only on the listed optimizations.\n\n"
+                    f"Apply these suggestions:\n- " + "\n- ".join(hints) + "\n\n" +
+                    example_block +
+                    f"Code:\n{code_text}\n\n"
                 )
 
-                summary = {
-                    "model": args.llm if args.llm else args.openai_model,
-                    "original_prediction": orig_pred,
-                    "original_confidence": orig_conf,
-                    "updated_prediction": upd_pred,
-                    "updated_confidence": upd_conf,
-                    "top_features": top_feats,
-                    "perf_original": str(perf_orig.relative_to(run_dir)),
-                    "perf_updated": str(perf_upd.relative_to(run_dir)),
-                }
-                (out_dir / "summary.json").write_text(
-                    json.dumps(summary, indent=2), encoding="utf-8"
-                )
-                logging.info("Finished processing %s", code_path)
-
-            logging.info("Results saved to %s", run_dir)
-            
-
-        except Exception as e:
-            logging.error("LLM generation failed: %s", e)
-            traceback.print_exc()
-
-
+                print(prompt)
+                f.write(prompt + "\n")
 
 if __name__ == "__main__":
     main()
