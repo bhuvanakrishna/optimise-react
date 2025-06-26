@@ -14,7 +14,23 @@ from sklearn.svm import SVC
 import xgboost as xgb
 import lightgbm as lgb
 import joblib
+import numpy as np
 from imblearn.over_sampling import SMOTE
+
+# Baseline heuristics
+def random_baseline(y_true):
+    np.random.seed(42)
+    return np.random.choice(["fast", "slow"], size=len(y_true))
+
+
+def static_thresholds_baseline(X):
+    cond = (X["depth"] > 4) | (X.get("bulkDOMNodes", 0).astype(bool))
+    return np.where(cond, "slow", "fast")
+
+
+def eslint_heuristics_baseline(X):
+    cond = X.get("slowNetwork", 0).astype(bool) | X.get("expensiveEffects", 0).astype(bool)
+    return np.where(cond, "slow", "fast")
 
 # Paths and constants
 DATASET = Path(__file__).with_name("dataset.csv")
@@ -63,6 +79,27 @@ def main():
     smote = SMOTE(random_state=42)
     X_train_bal, y_train_bal = smote.fit_resample(X_train_scaled, y_train)
     X_train_bal = pd.DataFrame(X_train_bal, columns=X_train_scaled.columns)
+
+    # Baseline evaluations on raw test set
+    baseline_preds = {
+        "random": random_baseline(y_test),
+        "static_thresholds": static_thresholds_baseline(X_test),
+        "eslint_heuristics": eslint_heuristics_baseline(X_test),
+    }
+
+    all_results = []
+    for name, preds in baseline_preds.items():
+        report = classification_report(y_test, preds, output_dict=True)
+        all_results.append({
+            "model": name,
+            "accuracy": report["accuracy"],
+            "precision_fast": report["fast"]["precision"],
+            "recall_fast": report["fast"]["recall"],
+            "f1_fast": report["fast"]["f1-score"],
+            "precision_slow": report["slow"]["precision"],
+            "recall_slow": report["slow"]["recall"],
+            "f1_slow": report["slow"]["f1-score"],
+        })
 
     # Models and parameters
     models = {
@@ -113,8 +150,6 @@ def main():
     y_train_bal_encoded = le.transform(y_train_bal)
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-
-    all_results = []
 
     for name, model in models.items():
         print(f"\n--- Training {name} ---")
