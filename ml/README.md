@@ -62,3 +62,39 @@ python optimise_cli.py /path/to/project --llm path/to/model
 ```bash
 python optimise_cli.py /path/to/project --openai-model gpt-3.5-turbo
 ```
+
+## Evaluation
+
+The machine learning workflow was evaluated against several baselines on a
+synthesised dataset of 3,000 React pages. Each page is labelled `fast` or
+`slow` using runtime metrics gathered through a Puppeteer profiling script. The
+feature set consists of structural properties (component depth, layout choices
+and boolean flags for expensive patterns) while dynamic metrics such as LCP and
+TBT are reserved as ground truth.
+
+### Baselines
+
+* **Random** – uniform random classifier.
+* **Static thresholds** – heuristics based on depth and the presence of bulk DOM
+  nodes.
+* **ESLint rules** – simplified rule set combining `slowNetwork` and
+  `expensiveEffects` flags.
+* **Logistic regression** – lightweight model trained on the static features
+  using gradient descent.
+
+### Metrics
+
+Precision, recall, F1 score and ROC–AUC are reported on the full dataset. The
+table below summarises the results.
+
+| Approach            | Precision | Recall | F1   | ROC‑AUC |
+|---------------------|---------:|------:|-----:|-------:|
+| Random              | 0.581 | 0.494 | 0.534 | 0.518 |
+| Static thresholds   | 0.610 | 0.494 | 0.546 | 0.527 |
+| ESLint heuristics   | 0.747 | 0.660 | 0.701 | 0.674 |
+| Logistic regression | **0.912** | **0.564** | **0.697** | **0.780** |
+
+Although the logistic model achieves the highest precision and ROC–AUC, recall
+remains modest. Future work will include cross‑validation with additional
+models such as random forests and gradient boosting, plus a comparison to
+metrics reported by Lighthouse on real‑world projects.
