@@ -5,3 +5,7 @@ scipy<1.12
 shap
 openai
 transformers
+xgboost
+lightgbm
+imbalanced-learn
+python-dotenv
