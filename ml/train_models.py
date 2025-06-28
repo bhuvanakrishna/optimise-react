@@ -33,6 +33,10 @@ def static_thresholds_baseline(X):
     return np.where(cond, "slow", "fast")
 
 
+def test():
+    return;
+
+
 
 def eslint_heuristics_baseline(X):
     flags = [
