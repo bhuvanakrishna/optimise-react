@@ -24,13 +24,25 @@ def random_baseline(y_true):
 
 
 def static_thresholds_baseline(X):
-    cond = (X["depth"] > 4) | (X.get("bulkDOMNodes", 0).astype(bool))
+    cond = (
+        (X["depth"] >= 4) |
+        (X["bulkDOMNodes"].astype(bool)) |
+        (X["expensiveEffects"].astype(bool)) |
+        (X["hasLargeImage"].astype(bool))
+    )
     return np.where(cond, "slow", "fast")
+
 
 
 def eslint_heuristics_baseline(X):
-    cond = X.get("slowNetwork", 0).astype(bool) | X.get("expensiveEffects", 0).astype(bool)
-    return np.where(cond, "slow", "fast")
+    flags = [
+        "hasLargeImage", "causesLayoutShift", "slowClickHandler",
+        "deepComponentTree", "bulkDOMNodes", "slowNetwork",
+        "expensiveEffects", "largeJsonState"
+    ]
+    total_flags = X[flags].astype(bool).sum(axis=1)
+    return np.where(total_flags >= 3, "slow", "fast")
+
 
 # Paths and constants
 DATASET = Path(__file__).with_name("dataset.csv")
