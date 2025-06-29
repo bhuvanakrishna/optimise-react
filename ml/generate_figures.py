@@ -4,6 +4,10 @@ from __future__ import annotations
 from pathlib import Path
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, FancyArrow
+
+plt.style.use("seaborn-v0_8-whitegrid")
+plt.rcParams.update({"font.size": 12})
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
