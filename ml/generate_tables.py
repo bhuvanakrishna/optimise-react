@@ -52,9 +52,9 @@ PARAM_GRIDS = {
 
 
 def random_baseline(y_true: pd.Series) -> pd.Series:
+    """Return a random fast/slow series matching the input index."""
     return pd.Series(
-        pd.Categorical(np.random.choice(["fast", "slow"], size=len(y_true)),
-                       categories=["fast", "slow"])
+        np.random.choice(["fast", "slow"], size=len(y_true)), index=y_true.index
     )
 
 
